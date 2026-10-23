@@ -1,0 +1,981 @@
+{
+ "VR-RULE-GET-STATE": {
+  "name": "Actions that change state should be restricted to POST",
+  "type": "Vulnerability",
+  "severity": "Medium",
+  "why": "An MVC action without an HTTP verb attribute accepts GET as well as POST. When such an action changes data or session state, it can be triggered by a link, an image tag or a redirect, and its parameters end up in browser history, proxy logs and Referer headers. Pentesters report this as 'POST to GET method conversion' or 'privilege escalation on GET request'.",
+  "fix": "Add [HttpPost] (and [ValidateAntiForgeryToken]) to every action that creates, updates or deletes data, changes a preference or touches the session. Keep GET for pure reads.",
+  "noncompliant": [
+   "public ActionResult SetUIRenderingModePreference(bool neos)",
+   "{",
+   "    Model.SetUIRenderingModePreference(userId, neos);",
+   "    return SuccessJsonResult;",
+   "}"
+  ],
+  "compliant": [
+   "[HttpPost]",
+   "[ValidateAntiForgeryToken]",
+   "public ActionResult SetUIRenderingModePreference(bool neos)",
+   "{",
+   "    Model.SetUIRenderingModePreference(userId, neos);",
+   "    return SuccessJsonResult;",
+   "}"
+  ],
+  "refs": [
+   [
+    "CWE-650: Trusting HTTP permission methods on the server side",
+    "https://cwe.mitre.org/data/definitions/650.html"
+   ],
+   [
+    "OWASP Cheat Sheet: Cross-Site Request Forgery Prevention",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-CSRF": {
+  "name": "POST actions should validate an anti-forgery token",
+  "type": "Security Hotspot",
+  "severity": "Medium",
+  "why": "Without an anti-forgery token, another website can submit a form to this action using the victim's authenticated session (cross-site request forgery). On login, password reset and password change actions this can log a user into an attacker's account, trigger reset e-mails or change the password. The rule is a hotspot because a global filter (for example AutoValidateAntiforgeryToken) can provide the same protection; confirm before treating it as a vulnerability.",
+  "fix": "Add [ValidateAntiForgeryToken] to the action and @Html.AntiForgeryToken() to the form, or register a global anti-forgery filter for all unsafe HTTP methods. Do not rely on the presence of a Referer header.",
+  "noncompliant": [
+   "[HttpPost]",
+   "public virtual ActionResult ResetPassword()",
+   "{ ... }"
+  ],
+  "compliant": [
+   "[HttpPost]",
+   "[ValidateAntiForgeryToken]",
+   "public virtual ActionResult ResetPassword()",
+   "{ ... }",
+   "",
+   "// View",
+   "@using (Html.BeginForm(\"ResetPassword\", \"Login\")) {",
+   "    @Html.AntiForgeryToken()",
+   "}"
+  ],
+  "refs": [
+   [
+    "CWE-352: Cross-Site Request Forgery",
+    "https://cwe.mitre.org/data/definitions/352.html"
+   ],
+   [
+    "OWASP Cheat Sheet: Cross-Site Request Forgery Prevention",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-PRELOGIN-LOOKUP": {
+  "name": "Pre-login actions should not reveal whether an account exists",
+  "type": "Vulnerability",
+  "severity": "Medium",
+  "why": "Actions on the login page run before authentication. If they take a login name and return different data (business units, culture, flags, connection keys) for existing and unknown accounts, an attacker can enumerate valid user names and then target them with password guessing or phishing. Without throttling, the action becomes an unlimited oracle.",
+  "fix": "Return the same response shape and message for known and unknown login names, move these calls behind [HttpPost] with rate limiting, and require authentication for anything that is not needed to render the login form (for example connection keys for security administrators).",
+  "noncompliant": [
+   "public ActionResult GetBusinessUnitInfos(string loginName)",
+   "{",
+   "    var bus = Model.GetBusinessUnitInfos(loginName);",
+   "    return bus.Any() ? MakeJsonResult(bus)",
+   "                     : MakeJsonResult(new { resultMessage = Messages.NoBUsAssigned });",
+   "}"
+  ],
+  "compliant": [
+   "[HttpPost, ValidateAntiForgeryToken, RateLimit]",
+   "public ActionResult GetBusinessUnitInfos(string loginName)",
+   "{",
+   "    // Same shape for every login name; empty list when unknown",
+   "    return MakeJsonResult(Model.GetBusinessUnitInfos(loginName) ?? Enumerable.Empty<BusinessUnitInfo>());",
+   "}"
+  ],
+  "refs": [
+   [
+    "CWE-204: Observable response discrepancy",
+    "https://cwe.mitre.org/data/definitions/204.html"
+   ],
+   [
+    "CWE-306: Missing authentication for critical function",
+    "https://cwe.mitre.org/data/definitions/306.html"
+   ],
+   [
+    "OWASP Cheat Sheet: Authentication (user enumeration)",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-RESET-ENUM": {
+  "name": "Password reset should answer the same way for every account",
+  "type": "Vulnerability",
+  "severity": "Medium",
+  "why": "When the forgot-password flow returns a special message only for accounts that exist (for example 'a reset link was already shared'), anyone can learn which user names are valid. This is the 'password reset discloses whether an account exists' finding reported by pentesters.",
+  "fix": "Always show one neutral message such as 'If the details match an account, a reset link has been sent.' Handle the pending-link case silently on the server side.",
+  "noncompliant": [
+   "if (Config.Instance.PasswordResetViaLink && Model.UserHasValidPasswordResetLink())",
+   "    throw new BusinessException(\"ResetPasswordLink\", Messages.ResetPasswordLinkShared);"
+  ],
+  "compliant": [
+   "if (Config.Instance.PasswordResetViaLink && Model.UserHasValidPasswordResetLink())",
+   "    return NeutralResetResponse(); // same message and timing as every other request"
+  ],
+  "refs": [
+   [
+    "CWE-204: Observable response discrepancy",
+    "https://cwe.mitre.org/data/definitions/204.html"
+   ],
+   [
+    "OWASP Cheat Sheet: Forgot Password",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-COOKIE-AUTHCTX": {
+  "name": "Authentication decisions should not trust data read from a cookie",
+  "type": "Security Hotspot",
+  "severity": "High",
+  "why": "Cookies are fully controlled by the client. If an authentication context (user name, 'authentication successful' flag) is deserialised from a cookie and then used to skip the password check, anyone who can forge that cookie can log in as any user. This is only safe when the cookie is encrypted and integrity-protected with a server-side key. Deserialising client data is also listed in the CWE Top 25 (CWE-502).",
+  "fix": "Keep the external-login result in server-side session state or in a short-lived, signed and encrypted ticket (for example ASP.NET Data Protection). Verify the signature before deserialising, and never let a client-supplied flag decide whether a password is checked.",
+  "noncompliant": [
+   "var ext = HttpContext.Request.Cookies.GetCookie(\"ExtLoginDetails\");",
+   "Model.ExternalAuthenticationContext = Jsonizer.Create<ExternalAuthenticationContext>(ext);",
+   "// later: Authenticate = !ctx.IsAuthenticationSuccessful -> password not checked"
+  ],
+  "compliant": [
+   "var protector = dataProtection.CreateProtector(\"ExtLogin\");",
+   "var json = protector.Unprotect(cookieValue);   // throws if tampered",
+   "var ctx = Jsonizer.Create<ExternalAuthenticationContext>(json);"
+  ],
+  "refs": [
+   [
+    "CWE-565: Reliance on cookies without validation and integrity checking",
+    "https://cwe.mitre.org/data/definitions/565.html"
+   ],
+   [
+    "CWE-502: Deserialization of untrusted data",
+    "https://cwe.mitre.org/data/definitions/502.html"
+   ],
+   [
+    "OWASP Cheat Sheet: Session Management",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-CUSTOMERRORS-OFF": {
+  "name": "Detailed error pages should not be shown to remote users",
+  "type": "Vulnerability",
+  "severity": "Medium",
+  "why": "With customErrors mode=\"Off\", any unhandled exception returns the ASP.NET 'yellow screen' with the stack trace, source file paths, framework and assembly versions. Attackers use this to map the application and target known weaknesses. Pentest reports call this 'server-side details revealed' or 'verbose error messages'.",
+  "fix": "Ship customErrors mode=\"RemoteOnly\" (or \"On\") with a generic error page, log the exception server-side, and only relax it in development transforms.",
+  "noncompliant": [
+   "<customErrors mode=\"Off\" defaultRedirect=\"/app_offline1.htm\"/>"
+  ],
+  "compliant": [
+   "<customErrors mode=\"RemoteOnly\" defaultRedirect=\"~/Error\"/>"
+  ],
+  "refs": [
+   [
+    "CWE-209: Generation of error message containing sensitive information",
+    "https://cwe.mitre.org/data/definitions/209.html"
+   ],
+   [
+    "OWASP Cheat Sheet: Error Handling",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Error_Handling_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-DEBUG-TRUE": {
+  "name": "Debug compilation should be disabled in shipped configuration",
+  "type": "Vulnerability",
+  "severity": "Low",
+  "why": "compilation debug=\"true\" disables batch compilation and script optimisation, keeps debug symbols, extends request timeouts and makes error output more detailed. In production it increases information disclosure and resource use.",
+  "fix": "Set debug=\"false\" in the shipped Web.config and enable it only through a development transform.",
+  "noncompliant": [
+   "<compilation debug=\"true\"/>"
+  ],
+  "compliant": [
+   "<compilation debug=\"false\"/>"
+  ],
+  "refs": [
+   [
+    "CWE-11: ASP.NET misconfiguration: creating debug binary",
+    "https://cwe.mitre.org/data/definitions/11.html"
+   ]
+  ]
+ },
+ "VR-RULE-ELMAH-REMOTE": {
+  "name": "Error log viewers should not be reachable remotely",
+  "type": "Vulnerability",
+  "severity": "High",
+  "why": "ELMAH stores every unhandled error with the full HTTP context: cookies, form fields, server variables and query strings. With allowRemoteAccess enabled and no authorisation rule on elmah.axd, anyone who reaches the site can read session cookies and submitted data, which can lead to session hijacking and credential exposure.",
+  "fix": "Set allowRemoteAccess=\"0\", add a <location path=\"elmah.axd\"> rule that allows only administrators, or remove the elmah.axd handler from production builds.",
+  "noncompliant": [
+   "<elmah>",
+   "  <security allowRemoteAccess=\"1\"/>",
+   "</elmah>"
+  ],
+  "compliant": [
+   "<elmah>",
+   "  <security allowRemoteAccess=\"0\"/>",
+   "</elmah>",
+   "<location path=\"elmah.axd\">",
+   "  <system.web><authorization>",
+   "    <allow roles=\"SecurityAdmin\"/><deny users=\"*\"/>",
+   "  </authorization></system.web>",
+   "</location>"
+  ],
+  "refs": [
+   [
+    "CWE-215: Insertion of sensitive information into debugging code",
+    "https://cwe.mitre.org/data/definitions/215.html"
+   ],
+   [
+    "CWE-200: Exposure of sensitive information",
+    "https://cwe.mitre.org/data/definitions/200.html"
+   ]
+  ]
+ },
+ "VR-RULE-NO-HSTS": {
+  "name": "Strict-Transport-Security should be sent on HTTPS responses",
+  "type": "Vulnerability",
+  "severity": "Medium",
+  "why": "Without HSTS, a user's first request (or a typed http:// URL) can be intercepted and downgraded to plain HTTP, exposing session cookies and credentials to anyone on the network path (SSL stripping).",
+  "fix": "Send Strict-Transport-Security: max-age=31536000; includeSubDomains on every HTTPS response. Emit it from code or the base config so each deployment gets it without manual edits.",
+  "noncompliant": [
+   "<customHeaders>",
+   "  <!--<add name=\"Strict-Transport-Security\" value=\"max-age=31536000\"/>-->",
+   "</customHeaders>"
+  ],
+  "compliant": [
+   "<customHeaders>",
+   "  <add name=\"Strict-Transport-Security\" value=\"max-age=31536000; includeSubDomains\"/>",
+   "</customHeaders>"
+  ],
+  "refs": [
+   [
+    "CWE-523: Unprotected transport of credentials",
+    "https://cwe.mitre.org/data/definitions/523.html"
+   ],
+   [
+    "OWASP Cheat Sheet: HTTP Strict Transport Security",
+    "https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-NO-CSP": {
+  "name": "A Content-Security-Policy header should be configured",
+  "type": "Security Hotspot",
+  "severity": "Medium",
+  "why": "A Content-Security-Policy limits where scripts, styles and frames may load from. Without it, any HTML or script injection runs with full privileges and the page can be framed by other sites. This is a hotspot because the header may be added in code rather than in Web.config.",
+  "fix": "Send a CSP from the response pipeline (or customHeaders) that allows only your own origins and required third parties, and add frame-ancestors 'self'. Start with Content-Security-Policy-Report-Only to find violations before enforcing.",
+  "noncompliant": [
+   "<customHeaders>",
+   "  <add name=\"X-Frame-Options\" value=\"sameorigin\"/>",
+   "</customHeaders>"
+  ],
+  "compliant": [
+   "<customHeaders>",
+   "  <add name=\"Content-Security-Policy\" value=\"default-src 'self'; frame-ancestors 'self'; object-src 'none'\"/>",
+   "</customHeaders>"
+  ],
+  "refs": [
+   [
+    "CWE-1021: Improper restriction of rendered UI layers",
+    "https://cwe.mitre.org/data/definitions/1021.html"
+   ],
+   [
+    "OWASP Cheat Sheet: Content Security Policy",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-COOKIE-SECURE": {
+  "name": "Cookies should be marked Secure",
+  "type": "Vulnerability",
+  "severity": "Medium",
+  "why": "A cookie without the Secure attribute is also sent over plain HTTP. If any request is made over HTTP (mixed content, a typed URL, a downgrade), the session cookie travels unencrypted and can be captured. Missing SameSite also leaves cookies open to cross-site use.",
+  "fix": "Set requireSSL=\"true\" and sameSite=\"Lax\" (or \"Strict\") on httpCookies, and set the same on the session and authentication cookies.",
+  "noncompliant": [
+   "<httpCookies httpOnlyCookies=\"true\"/>"
+  ],
+  "compliant": [
+   "<httpCookies httpOnlyCookies=\"true\" requireSSL=\"true\" sameSite=\"Lax\"/>"
+  ],
+  "refs": [
+   [
+    "CWE-614: Sensitive cookie in HTTPS session without 'Secure' attribute",
+    "https://cwe.mitre.org/data/definitions/614.html"
+   ],
+   [
+    "OWASP Cheat Sheet: Session Management",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-PLAINTEXT-PASSWORD": {
+  "name": "Credentials should not be stored in plain text in configuration",
+  "type": "Security Hotspot",
+  "severity": "Medium",
+  "why": "A password written into a committed config file is visible to everyone with repository or server access, ends up in backups and deployment packages, and is hard to rotate. Pentesters report this as 'sensitive data exposure' or 'password in clear text'.",
+  "fix": "Load the secret from Azure Key Vault (the AzureKeyVault config builder is already declared) or environment variables, rotate it if it was ever real, and keep only a placeholder in source control.",
+  "noncompliant": [
+   "<network host=\"mail.example\" userName=\"no-reply@example\" password=\"********\"/>"
+  ],
+  "compliant": [
+   "<smtp configBuilders=\"AzureKeyVault\">",
+   "  <network host=\"mail.example\" userName=\"no-reply@example\" password=\"[SmtpPassword]\"/>",
+   "</smtp>"
+  ],
+  "refs": [
+   [
+    "CWE-260: Password in configuration file",
+    "https://cwe.mitre.org/data/definitions/260.html"
+   ],
+   [
+    "CWE-798: Use of hard-coded credentials",
+    "https://cwe.mitre.org/data/definitions/798.html"
+   ],
+   [
+    "OWASP Cheat Sheet: Secrets Management",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-SESSION-TIMEOUT": {
+  "name": "Session idle timeout should be short",
+  "type": "Vulnerability",
+  "severity": "Low",
+  "why": "A long idle timeout keeps an unattended or stolen session usable for hours. Pentesters report this as 'insufficient session expiration'.",
+  "fix": "Use an idle timeout of 15 to 30 minutes for the portal (shorter for administrators) and an absolute session lifetime. Document any business exception.",
+  "noncompliant": [
+   "<sessionState mode=\"InProc\" timeout=\"120\"/>"
+  ],
+  "compliant": [
+   "<sessionState mode=\"InProc\" timeout=\"20\"/>"
+  ],
+  "refs": [
+   [
+    "CWE-613: Insufficient session expiration",
+    "https://cwe.mitre.org/data/definitions/613.html"
+   ],
+   [
+    "OWASP Cheat Sheet: Session Management",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-REQUEST-LIMIT": {
+  "name": "Request size limits should match real upload needs",
+  "type": "Vulnerability",
+  "severity": "Low",
+  "why": "Allowing requests of several gigabytes lets a single client tie up bandwidth, disk and memory, and makes unrestricted file upload easier to abuse.",
+  "fix": "Set maxAllowedContentLength and maxRequestLength to the largest file the business needs, and enforce stricter limits per upload endpoint.",
+  "noncompliant": [
+   "<requestLimits maxAllowedContentLength=\"4294967295\"/>"
+  ],
+  "compliant": [
+   "<requestLimits maxAllowedContentLength=\"52428800\"/>  <!-- 50 MB -->"
+  ],
+  "refs": [
+   [
+    "CWE-770: Allocation of resources without limits",
+    "https://cwe.mitre.org/data/definitions/770.html"
+   ],
+   [
+    "OWASP Cheat Sheet: File Upload",
+    "https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-HTTP-ENDPOINT": {
+  "name": "Service endpoints should use HTTPS",
+  "type": "Vulnerability",
+  "severity": "Low",
+  "why": "Calls to http:// endpoints send requests and responses (tax data, pricing, report credentials) without encryption, so anyone on the network path can read or change them. Internal host names and IP addresses in a shipped config also disclose infrastructure details.",
+  "fix": "Use https:// endpoints with transport security, and supply environment-specific addresses through config transforms or App Configuration instead of the base file.",
+  "noncompliant": [
+   "<endpoint address=\"http://192.168.10.88:8095/vertex-ws/services/CalculateTaxString\" .../>"
+  ],
+  "compliant": [
+   "<endpoint address=\"https://tax.internal.example/vertex-ws/services/CalculateTaxString\" .../>"
+  ],
+  "refs": [
+   [
+    "CWE-319: Cleartext transmission of sensitive information",
+    "https://cwe.mitre.org/data/definitions/319.html"
+   ],
+   [
+    "OWASP Cheat Sheet: Transport Layer Security",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Security_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-SQL-CONCAT": {
+  "name": "SQL queries should not be built by string concatenation",
+  "type": "Vulnerability",
+  "severity": "Critical",
+  "why": "Concatenating request values into SQL lets an attacker change the query: read other tenants' data, bypass filters or modify records. SQL injection is CWE Top 25 #3.",
+  "fix": "Use parameterised commands or the repository query API; never concatenate input into SQL text. Validate identifiers (column or table names) against an allow-list.",
+  "noncompliant": [
+   "var sql = \"SELECT * FROM Contracts WHERE Number = '\" + number + \"'\";"
+  ],
+  "compliant": [
+   "var cmd = new SqlCommand(\"SELECT * FROM Contracts WHERE Number = @n\", conn);",
+   "cmd.Parameters.AddWithValue(\"@n\", number);"
+  ],
+  "refs": [
+   [
+    "CWE-89: SQL injection",
+    "https://cwe.mitre.org/data/definitions/89.html"
+   ],
+   [
+    "OWASP Cheat Sheet: SQL Injection Prevention",
+    "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-HTML-RAW": {
+  "name": "Html.Raw should not output user-controlled data",
+  "type": "Security Hotspot",
+  "severity": "High",
+  "why": "Html.Raw switches off Razor's automatic HTML encoding. If the value can contain user input (comments, notes, names), injected script runs in other users' browsers (cross-site scripting, CWE Top 25 #1).",
+  "fix": "Use @value so Razor encodes it. If rich text is required, sanitise it with an allow-list HTML sanitiser before output.",
+  "noncompliant": [
+   "@Html.Raw(Model.Notes)"
+  ],
+  "compliant": [
+   "@Model.Notes",
+   "@Html.Raw(sanitizer.Sanitize(Model.Notes))"
+  ],
+  "refs": [
+   [
+    "CWE-79: Cross-site scripting",
+    "https://cwe.mitre.org/data/definitions/79.html"
+   ],
+   [
+    "OWASP Cheat Sheet: Cross Site Scripting Prevention",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-OPEN-REDIRECT": {
+  "name": "Redirect targets from the request should be validated",
+  "type": "Vulnerability",
+  "severity": "Medium",
+  "why": "Redirecting to a URL taken from the request lets an attacker send users from a trusted Odessa link to a phishing site.",
+  "fix": "Redirect only when Url.IsLocalUrl(returnUrl) is true, or map the value to an allow-list of destinations.",
+  "noncompliant": [
+   "return Redirect(returnUrl);"
+  ],
+  "compliant": [
+   "return Url.IsLocalUrl(returnUrl) ? Redirect(returnUrl) : RedirectToAction(\"Index\", \"Workarea\");"
+  ],
+  "refs": [
+   [
+    "CWE-601: Open redirect",
+    "https://cwe.mitre.org/data/definitions/601.html"
+   ],
+   [
+    "OWASP Cheat Sheet: Unvalidated Redirects and Forwards",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-PATH-TRAVERSAL": {
+  "name": "File paths should not be built from request input",
+  "type": "Security Hotspot",
+  "severity": "High",
+  "why": "A file name such as ..\\..\\Web.config combined into a path lets an attacker read or overwrite files outside the intended folder (path traversal, CWE Top 25 #5).",
+  "fix": "Use Path.GetFileName on the input, combine with a fixed base folder, resolve the full path and check that it still starts with the base folder. Prefer storage IDs over file names.",
+  "noncompliant": [
+   "var path = Path.Combine(storageRoot, fileName);",
+   "return File(System.IO.File.ReadAllBytes(path), \"application/octet-stream\");"
+  ],
+  "compliant": [
+   "var full = Path.GetFullPath(Path.Combine(storageRoot, Path.GetFileName(fileName)));",
+   "if (!full.StartsWith(storageRoot, StringComparison.OrdinalIgnoreCase)) return new HttpStatusCodeResult(400);"
+  ],
+  "refs": [
+   [
+    "CWE-22: Path traversal",
+    "https://cwe.mitre.org/data/definitions/22.html"
+   ],
+   [
+    "OWASP: Path Traversal",
+    "https://owasp.org/www-community/attacks/Path_Traversal"
+   ]
+  ]
+ },
+ "VR-RULE-SSRF": {
+  "name": "Outbound requests should not use request-supplied URLs",
+  "type": "Security Hotspot",
+  "severity": "High",
+  "why": "If the server fetches a URL supplied by the user, an attacker can make it call internal systems (databases, metadata services, admin APIs) that are not reachable from outside (server-side request forgery, CWE Top 25 #19).",
+  "fix": "Allow only known hosts and schemes, resolve and block private address ranges, and never pass raw user input to HttpClient or WebClient.",
+  "noncompliant": [
+   "var body = await client.GetStringAsync(url);"
+  ],
+  "compliant": [
+   "var uri = new Uri(url);",
+   "if (!AllowedHosts.Contains(uri.Host) || uri.Scheme != Uri.UriSchemeHttps) return BadRequest();",
+   "var body = await client.GetStringAsync(uri);"
+  ],
+  "refs": [
+   [
+    "CWE-918: Server-side request forgery",
+    "https://cwe.mitre.org/data/definitions/918.html"
+   ],
+   [
+    "OWASP Cheat Sheet: SSRF Prevention",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-UNSAFE-DESERIALIZE": {
+  "name": "Deserialisation should not allow arbitrary types",
+  "type": "Vulnerability",
+  "severity": "Critical",
+  "why": "BinaryFormatter, NetDataContractSerializer, LosFormatter and Json.NET with TypeNameHandling other than None can instantiate attacker-chosen types while deserialising, which leads to remote code execution (CWE Top 25 #16).",
+  "fix": "Use TypeNameHandling.None or a strict SerializationBinder allow-list, and replace BinaryFormatter with System.Text.Json or DataContractSerializer with known types.",
+  "noncompliant": [
+   "var settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All };"
+  ],
+  "compliant": [
+   "var settings = new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.None };"
+  ],
+  "refs": [
+   [
+    "CWE-502: Deserialization of untrusted data",
+    "https://cwe.mitre.org/data/definitions/502.html"
+   ],
+   [
+    "OWASP Cheat Sheet: Deserialization",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Deserialization_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-PROCESS-START": {
+  "name": "Processes should not be started with variable arguments",
+  "type": "Security Hotspot",
+  "severity": "High",
+  "why": "Passing request data to Process.Start lets an attacker run other commands or add arguments on the server (OS command injection, CWE Top 25 #7).",
+  "fix": "Avoid starting processes from web requests. If required, use a fixed executable path and pass validated arguments through ProcessStartInfo.ArgumentList.",
+  "noncompliant": [
+   "Process.Start(toolPath, userArgs);"
+  ],
+  "compliant": [
+   "var psi = new ProcessStartInfo(FixedToolPath);",
+   "psi.ArgumentList.Add(ValidatedFileId(userArgs));",
+   "Process.Start(psi);"
+  ],
+  "refs": [
+   [
+    "CWE-78: OS command injection",
+    "https://cwe.mitre.org/data/definitions/78.html"
+   ],
+   [
+    "OWASP Cheat Sheet: OS Command Injection Defense",
+    "https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-WEAK-CRYPTO": {
+  "name": "Weak hashes, ciphers and TLS versions should not be used",
+  "type": "Vulnerability",
+  "severity": "Medium",
+  "why": "MD5, SHA-1, DES, 3DES and RC2 are broken or too weak for security use, and forcing SSL 3.0 or TLS 1.0/1.1 allows downgrade attacks. The Odessa CLAUDE.md also requires SecurityProtocolType.SystemDefault.",
+  "fix": "Use SHA-256 or stronger, AES-GCM for encryption, a password hashing function (PBKDF2, bcrypt, Argon2) for passwords, and leave TLS selection to the operating system (SystemDefault).",
+  "noncompliant": [
+   "ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls;",
+   "var hash = MD5.Create().ComputeHash(data);"
+  ],
+  "compliant": [
+   "ServicePointManager.SecurityProtocol = SecurityProtocolType.SystemDefault;",
+   "var hash = SHA256.Create().ComputeHash(data);"
+  ],
+  "refs": [
+   [
+    "CWE-327: Use of a broken or risky cryptographic algorithm",
+    "https://cwe.mitre.org/data/definitions/327.html"
+   ],
+   [
+    "OWASP Cheat Sheet: Cryptographic Storage",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-CERT-BYPASS": {
+  "name": "TLS certificate validation should not be disabled",
+  "type": "Vulnerability",
+  "severity": "High",
+  "why": "A certificate validation callback that always returns true accepts any certificate, so a man-in-the-middle can read and alter all traffic to that service.",
+  "fix": "Remove the callback. For private certificate authorities, trust the CA in the machine store or validate the specific certificate thumbprint.",
+  "noncompliant": [
+   "ServicePointManager.ServerCertificateValidationCallback = (s, c, ch, e) => true;"
+  ],
+  "compliant": [
+   "// No callback: the default validation applies"
+  ],
+  "refs": [
+   [
+    "CWE-295: Improper certificate validation",
+    "https://cwe.mitre.org/data/definitions/295.html"
+   ]
+  ]
+ },
+ "VR-RULE-HARDCODED-SECRET": {
+  "name": "Secrets should not be hard-coded in source",
+  "type": "Security Hotspot",
+  "severity": "High",
+  "why": "A password, API key or client secret in source code is shared with everyone who can read the repository and its history, and cannot be rotated without a release.",
+  "fix": "Read secrets from Key Vault or environment configuration at runtime and remove them from source and history.",
+  "noncompliant": [
+   "private const string ApiKey = \"live_8f3c...\";"
+  ],
+  "compliant": [
+   "var apiKey = configuration[\"Integrations:ApiKey\"]; // from Key Vault"
+  ],
+  "refs": [
+   [
+    "CWE-798: Use of hard-coded credentials",
+    "https://cwe.mitre.org/data/definitions/798.html"
+   ],
+   [
+    "OWASP Cheat Sheet: Secrets Management",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-ALLOW-ANONYMOUS": {
+  "name": "Anonymous access should be limited to login and public pages",
+  "type": "Security Hotspot",
+  "severity": "Medium",
+  "why": "[AllowAnonymous] removes authentication from an action. On anything other than login, password reset or public content, it exposes business functions or data without a session (missing authentication, CWE Top 25 #25).",
+  "fix": "Remove [AllowAnonymous] unless the action must work before login, and add explicit authorisation checks on the rest.",
+  "noncompliant": [
+   "[AllowAnonymous]",
+   "public ActionResult ExportContracts() { ... }"
+  ],
+  "compliant": [
+   "[Authorize(Roles = \"ContractViewer\")]",
+   "public ActionResult ExportContracts() { ... }"
+  ],
+  "refs": [
+   [
+    "CWE-306: Missing authentication for critical function",
+    "https://cwe.mitre.org/data/definitions/306.html"
+   ],
+   [
+    "OWASP Cheat Sheet: Authorization",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-DEP": {
+  "name": "Components should not have known published vulnerabilities",
+  "type": "Vulnerability",
+  "severity": "Medium",
+  "why": "A library version that falls inside an advisory's affected range carries a publicly documented weakness. Attackers and vendor scanners fingerprint library versions, so these are among the first issues found in a VAPT ('outdated library', 'vulnerable component'). Severity on this dashboard starts from the advisory's CVSS and is adjusted for how the library is used (shipped to browsers or build-time only).",
+  "fix": "Upgrade to the first patched version listed in the advisory, re-run the build and tests, and re-run VulnRadar to confirm. If an upgrade is not possible, document the mitigation and how the vulnerable function is not reachable.",
+  "noncompliant": [
+   "/*! js-cookie v3.0.5 | MIT */"
+  ],
+  "compliant": [
+   "/*! js-cookie v<first patched version> | MIT */"
+  ],
+  "refs": [
+   [
+    "OWASP Top 10:2025 A03 Software Supply Chain Failures",
+    "https://owasp.org/Top10/"
+   ],
+   [
+    "OWASP Cheat Sheet: Vulnerable Dependency Management",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Vulnerable_Dependency_Management_Cheat_Sheet.html"
+   ],
+   [
+    "GitHub Advisory Database",
+    "https://github.com/advisories"
+   ]
+  ]
+ },
+ "VR-RULE-REQUEST-SQL": {
+  "name": "SQL text and connection strings should never come from the request",
+  "type": "Security Hotspot",
+  "severity": "Critical",
+  "why": "An action that accepts SQL text or a connection string as a parameter lets the caller run their own queries against the database, or point the server at any database host it can reach. Even when the SQL is only used to read column metadata, many providers execute the batch, and a supplied connection string can be used to probe internal servers (SQL injection, CWE Top 25 #3, and server-side request forgery, #19).",
+  "fix": "Remove the endpoint from production builds. If it is needed for test tooling, accept only a named query or connection key from an allow-list, never raw SQL or a raw connection string, and require an administrator role.",
+  "noncompliant": [
+   "public ActionResult GetExecutedCommandResult(string sqlCommand, string connectionString = null)",
+   "{",
+   "    using (var db = connectionString.ResolveNameOrConnectionString().CreateConnection())",
+   "        return MakeJsonResult(db.GetSqlColumnInfo(sqlCommand));",
+   "}"
+  ],
+  "compliant": [
+   "[HttpPost, ValidateAntiForgeryToken, Authorize(Roles = \"TestAutomationAdmin\")]",
+   "public ActionResult GetExecutedCommandResult(string queryKey)",
+   "{",
+   "    var sql = AllowedQueries.Get(queryKey);           // fixed, reviewed SQL",
+   "    using (var db = ConnectionKeys.LeasewaveRepository.CreateConnection())",
+   "        return MakeJsonResult(db.GetSqlColumnInfo(sql));",
+   "}"
+  ],
+  "refs": [
+   [
+    "CWE-89: SQL injection",
+    "https://cwe.mitre.org/data/definitions/89.html"
+   ],
+   [
+    "CWE-918: Server-side request forgery",
+    "https://cwe.mitre.org/data/definitions/918.html"
+   ],
+   [
+    "OWASP Cheat Sheet: SQL Injection Prevention",
+    "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-SECRET-DISCLOSURE": {
+  "name": "Connection strings and secrets should not be returned in responses",
+  "type": "Vulnerability",
+  "severity": "High",
+  "why": "A connection string usually contains the database server, database name and, with SQL authentication, a user name and password. Returning it in JSON hands those details to any caller, browser extension or proxy log, and gives an attacker a direct path to the database.",
+  "fix": "Do not return connection strings. Return only a display name or a yes/no 'connected' result, and keep credentials in Key Vault. Return a generic failure message instead of the exception text.",
+  "noncompliant": [
+   "public ActionResult GetAutomationRepositoryConnection()",
+   "{",
+   "    return MakeJsonResult(Config.ConnectionStrings.Value(\"AutomationRepository\"));",
+   "}"
+  ],
+  "compliant": [
+   "public ActionResult GetAutomationRepositoryConnection()",
+   "{",
+   "    return MakeJsonResult(new { configured = Config.ConnectionStrings.Exists(\"AutomationRepository\") });",
+   "}"
+  ],
+  "refs": [
+   [
+    "CWE-200: Exposure of sensitive information",
+    "https://cwe.mitre.org/data/definitions/200.html"
+   ],
+   [
+    "CWE-522: Insufficiently protected credentials",
+    "https://cwe.mitre.org/data/definitions/522.html"
+   ],
+   [
+    "OWASP Cheat Sheet: Secrets Management",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-EXCEPTION-MESSAGE": {
+  "name": "Exception messages should not be shown to users",
+  "type": "Security Hotspot",
+  "severity": "Low",
+  "why": "Exception messages often contain SQL errors, server names, file paths, connection details or internal type names. Sending them to the browser helps an attacker map the system; pentesters report it as improper error handling or verbose error messages.",
+  "fix": "Log the full exception server-side with a correlation ID and show the user a generic message that includes only that ID.",
+  "noncompliant": [
+   "catch (Exception ex)",
+   "{",
+   "    return MakeJsonResult(\"Fail\" + ex.Message);",
+   "}"
+  ],
+  "compliant": [
+   "catch (Exception ex)",
+   "{",
+   "    var id = DefaultLogger.Instance.LogException(ex);",
+   "    return MakeJsonResult(new { error = \"The operation failed\", reference = id });",
+   "}"
+  ],
+  "refs": [
+   [
+    "CWE-209: Error message containing sensitive information",
+    "https://cwe.mitre.org/data/definitions/209.html"
+   ],
+   [
+    "OWASP Cheat Sheet: Error Handling",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Error_Handling_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-TEST-ENDPOINT": {
+  "name": "Test automation endpoints should not ship enabled in production",
+  "type": "Security Hotspot",
+  "severity": "High",
+  "why": "Test tooling endpoints are built for convenience: they switch to the system user, list all users and business units, run scenarios, delete runs and touch the file system. If they are reachable in a production portal, their protection rests on a single filter and a configuration flag; a weakness in either exposes administrative functions and personal data (active debug code, CWE-489; missing authentication for critical function, CWE-306).",
+  "fix": "Exclude the controller from production builds or routes, or require an authenticated administrator plus the test-automation token, and make the security flag impossible to turn off outside test environments. Log every call.",
+  "noncompliant": [
+   "[OdessaTestAuthenticationFilter]",
+   "public class TestAutomationController : BaseController",
+   "{",
+   "    public ActionResult GetUserPortalInfos(string connectionName)",
+   "    {",
+   "        userService.SetSystemUserContext(connectionName, ...);  // runs as system",
+   "        ...",
+   "    }",
+   "}"
+  ],
+  "compliant": [
+   "#if TEST_AUTOMATION",
+   "[OdessaTestAuthenticationFilter, Authorize(Roles = \"TestAutomationAdmin\")]",
+   "public class TestAutomationController : BaseController { ... }",
+   "#endif"
+  ],
+  "refs": [
+   [
+    "CWE-489: Active debug code",
+    "https://cwe.mitre.org/data/definitions/489.html"
+   ],
+   [
+    "CWE-306: Missing authentication for critical function",
+    "https://cwe.mitre.org/data/definitions/306.html"
+   ],
+   [
+    "OWASP Cheat Sheet: Authorization",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-OTP-BRUTEFORCE": {
+  "name": "OTP verification attempts should be limited",
+  "type": "Security Hotspot",
+  "severity": "Medium",
+  "why": "A six-digit code has one million values. Without a per-user limit on failed verifications, an attacker who has the password can try codes until one works. An in-memory, per-process rate limiter is reset when the application restarts and is not shared between web servers, so it does not give a reliable limit.",
+  "fix": "Count failed OTP verifications per user in persistent storage, lock or slow down after a small number (e.g. 5), invalidate the code after use or expiry, and apply the limit to every factor type, not only e-mail.",
+  "noncompliant": [
+   "public ActionResult Verify(string authCode)",
+   "{",
+   "    if (IsValidModel() && IsValidAuthCode(authCode)) { ... }",
+   "    // failure: no attempt counter here",
+   "}"
+  ],
+  "compliant": [
+   "public ActionResult Verify(string authCode)",
+   "{",
+   "    if (otpAttempts.IsLocked(userId)) return Locked();",
+   "    if (!IsValidAuthCode(authCode)) { otpAttempts.RecordFailure(userId); return Failed(); }",
+   "    otpAttempts.Reset(userId);",
+   "}"
+  ],
+  "refs": [
+   [
+    "CWE-307: Improper restriction of excessive authentication attempts",
+    "https://cwe.mitre.org/data/definitions/307.html"
+   ],
+   [
+    "OWASP Cheat Sheet: Multifactor Authentication",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-SECURITY-EVENT-LOG": {
+  "name": "Security events should be written to the audit log",
+  "type": "Vulnerability",
+  "severity": "Medium",
+  "why": "Rate-limit hits, failed OTPs and lockouts are the signals a security team needs to spot attacks. System.Diagnostics.Debug.WriteLine is compiled out of release builds, so these events are never recorded in production (security logging and alerting failure, OWASP A09).",
+  "fix": "Write the event through the application logger or audit log at warning level with user ID, IP and event type, and make sure it reaches the central log or SIEM.",
+  "noncompliant": [
+   "System.Diagnostics.Debug.WriteLine($\"Rate limit exceeded - Type: {type}, User: {userId}\");"
+  ],
+  "compliant": [
+   "DefaultLogger.Instance.LogWarning($\"OTP rate limit exceeded\", new { type, userId, clientIp });"
+  ],
+  "refs": [
+   [
+    "CWE-778: Insufficient logging",
+    "https://cwe.mitre.org/data/definitions/778.html"
+   ],
+   [
+    "OWASP Cheat Sheet: Logging",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-OTP-DESTINATION": {
+  "name": "One-time codes should only be sent to the registered destination",
+  "type": "Security Hotspot",
+  "severity": "High",
+  "why": "If the e-mail address or phone number that receives the code comes from data the client can influence, an attacker who knows the password can have the code sent to themselves and bypass MFA. This is the MFA e-mail tampering class the organisation has fixed before.",
+  "fix": "Read the destination from the stored user record at send time, ignore any value from the model or request, and log a security event when they differ.",
+  "noncompliant": [
+   "Destination = Model.FactorTrueValue ?? Model.FactorUnmaskedValue,"
+  ],
+  "compliant": [
+   "Destination = user.MultiFactorAuthentication.Email,   // from the database, not the model"
+  ],
+  "refs": [
+   [
+    "CWE-287: Improper authentication",
+    "https://cwe.mitre.org/data/definitions/287.html"
+   ],
+   [
+    "CWE-639: Authorization bypass through user-controlled key",
+    "https://cwe.mitre.org/data/definitions/639.html"
+   ],
+   [
+    "OWASP Cheat Sheet: Multifactor Authentication",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-OPEN-PROXY": {
+  "name": "Proxies should forward only allow-listed backend endpoints",
+  "type": "Security Hotspot",
+  "severity": "Medium",
+  "why": "A proxy action that appends any request path and query string to a backend URL lets a signed-in user reach every endpoint on that backend with the server's own trust: its network position, the cross-site session and any login token the proxy adds. A substring check to decide when to add a login token can be satisfied by unrelated paths. This is the 'authorization flow bypass via direct backend request' class.",
+  "fix": "Map allowed proxy routes explicitly (controller and action allow-list), reject paths with '..' or encoded separators, add the login token only for the exact login route, and require POST plus anti-forgery validation for forwarded form posts.",
+  "noncompliant": [
+   "var path = Request.Path.ToString().Substring(ActionPath.Length);",
+   "var coreUrl = $\"{CrossSiteUrl}/{path}?{queryString}\";",
+   "if (path.Contains(\"ChangeExternalContext\")) FillHeadersForLogin(httpClient);"
+  ],
+  "compliant": [
+   "if (!AllowedRoutes.TryGetValue(path, out var route)) return new HttpStatusCodeResult(404);",
+   "var coreUrl = $\"{CrossSiteUrl}/{route}?{queryString}\";",
+   "if (route == LoginRoute) FillHeadersForLogin(httpClient);"
+  ],
+  "refs": [
+   [
+    "CWE-441: Unintended proxy or intermediary",
+    "https://cwe.mitre.org/data/definitions/441.html"
+   ],
+   [
+    "CWE-918: Server-side request forgery",
+    "https://cwe.mitre.org/data/definitions/918.html"
+   ],
+   [
+    "OWASP Cheat Sheet: SSRF Prevention",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html"
+   ]
+  ]
+ },
+ "VR-RULE-PUBLIC-NONACTION": {
+  "name": "Public helpers on base controllers should not be exposed as actions",
+  "type": "Security Hotspot",
+  "severity": "Medium",
+  "why": "In ASP.NET MVC every public, non-static, non-generic method of a controller is an action that can be called by URL, unless it is marked [NonAction]. A public helper on a base controller is therefore reachable on every derived controller (for example /Login/GetApmCompatibleUrl?url=...). Helpers that echo input back can reflect attacker content, and helpers that change state (Close, release locks) can be triggered by any link without the checks the real actions have (exposed dangerous method, CWE-749).",
+  "fix": "Mark helper methods [NonAction], or make them protected or internal. Keep only the intended actions public on base controllers, and give those an explicit HTTP verb attribute.",
+  "noncompliant": [
+   "public abstract class AbstractController : Controller",
+   "{",
+   "    public string GetApmCompatibleUrl(string url) { ... }   // reachable as /AnyController/GetApmCompatibleUrl?url=...",
+   "    public virtual void Close() { }",
+   "}"
+  ],
+  "compliant": [
+   "public abstract class AbstractController : Controller",
+   "{",
+   "    [NonAction]",
+   "    public string GetApmCompatibleUrl(string url) { ... }",
+   "    protected virtual void Close() { }",
+   "}"
+  ],
+  "refs": [
+   [
+    "CWE-749: Exposed dangerous method or function",
+    "https://cwe.mitre.org/data/definitions/749.html"
+   ],
+   [
+    "OWASP Cheat Sheet: Authorization",
+    "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html"
+   ]
+  ]
+ }
+}

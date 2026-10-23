@@ -1,0 +1,8078 @@
+[
+{
+"key": "FRWK-26006",
+"summary": "LBC | PENTEST | Issues identified",
+"status": "In Progress",
+"type": "Requirements",
+"priority": "Highest",
+"labels": [],
+"created": "2026-10-16",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "BNP01-7890",
+"summary": "[PENTEST] AUTH_04 follow-up - GetBusinessUnitInfos pre-login credential check is an unthrottled password oracle",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"PENTEST"
+],
+"created": "2026-10-15",
+"resolution": null,
+"project": "BNP01",
+"components": []
+},
+{
+"key": "DOT-9480",
+"summary": "Need to disable internal vapt application and associated jobs/services in vapttest host 10.0.2.8",
+"status": "Open",
+"type": "Change Request",
+"priority": "High",
+"labels": [],
+"created": "2026-10-15",
+"resolution": null,
+"project": "DOT",
+"components": [
+"Platform"
+]
+},
+{
+"key": "PROD01-65393",
+"summary": "SFI | Customer Portal Login | \"Terms and Conditions\" link does not open when Content Security Policy is enabled (inline onclick blocked)",
+"status": "Promote Merge",
+"type": "Bug",
+"priority": "High",
+"labels": [],
+"created": "2026-10-12",
+"resolution": "Resolved",
+"project": "PROD01",
+"components": []
+},
+{
+"key": "CO-36411",
+"summary": "10.0.2.8 Server is Not allowing RDP Access",
+"status": "Completed",
+"type": "Issue",
+"priority": "Medium",
+"labels": [],
+"created": "2026-10-09",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-25936",
+"summary": "SFI | VAPT | Security Misconfiguration | Unstripped EXIF Metadata",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"SFIVAPT"
+],
+"created": "2026-10-08",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-25935",
+"summary": "SFI | VAPT | Mishandling of Exceptional Conditions | Lack of Rate Limiting",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"SFIVAPT"
+],
+"created": "2026-10-08",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-25934",
+"summary": "SFI | VAPT | Mishandling of Exceptional Conditions | Lack of Input Validation",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"SFIVAPT"
+],
+"created": "2026-10-08",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-25933",
+"summary": "SFI | VAPT | Security Misconfiguration | POST to GET Method Conversion",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"SFIVAPT"
+],
+"created": "2026-10-08",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-25932",
+"summary": "SFI | VAPT | Software Supply Chain Failures | Outdated Library",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"SFIVAPT"
+],
+"created": "2026-10-08",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-25931",
+"summary": "SFI | VAPT | Broken Access Control | Cross-Site Request Forgery",
+"status": "Open",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"SFIVAPT"
+],
+"created": "2026-10-08",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-25930",
+"summary": "SFI | VAPT | Credential exposure in logs resulting in mass data disclosure",
+"status": "Open",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"SFIVAPT"
+],
+"created": "2026-10-08",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-25929",
+"summary": "SFI | VAPT | Improper authorization",
+"status": "Open",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"SFIVAPT"
+],
+"created": "2026-10-08",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-25928",
+"summary": "SFI | VAPT | Broken Access Control",
+"status": "Open",
+"type": "Bug",
+"priority": "Highest",
+"labels": [
+"SFIVAPT"
+],
+"created": "2026-10-08",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-25927",
+"summary": "SFI | VAPT | Security Logging & Alerting Failures",
+"status": "Open",
+"type": "Bug",
+"priority": "Highest",
+"labels": [
+"SFIVAPT"
+],
+"created": "2026-10-08",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "SFI01-6588",
+"summary": "VAPT | Medium & Low priority defects",
+"status": "With Product / Framework",
+"type": "Bug",
+"priority": "Medium",
+"labels": [],
+"created": "2026-10-08",
+"resolution": null,
+"project": "SFI01",
+"components": []
+},
+{
+"key": "SFI01-6587",
+"summary": "VAPT | Critical & High priority defects",
+"status": "With Product / Framework",
+"type": "Bug",
+"priority": "Highest",
+"labels": [],
+"created": "2026-10-08",
+"resolution": null,
+"project": "SFI01",
+"components": []
+},
+{
+"key": "CO-36183",
+"summary": "WAF URL Review for OCT 2026",
+"status": "In Progress",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [],
+"created": "2026-10-05",
+"resolution": null,
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-35930",
+"summary": "LBC | VAPT Testing : Vendor Ips to be whitelisted.",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2026-09-28",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-35732",
+"summary": "RDP For 10.0.2.8 is Blocking for users",
+"status": "Completed",
+"type": "Issue",
+"priority": "Medium",
+"labels": [],
+"created": "2026-09-22",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "DOT-9144",
+"summary": "Basic Authentication Restriction Key should be False on every deployment",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [],
+"created": "2026-09-21",
+"resolution": "Done",
+"project": "DOT",
+"components": [
+"Platform"
+]
+},
+{
+"key": "FRWK-25714",
+"summary": "Review and align security configurations from .NET 4.8 to .NET Core",
+"status": "In Progress",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"DPCFX:2026-Oct"
+],
+"created": "2026-09-15",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "VTC02-1908",
+"summary": "VAPT config changes",
+"status": "In Progress",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2026-09-09",
+"resolution": null,
+"project": "VTC02",
+"components": []
+},
+{
+"key": "CO-35244",
+"summary": "LBC | New Env for PENTEST",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2026-09-09",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-25666",
+"summary": "SFI | Request to SHA-256 hash value of the Odessa web application",
+"status": "Done",
+"type": "Question",
+"priority": "Highest",
+"labels": [
+"FXSep26"
+],
+"created": "2026-09-09",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "PROD01-64585",
+"summary": "Error while submitting forms(user creation) - Customer & Partner portal",
+"status": "Clarification",
+"type": "Bug",
+"priority": "Highest",
+"labels": [
+"Internal_NonActionable",
+"VAPTOct2026"
+],
+"created": "2026-09-03",
+"resolution": null,
+"project": "PROD01",
+"components": []
+},
+{
+"key": "CO-34983",
+"summary": "VAPT server is inaccessible via RDC",
+"status": "To Do",
+"type": "Issue",
+"priority": "Highest",
+"labels": [],
+"created": "2026-09-03",
+"resolution": null,
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-34874",
+"summary": "WAF URL Review for SEP 2026",
+"status": "Completed",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [],
+"created": "2026-09-01",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-34847",
+"summary": "Request for Nagios client or similar approved monitoring",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2026-08-31",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-34846",
+"summary": "Need RDP access to VAPT server",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2026-08-31",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-34821",
+"summary": "Error while submitting forms(user creation) - Customer & Partner portal",
+"status": "Completed",
+"type": "Issue",
+"priority": "Highest",
+"labels": [],
+"created": "2026-08-31",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-34584",
+"summary": "Both our Internal and External VAPT servers are down",
+"status": "Completed",
+"type": "Issue",
+"priority": "Highest",
+"labels": [],
+"created": "2026-08-25",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-34356",
+"summary": "CBA | Need IP whitelisting for Pre-Prod for VAPT testing",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2026-08-19",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "BNP01-7610",
+"summary": "Odessa - [PENTEST] AUTH_04 - Password reset flow discloses whether an account exists",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"PENTEST"
+],
+"created": "2026-08-18",
+"resolution": null,
+"project": "BNP01",
+"components": []
+},
+{
+"key": "FRWK-25523",
+"summary": "MFS | VAPT | Server-Side Details Revealed (ASP.NET) \u2013 Odessa Web API",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [],
+"created": "2026-08-18",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-25522",
+"summary": "MFS | VAPT | HSTS Header Not Implemented \u2013 Odessa Web API",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [],
+"created": "2026-08-18",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-25521",
+"summary": "MFS | VAPT | Exposure of Backend Infrastructure Details via DNS Resolution \u2013 Odessa Web API",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [],
+"created": "2026-08-18",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-25520",
+"summary": "MFS | VAPT | Missing Content Security Policy Header \u2013 Odessa Web API",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [],
+"created": "2026-08-18",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-25519",
+"summary": "MFS | VAPT | Endpoint accepts un-sanitized input allowing special characters \u2013 Odessa Web API",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [],
+"created": "2026-08-18",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-25518",
+"summary": "MFS | VAPT | User Enumeration via Authentication Error Messages \u2013 Odessa Web API",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [],
+"created": "2026-08-18",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-25517",
+"summary": "MFS | VAPT | Odessa Web API VAPT findings shared to be fixed on Priority",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [],
+"created": "2026-08-18",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "BNP01-7605",
+"summary": "Odessa - [PENTEST] SESS_06 - Vulnerable disconnection mechanism (parallel sessions)",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"PENTEST"
+],
+"created": "2026-08-16",
+"resolution": null,
+"project": "BNP01",
+"components": []
+},
+{
+"key": "BNP01-7604",
+"summary": "Odessa - [PENTEST] APP_02 - Identification of accessible debug tools (ELMAH)",
+"status": "Release Approved",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"PENTEST"
+],
+"created": "2026-08-16",
+"resolution": null,
+"project": "BNP01",
+"components": []
+},
+{
+"key": "CO-33812",
+"summary": "WAF URL Review for AUG 2026",
+"status": "Completed",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [],
+"created": "2026-08-03",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-25377",
+"summary": "VAPT | Successful POST to GET Method Conversion",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"Aug2026-1",
+"DPCFX:2025-Jan",
+"DigiEx-Hypercare",
+"SFIVAPT"
+],
+"created": "2026-07-31",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-33491",
+"summary": "VAPT server is down",
+"status": "To Do",
+"type": "Issue",
+"priority": "Medium",
+"labels": [],
+"created": "2026-07-24",
+"resolution": null,
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-25315",
+"summary": "VAPT -  Broken Access Control \u2013 Security Administrator Can Access Business Modules Outside Assigned Scope (Separation-of-Duties Violation)",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"vulnerability"
+],
+"created": "2026-07-23",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "DOT-8510",
+"summary": "VAPT External Release Redeployment On Top Of Patch By RB Team for ReportBuilder",
+"status": "Closed",
+"type": "Task",
+"priority": "Medium",
+"labels": [
+"Devops-RTB",
+"Devops-Release"
+],
+"created": "2026-07-23",
+"resolution": "Done",
+"project": "DOT",
+"components": [
+"Platform"
+]
+},
+{
+"key": "DOT-8508",
+"summary": "VAPT Internal Release For Core,Plugin,Portal and RB",
+"status": "Closed",
+"type": "Task",
+"priority": "Medium",
+"labels": [
+"Devops-RTB",
+"Devops-Release"
+],
+"created": "2026-07-23",
+"resolution": "Done",
+"project": "DOT",
+"components": [
+"Platform"
+]
+},
+{
+"key": "TDM-12439",
+"summary": "VAPT issue for reset of password",
+"status": "Done",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"5.26.6.2"
+],
+"created": "2026-07-21",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "DOT-8447",
+"summary": "Need access to VAPT server",
+"status": "Closed",
+"type": "Task",
+"priority": "High",
+"labels": [
+"Devops-Access",
+"Devops-RTB"
+],
+"created": "2026-07-17",
+"resolution": "Done",
+"project": "DOT",
+"components": [
+"Platform"
+]
+},
+{
+"key": "DOT-8424",
+"summary": "VAPT External Release For Core,Plugin,Portal and RB",
+"status": "Closed",
+"type": "Task",
+"priority": "Medium",
+"labels": [
+"Devops-RTB",
+"Devops-Release"
+],
+"created": "2026-07-16",
+"resolution": "Delivered",
+"project": "DOT",
+"components": [
+"Platform"
+]
+},
+{
+"key": "DOT-8388",
+"summary": "VAPT External Release For Core,Plugin,Portal and RB",
+"status": "Duplicate",
+"type": "Task",
+"priority": "Medium",
+"labels": [
+"Devops-RTB",
+"Devops-Release"
+],
+"created": "2026-07-14",
+"resolution": "Duplicate",
+"project": "DOT",
+"components": [
+"Platform"
+]
+},
+{
+"key": "PROD-35876",
+"summary": "Domain impact handling | portals|plugin|core | multiple domain fixes needed",
+"status": "To Do",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [],
+"created": "2026-07-07",
+"resolution": null,
+"project": "PROD",
+"components": []
+},
+{
+"key": "AMW01-741",
+"summary": "VAPT Remediation \u2013 Brute Force Attack Protection (Rate Limiting and Account Lockout)",
+"status": "In Progress",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2026-07-03",
+"resolution": null,
+"project": "AMW01",
+"components": []
+},
+{
+"key": "AMW01-739",
+"summary": "VAPT Remediation \u2013 Missing X-Frame-Options Header",
+"status": "In Progress",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2026-07-03",
+"resolution": null,
+"project": "AMW01",
+"components": []
+},
+{
+"key": "AMW01-738",
+"summary": "VAPT Remediation \u2013 ASP.NET Version Disclosure Vulnerability",
+"status": "In Progress",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2026-07-03",
+"resolution": null,
+"project": "AMW01",
+"components": []
+},
+{
+"key": "DOT-8137",
+"summary": "VAPT External Release For Core,Plugin,Portal and RB",
+"status": "Closed",
+"type": "Task",
+"priority": "Medium",
+"labels": [
+"Devops-RTB",
+"Devops-Release"
+],
+"created": "2026-06-23",
+"resolution": "Done",
+"project": "DOT",
+"components": [
+"Platform"
+]
+},
+{
+"key": "AMW01-731",
+"summary": "Outdated IIS Version \u2013 Security vulnerabilities in Leasewave application (identified via VAPT assessment).",
+"status": "Closed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2026-06-22",
+"resolution": "Resolved",
+"project": "AMW01",
+"components": []
+},
+{
+"key": "AMW01-730",
+"summary": "SSL/TLS Not Implemented \u2013 Risk of data integrity compromise in Leasewave application (identified via VAPT assessment).",
+"status": "Requirement Firming",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2026-06-22",
+"resolution": null,
+"project": "AMW01",
+"components": []
+},
+{
+"key": "AMW01-729",
+"summary": "SSL/TLS Not Implemented \u2013 Risk of session hijacking in Leasewave application (identified via VAPT assessment)",
+"status": "Requirement Firming",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2026-06-22",
+"resolution": null,
+"project": "AMW01",
+"components": []
+},
+{
+"key": "AMW01-728",
+"summary": "SSL/TLS Not Implemented \u2013 Risk of Man-in-the-Middle (MITM) attacks in Leasewave application (identified via VAPT assessment).",
+"status": "Requirement Firming",
+"type": "Requirements",
+"priority": "Highest",
+"labels": [],
+"created": "2026-06-22",
+"resolution": null,
+"project": "AMW01",
+"components": []
+},
+{
+"key": "AMW01-727",
+"summary": "SSL/TLS Not Implemented \u2013 Risk of sensitive information exposure in Leasewave application.",
+"status": "Requirement Firming",
+"type": "Requirements",
+"priority": "Highest",
+"labels": [],
+"created": "2026-06-22",
+"resolution": null,
+"project": "AMW01",
+"components": []
+},
+{
+"key": "AMW01-723",
+"summary": "Discussion Required \u2013 VAPT Findings and Mitigation Actions",
+"status": "In Progress",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2026-06-19",
+"resolution": null,
+"project": "AMW01",
+"components": []
+},
+{
+"key": "DOT-8081",
+"summary": "Odessa VAPT Deployment Process(KT) Transition",
+"status": "Closed",
+"type": "Task",
+"priority": "Medium",
+"labels": [
+"Devops-RTB",
+"Devops-Setup"
+],
+"created": "2026-06-16",
+"resolution": "Done",
+"project": "DOT",
+"components": [
+"Platform"
+]
+},
+{
+"key": "BNP01-7133",
+"summary": "Odessa - LS_PJ04620-5158 - [PENTEST] logs should not include session cookies",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"PENTEST"
+],
+"created": "2026-06-15",
+"resolution": "Delivered",
+"project": "BNP01",
+"components": []
+},
+{
+"key": "DOT-8045",
+"summary": "April Patch 2 Upgrade- VAPT External Deployment",
+"status": "Closed",
+"type": "Task",
+"priority": "Medium",
+"labels": [
+"Devops-RTB",
+"Devops-Release"
+],
+"created": "2026-06-12",
+"resolution": "Done",
+"project": "DOT",
+"components": [
+"Platform"
+]
+},
+{
+"key": "DOT-8044",
+"summary": "April Patch 2 Upgrade- VAPT External Deployment",
+"status": "Completed",
+"type": "Task",
+"priority": "Medium",
+"labels": [
+"Devops-RTB",
+"Devops-Release"
+],
+"created": "2026-06-12",
+"resolution": "Done",
+"project": "DOT",
+"components": [
+"Platform"
+]
+},
+{
+"key": "DOT-8043",
+"summary": "April Patch 2 Upgrade- VAPT internal Deployment",
+"status": "Completed",
+"type": "Task",
+"priority": "Medium",
+"labels": [
+"Devops-RTB",
+"Devops-Release"
+],
+"created": "2026-06-12",
+"resolution": "Done",
+"project": "DOT",
+"components": [
+"Platform"
+]
+},
+{
+"key": "DOT-8042",
+"summary": "April Patch 2 Upgrade- VAPT internal Deployment",
+"status": "Closed",
+"type": "Task",
+"priority": "Medium",
+"labels": [
+"Devops-RTB",
+"Devops-Release"
+],
+"created": "2026-06-12",
+"resolution": "Done",
+"project": "DOT",
+"components": [
+"Platform"
+]
+},
+{
+"key": "FRWK-24854",
+"summary": "VAPT - net 8 - Missing http security headers",
+"status": "Open",
+"type": "Bug",
+"priority": "High",
+"labels": [],
+"created": "2026-05-25",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-24853",
+"summary": "VAPT -API : Missing http security headers(net 8)",
+"status": "Released",
+"type": "Bug",
+"priority": "Medium",
+"labels": [],
+"created": "2026-05-25",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-31403",
+"summary": "TD Odessacore & Customer Portal Web Config Files",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Highest",
+"labels": [],
+"created": "2026-05-21",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-24838",
+"summary": "VAPT - NET 8 - Privilege escalation on GET request",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"VAPTJan26"
+],
+"created": "2026-05-21",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "PROD-34850",
+"summary": "Platform VAPT Issues",
+"status": "To Do",
+"type": "Epic",
+"priority": "Medium",
+"labels": [],
+"created": "2026-05-19",
+"resolution": null,
+"project": "PROD",
+"components": []
+},
+{
+"key": "DOT-7846",
+"summary": "MFS | VAPT - Security Fixes",
+"status": "To Do",
+"type": "Task",
+"priority": "Critical",
+"labels": [],
+"created": "2026-05-14",
+"resolution": null,
+"project": "DOT",
+"components": [
+"Delivery"
+]
+},
+{
+"key": "FRWK-24780",
+"summary": "VAPT - Username Enumeration via Login UI Response",
+"status": "Closed",
+"type": "Story",
+"priority": "Medium",
+"labels": [
+"DigiEx-Hypercare"
+],
+"created": "2026-05-14",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-24754",
+"summary": "API Developer Guide (DocPortal) Access for Security.Admin",
+"status": "Released",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"DPCFX:2026-May"
+],
+"created": "2026-05-08",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-24740",
+"summary": "VAPT API - Insecure Use of Basic Authentication Exposing Credentials",
+"status": "Released",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"DPCFX:2026-May",
+"VAPTJan26"
+],
+"created": "2026-05-07",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-24714",
+"summary": "VAPT |Data Masking not working \u2013 MFS UAT",
+"status": "Released",
+"type": "Bug",
+"priority": "Critical",
+"labels": [
+"FxMay26"
+],
+"created": "2026-05-04",
+"resolution": "No Response",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "PROD01-62229",
+"summary": "VAPT : Partner Portal - Forgot Password link on login screen is crashing",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [],
+"created": "2026-04-30",
+"resolution": "Resolved",
+"project": "PROD01",
+"components": []
+},
+{
+"key": "FRWK-24703",
+"summary": "VAPT-Improper Session Termination leading to Unauthorized Password Change from Terminated Session",
+"status": "Released",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"DPCFX:2026-Jun"
+],
+"created": "2026-04-29",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-24683",
+"summary": "VAPT | Password Reset Screen Visibility \u2013 MFS UAT",
+"status": "Released",
+"type": "Bug",
+"priority": "Critical",
+"labels": [
+"DPCFX:2026-May",
+"expresslane"
+],
+"created": "2026-04-27",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-30287",
+"summary": "App Settings Key For the Accounts : VAPT Fix",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2026-04-20",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "TDM-12278",
+"summary": "Reportbuilder Neos VAPT | Passwords are sent as plain text on new user creation and when admin resets the password for existing user.",
+"status": "Completed",
+"type": "Task",
+"priority": "High",
+"labels": [
+"5.26.3.2",
+"RBNeosJuly'26PI",
+"V6.26.6.1"
+],
+"created": "2026-04-09",
+"resolution": "Done",
+"project": "TDM",
+"components": []
+},
+{
+"key": "FRWK-24551",
+"summary": "VAPT - LP/ CP/ PP",
+"status": "Closed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2026-04-07",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": [
+"UI "
+]
+},
+{
+"key": "BNP01-6610",
+"summary": "Odessa - LS_PJ04620-4768 - [PENTEST] INJ_04",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"PENTEST"
+],
+"created": "2026-04-03",
+"resolution": null,
+"project": "BNP01",
+"components": []
+},
+{
+"key": "DOT-7607",
+"summary": "Requesting DB Refresh on SQLMI for VAPT Deployments",
+"status": "Closed",
+"type": "Task",
+"priority": "Medium",
+"labels": [
+"Devops-DB",
+"Devops-RTB"
+],
+"created": "2026-04-03",
+"resolution": "Done",
+"project": "DOT",
+"components": []
+},
+{
+"key": "FRWK-24421",
+"summary": "SFI | Not able to share the views created in the system",
+"status": "Released",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"DPCFX:2026-Apr"
+],
+"created": "2026-03-16",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-24278",
+"summary": "VAPT | Misconfigured Cache Control \u2013 Document Download and Session Expire flow",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [],
+"created": "2026-03-03",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "PROD01-60879",
+"summary": "Merge - VAPT | Restrict Hyperlink injection in Comments in Core and Portal",
+"status": "Closed",
+"type": "Task",
+"priority": "Medium",
+"labels": [
+"Frwk-Prod-AprPI-Merge"
+],
+"created": "2026-02-27",
+"resolution": "Done",
+"project": "PROD01",
+"components": []
+},
+{
+"key": "FRWK-24209",
+"summary": "VAPT - No Rate Limiting in Help Center",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"VAPT_PP_Jan26"
+],
+"created": "2026-02-19",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-24208",
+"summary": "VAPT - Authorization Flow Bypass via Direct Backend Request Replay",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"VAPT_PP_Jan26"
+],
+"created": "2026-02-19",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "PPM-46",
+"summary": "Setup & Standardize Monthly Engineering reviews",
+"status": "Done",
+"type": "Task",
+"priority": "Highest",
+"labels": [
+"Engineering"
+],
+"created": "2026-02-19",
+"resolution": "Done",
+"project": "PPM",
+"components": []
+},
+{
+"key": "FRWK-24150",
+"summary": "VAPT | Restrict Hyperlink injection in Comments in Core and Portal",
+"status": "Closed",
+"type": "Story",
+"priority": "Medium",
+"labels": [],
+"created": "2026-02-12",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-24107",
+"summary": "VAPT - Sensitive data exposure - Username & password in cleartext",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"DigiEx-Hypercare",
+"VAPTJan26"
+],
+"created": "2026-02-06",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-24105",
+"summary": "VAPT - Sensitive Client IP Address Exposure in HTTP Request Headers",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"VAPTJan26"
+],
+"created": "2026-02-06",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-24104",
+"summary": "VAPT - Missing SRI on Third-Party Whatfix Script",
+"status": "Released",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"DigiEx-Fixathon-P1",
+"DigiEx-Hypercare",
+"VAPTJan26"
+],
+"created": "2026-02-06",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-24102",
+"summary": "VAPT - Old OTP Can Be Reused for User Authentication",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"VAPTJan26"
+],
+"created": "2026-02-06",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-24101",
+"summary": "VAPT - Exposure of Session Identifier in URL During File Download (HTTP Method Tampering)",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"VAPTJan26"
+],
+"created": "2026-02-06",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-24099",
+"summary": "VAPT - Exposure of Backend Infrastructure Details via DNS Resolution",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"VAPTJan26"
+],
+"created": "2026-02-06",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-24098",
+"summary": "VAPT - Use of Wildcard SSL/TLS Certificate for Application Domain",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"VAPTJan26"
+],
+"created": "2026-02-06",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-24097",
+"summary": "CLONE - VAPT - Weak Password Complexity Policy Enforcement",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"VAPTJan26"
+],
+"created": "2026-02-06",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-24096",
+"summary": "VAPT - Privilege escalation on GET request",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"VAPTJan26"
+],
+"created": "2026-02-06",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-24095",
+"summary": "VAPT - TFA session token does not expire after user Login(Odessa Core/Partner Portal)",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"VAPTJan26",
+"VAPT_PP_Jan26"
+],
+"created": "2026-02-06",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-24092",
+"summary": "VAPT - Concurrent Login issue (.net 48)",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"VAPTJan26"
+],
+"created": "2026-02-06",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-24090",
+"summary": "VAPT Internal Issues (.NET 4.8)  - Jan 26 (Odessa Core, Partner Portal)",
+"status": "To Do",
+"type": "Epic",
+"priority": "Medium",
+"labels": [
+"VAPTJan26"
+],
+"created": "2026-02-06",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-24068",
+"summary": "VAPT - Concurrent Login issue (.net 8)",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"VAPTJan26"
+],
+"created": "2026-02-05",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "TDM-12175",
+"summary": "VAPT Framework Upgrade",
+"status": "Completed",
+"type": "Task",
+"priority": "High",
+"labels": [
+"RBNeosJuly'26PI",
+"V6.26.6.1"
+],
+"created": "2026-02-02",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-12173",
+"summary": "Vapt Item- Sync Query>> VAPT issue",
+"status": "Deferred",
+"type": "Task",
+"priority": "High",
+"labels": [
+"RBNeosJuly'26PI"
+],
+"created": "2026-02-02",
+"resolution": null,
+"project": "TDM",
+"components": []
+},
+{
+"key": "PROD01-62682",
+"summary": "VAPT - Reflected Cross-Site Scripting (XSS) in Customer Selection Dropdown",
+"status": "Verification",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"DigiEx-Hypercare"
+],
+"created": "2026-01-27",
+"resolution": "Resolved",
+"project": "PROD01",
+"components": []
+},
+{
+"key": "TDM-12145",
+"summary": "OCT VAPT Content, Frwk Upgrade With 4.25.6.3302 Version",
+"status": "Completed",
+"type": "Task",
+"priority": "Highest",
+"labels": [],
+"created": "2026-01-16",
+"resolution": "Done",
+"project": "TDM",
+"components": []
+},
+{
+"key": "CO-27155",
+"summary": "MFS| VAPT Issue | Weak Cipher-lucky13",
+"status": "Completed",
+"type": "Issue",
+"priority": "Medium",
+"labels": [],
+"created": "2026-01-14",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "PROD-32772",
+"summary": "OE - NFR - Portal net 8.0 Certification",
+"status": "Done",
+"type": "Requirements",
+"priority": "High",
+"labels": [
+"Apr_26Revd",
+"late_commit_apr'26"
+],
+"created": "2026-01-14",
+"resolution": "Done",
+"project": "PROD",
+"components": []
+},
+{
+"key": "FRWK-23908",
+"summary": "VAPT | Same Site Cookie Not Set Properly \u2013 MFS UAT",
+"status": "Released",
+"type": "Bug",
+"priority": "Highest",
+"labels": [
+"DPCFX:2026-Mar"
+],
+"created": "2026-01-09",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-23907",
+"summary": "VAPT | Cookie Path Set to Root \u2013 MFS UAT",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [],
+"created": "2026-01-09",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-23906",
+"summary": "VAPT | Outdated and Known Vulnerable Components \u2013 MFS UAT",
+"status": "Clarification",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"DigiEx-Hypercare",
+"DigiEx-Jan27",
+"DigiEx-Jan27-P2"
+],
+"created": "2026-01-09",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-23905",
+"summary": "VAPT | Misconfigured Cache Control \u2013 MFS UAT",
+"status": "Closed",
+"type": "Bug",
+"priority": "Critical",
+"labels": [
+"DPCFX:2026-Mar",
+"DigiEx-Hypercare"
+],
+"created": "2026-01-09",
+"resolution": "No Response",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-23904",
+"summary": "VAPT | Application Vulnerable to Arbitrary Methods \u2013 MFS UAT",
+"status": "Released",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"FxJan26"
+],
+"created": "2026-01-09",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-23903",
+"summary": "VAPT | Password in Plain Text \u2013 MFS UAT",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"DPCFX:2026-Jan"
+],
+"created": "2026-01-09",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-23902",
+"summary": "VAPT | PII Data in Plain Text \u2013 MFS UAT",
+"status": "Released",
+"type": "Bug",
+"priority": "Critical",
+"labels": [
+"DPCFX:2026-May"
+],
+"created": "2026-01-09",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-23901",
+"summary": "VAPT | Email Flooding \u2013 MFS UAT",
+"status": "Released",
+"type": "Bug",
+"priority": "Highest",
+"labels": [
+"DPCFX:2026-Jan",
+"DPCFX:2026-May"
+],
+"created": "2026-01-09",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-23864",
+"summary": "VAPT defect fixes (Internal/Adhoc from Ext) for Apr 26 PI",
+"status": "Closed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2026-01-06",
+"resolution": "Done",
+"project": "FRWK",
+"components": [
+"UI ",
+"UX "
+]
+},
+{
+"key": "FRWK-23851",
+"summary": "VAPT | Odessa application VAPT of MFS UAT and finding shared to be fixed on Priority",
+"status": "Released",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"FxJan26"
+],
+"created": "2026-01-02",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "MFS03-1907",
+"summary": "Odessa VAPT Observations \u2013 Security Fix Implementation",
+"status": "Monitor",
+"type": "Risk",
+"priority": "Highest",
+"labels": [],
+"created": "2026-01-02",
+"resolution": null,
+"project": "MFS03",
+"components": []
+},
+{
+"key": "FRWK-23818",
+"summary": "VAPT | SFI | Security Header is Missing",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"DPCFX:2026-Jan",
+"SFIVAPT"
+],
+"created": "2025-12-22",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-23817",
+"summary": "Setup Elastic server for UAT and VAPT",
+"status": "Done",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [],
+"created": "2025-12-20",
+"resolution": "Done",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-23816",
+"summary": "Setup Elastic server for UAT and VAPT",
+"status": "Closed",
+"type": "Story",
+"priority": "Medium",
+"labels": [],
+"created": "2025-12-19",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "PROD-32480",
+"summary": "VAPT Setup of Portals & Core for Jan'26",
+"status": "Done",
+"type": "Story",
+"priority": "Medium",
+"labels": [],
+"created": "2025-12-19",
+"resolution": "Resolved",
+"project": "PROD",
+"components": []
+},
+{
+"key": "CO-26476",
+"summary": "We need a new VM in Azure dev test subscription same as 10.0.2.8 VAPT server",
+"status": "Done",
+"type": "Environment Request",
+"priority": "Medium",
+"labels": [],
+"created": "2025-12-16",
+"resolution": "Resolved",
+"project": "CO",
+"components": []
+},
+{
+"key": "DOT-6976",
+"summary": "unable to restore DB backup which taken on SQLMI",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"Devops-DB",
+"Devops-RTB"
+],
+"created": "2025-12-16",
+"resolution": "Done",
+"project": "DOT",
+"components": []
+},
+{
+"key": "CO-26439",
+"summary": "Access to https://es01-poc-internal.odessatech.com:9200/ in 10.0.2.8 VAPT server",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [
+"Network"
+],
+"created": "2025-12-16",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "TDM-12043",
+"summary": "Report Builder Neos: VAPT 5.25.9.3",
+"status": "Completed",
+"type": "Task",
+"priority": "High",
+"labels": [
+"5.25.12.1",
+"RBNeosJan26PI"
+],
+"created": "2025-12-15",
+"resolution": "Done",
+"project": "TDM",
+"components": []
+},
+{
+"key": "DOT-6954",
+"summary": "Requesting restoration of databases for VAPT deployment",
+"status": "Closed",
+"type": "Task",
+"priority": "Medium",
+"labels": [
+"Devops-DB",
+"Devops-RTB"
+],
+"created": "2025-12-12",
+"resolution": "Done",
+"project": "DOT",
+"components": []
+},
+{
+"key": "CO-26326",
+"summary": "Access to https://es01-poc-internal.odessatech.com:9200/ in 10.51.0.53 VAPT server",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2025-12-12",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-26297",
+"summary": "Request for Server Resource Upgrade - VAPT (10.0.2.8)",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2025-12-11",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-23758",
+"summary": "Rate Limiting when Sending OTP via Mail (MFA/TFA) to prevent DDOS attack & Resource Exhaustion | VAPT(Odessa Core/Partner Portal)",
+"status": "Closed",
+"type": "Product Enhancement",
+"priority": "Medium",
+"labels": [
+"DPCFX:2026-Jan",
+"VAPT",
+"VAPTJan26",
+"VAPT_PP_Jan26"
+],
+"created": "2025-12-10",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-23748",
+"summary": "VAPT - Verification of Reset Password Link",
+"status": "Done",
+"type": "Task",
+"priority": "Medium",
+"labels": [
+"DPCFX:2025-Dec",
+"VAPT"
+],
+"created": "2025-12-09",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "PROD01-58996",
+"summary": "Portal - Unable to login Security Admin due to Licensing issue",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"Internal_Triaged",
+"PartnerPortal"
+],
+"created": "2025-12-08",
+"resolution": "Cannot Reproduce",
+"project": "PROD01",
+"components": []
+},
+{
+"key": "CO-25892",
+"summary": "WAF Review",
+"status": "Completed",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [
+"Network",
+"WAF-Review"
+],
+"created": "2025-12-01",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "DOT-6773",
+"summary": "MFS |Audit Queries",
+"status": "To Do",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2025-11-17",
+"resolution": null,
+"project": "DOT",
+"components": [
+"Delivery"
+]
+},
+{
+"key": "FRWK-23595",
+"summary": "Fix MFA Email Tampering Vulnerability by Validating Against Stored User Email",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"DPCFX:2025-Nov",
+"VAPT"
+],
+"created": "2025-11-11",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-25214",
+"summary": "MFS Audit questions",
+"status": "To Do",
+"type": "Data Request",
+"priority": "Medium",
+"labels": [],
+"created": "2025-11-10",
+"resolution": null,
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-23579",
+"summary": "VAPT - Broken Access Control",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"DPCFX:2025-Dec"
+],
+"created": "2025-11-06",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-24318",
+"summary": "Request for Server Resource Upgrade - VAPT (10.0.2.8)",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2025-10-13",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "BNP01-5486",
+"summary": "Odessa - LS_PJ04620-3656 - [PENTEST] SVR-04 - Absence of CSP",
+"status": "Closed",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"PENTEST"
+],
+"created": "2025-10-09",
+"resolution": null,
+"project": "BNP01",
+"components": []
+},
+{
+"key": "CO-24159",
+"summary": "unable to take RDC - VAPT (10.0.2.8)",
+"status": "Completed",
+"type": "Issue",
+"priority": "Medium",
+"labels": [],
+"created": "2025-10-08",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-23361",
+"summary": "VAPT defect fixes (Internal/Adhoc from Ext) for Jan 26 PI",
+"status": "Closed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2025-10-07",
+"resolution": "Done",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "PROD01-57782",
+"summary": "[FRWK-23311] VAPT | Customer Portal | Security Header is Missing",
+"status": "Released",
+"type": "Bug",
+"priority": "Highest",
+"labels": [
+"BackMergeDone",
+"DPCFX:2025-Oct",
+"SFIVAPT"
+],
+"created": "2025-09-30",
+"resolution": "Resolved",
+"project": "PROD01",
+"components": []
+},
+{
+"key": "CO-23847",
+"summary": "unable to take RDC - VAPT (10.0.2.8)",
+"status": "Completed",
+"type": "Issue",
+"priority": "Medium",
+"labels": [],
+"created": "2025-09-29",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-23784",
+"summary": "Decommissioning *.odessatech.com on public DNS entry.",
+"status": "Completed",
+"type": "Epic",
+"priority": "Medium",
+"labels": [
+"Network"
+],
+"created": "2025-09-27",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-23698",
+"summary": "Turbo360 Cost optimization - Tracking - Networking",
+"status": "Completed",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [
+"Network"
+],
+"created": "2025-09-25",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-23268",
+"summary": "VAPT | Customer Portal | Cookie Secure Flag is Missing",
+"status": "Closed",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"FXSep25",
+"SFIVAPT"
+],
+"created": "2025-09-24",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-23267",
+"summary": "VAPT | Customer Portal | Credentials Passing in Plain Text",
+"status": "Closed",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"DPCFX:2025-Nov",
+"SFIVAPT"
+],
+"created": "2025-09-24",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-23266",
+"summary": "Crash on login when License is enabled for Portals",
+"status": "Released",
+"type": "Bug",
+"priority": "Medium",
+"labels": [],
+"created": "2025-09-23",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "LBC04-290",
+"summary": "[Proj Task] VAPT / Pen Test",
+"status": "To Do",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2025-09-22",
+"resolution": null,
+"project": "LBC04",
+"components": []
+},
+{
+"key": "HFL01-4625",
+"summary": "Vulnerability fixes movement to UAT",
+"status": "Closed",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2025-09-19",
+"resolution": "Delivered",
+"project": "HFL01",
+"components": []
+},
+{
+"key": "CO-23376",
+"summary": "Clean-Up below Public DNS entry associated with front door",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [
+"Network"
+],
+"created": "2025-09-16",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-23330",
+"summary": "Apply WAF Exclusions in RB VAPT Environment",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [
+"Network"
+],
+"created": "2025-09-15",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "PROD-30724",
+"summary": "VAPT Task",
+"status": "Release",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2025-09-15",
+"resolution": "Resolved",
+"project": "PROD",
+"components": []
+},
+{
+"key": "CO-23097",
+"summary": "10.0.2.8 VAPT server is not accessible",
+"status": "Completed",
+"type": "Issue",
+"priority": "Medium",
+"labels": [],
+"created": "2025-09-09",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "OT-5249",
+"summary": "VAPT Environment Setup - October PI",
+"status": "Done",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2025-09-08",
+"resolution": "Done",
+"project": "OT",
+"components": []
+},
+{
+"key": "CO-22959",
+"summary": "WAF URL Review for Aug 25",
+"status": "Completed",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [
+"Network",
+"WAF-Review"
+],
+"created": "2025-09-05",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-22527",
+"summary": "Whitelisting of KPMG IPs- External Network VAPT",
+"status": "Completed",
+"type": "Service Request",
+"priority": "High",
+"labels": [],
+"created": "2025-08-21",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-23034",
+"summary": "VAPT | Successful POST to GET Method Conversion - DataGrids",
+"status": "Released",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"DPCFX:2025-Sep"
+],
+"created": "2025-08-20",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-22445",
+"summary": "SFS | VAPT | Evidence of Adherence to CERT-IN Guidelines.",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Highest",
+"labels": [],
+"created": "2025-08-20",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "AF-7501",
+"summary": "Activate RMQ Podman instance on Linux Server - OTB",
+"status": "Completed",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2025-08-18",
+"resolution": null,
+"project": "AF",
+"components": []
+},
+{
+"key": "CO-22316",
+"summary": "IP restriction for VAPT sites",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [
+"Network"
+],
+"created": "2025-08-14",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "DLL03-121",
+"summary": "VAPT Vulnerability Issues Check for DLL",
+"status": "Rejected",
+"type": "Epic",
+"priority": "Medium",
+"labels": [],
+"created": "2025-08-07",
+"resolution": "Declined",
+"project": "DLL03",
+"components": []
+},
+{
+"key": "CO-21988",
+"summary": "WAF URL Review for Aug 25",
+"status": "Completed",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [
+"Network",
+"WAF-Review"
+],
+"created": "2025-08-04",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-21946",
+"summary": "WAF backend port changes for VAPT sites",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [
+"Network"
+],
+"created": "2025-08-01",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "PROD-29747",
+"summary": "Platform Arch Review Feedback: PROD-27618 - Customer Portal - Self Registration form",
+"status": "In Progress",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [
+"PAB_Oct'25",
+"arch-review-feedback-2025-q2"
+],
+"created": "2025-07-30",
+"resolution": null,
+"project": "PROD",
+"components": []
+},
+{
+"key": "FRWK-22899",
+"summary": "VAPT Framework Fix | ePlus",
+"status": "Done",
+"type": "Epic",
+"priority": "Medium",
+"labels": [],
+"created": "2025-07-28",
+"resolution": "Done",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-22879",
+"summary": "VAPT | Credentials Passing in Plain Text",
+"status": "Closed",
+"type": "Bug",
+"priority": "Highest",
+"labels": [
+"SFIVAPT"
+],
+"created": "2025-07-24",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-21652",
+"summary": "Verify | Sites configured with unknown HTTPs ports",
+"status": "Completed",
+"type": "Data Request",
+"priority": "Medium",
+"labels": [],
+"created": "2025-07-23",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-21637",
+"summary": "10.0.2.8 VAPT server is not accessible",
+"status": "Completed",
+"type": "Issue",
+"priority": "Medium",
+"labels": [],
+"created": "2025-07-22",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "PROD01-55947",
+"summary": "BACKMERGE | July 2024 | VAPT | Credentials Passing in Plain Text | Customer Portal",
+"status": "Closed",
+"type": "Bug",
+"priority": "Highest",
+"labels": [
+"DPCFX:2025-Jul",
+"SFIVAPT"
+],
+"created": "2025-07-09",
+"resolution": "Done",
+"project": "PROD01",
+"components": []
+},
+{
+"key": "FRWK-22770",
+"summary": "VAPT DigiEx Framework Fix | TD Bank",
+"status": "Closed",
+"type": "Story",
+"priority": "High",
+"labels": [],
+"created": "2025-07-09",
+"resolution": "Done",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-21010",
+"summary": "WAF URL Review for July 25",
+"status": "Completed",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [
+"Network",
+"WAF-Review"
+],
+"created": "2025-07-01",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-22669",
+"summary": "VAPT | No validation is triggered on entering improper input values.",
+"status": "Open",
+"type": "Bug",
+"priority": "Medium",
+"labels": [],
+"created": "2025-06-30",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "TDM-11424",
+"summary": "VAPT | No validation is triggered on entering improper input values.",
+"status": "Deferred",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"RBNeosJuly'26PI"
+],
+"created": "2025-06-30",
+"resolution": null,
+"project": "TDM",
+"components": []
+},
+{
+"key": "PROD01-55844",
+"summary": "VAPT | Credentials Passing in Plain Text | Customer Portal",
+"status": "Closed",
+"type": "Bug",
+"priority": "Highest",
+"labels": [
+"BackMergeNotRequired",
+"SFIVAPT"
+],
+"created": "2025-06-24",
+"resolution": "Resolved",
+"project": "PROD01",
+"components": []
+},
+{
+"key": "GLBL-2531",
+"summary": "Content creation for Plugin VAPT -- June PI",
+"status": "Release",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2025-06-16",
+"resolution": "Resolved",
+"project": "GLBL",
+"components": []
+},
+{
+"key": "OT-5205",
+"summary": "VAPT - June Tools Deployment",
+"status": "Done",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2025-06-12",
+"resolution": "Done",
+"project": "OT",
+"components": []
+},
+{
+"key": "TDM-11331",
+"summary": "VAPT Issue Banner Discloser",
+"status": "Done",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"classic_defect"
+],
+"created": "2025-06-11",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "TMF03-202",
+"summary": "Latest App_sec (VAPT) report of ODESSA application",
+"status": "Closed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2025-06-09",
+"resolution": "Resolved",
+"project": "TMF03",
+"components": []
+},
+{
+"key": "FRWK-22473",
+"summary": "VAPT Framework Fix | TD Bank",
+"status": "Released",
+"type": "Product Enhancement",
+"priority": "High",
+"labels": [
+"DPCFX:2025-Jun"
+],
+"created": "2025-06-03",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-20194",
+"summary": "WAF URL Review for June 25",
+"status": "Completed",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [
+"Network",
+"WAF-Review"
+],
+"created": "2025-06-01",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-22445",
+"summary": "VAPT | Cross-Site Request Forgery (CSRF)",
+"status": "Released",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"DigiEx-Fixathon-P2",
+"DigiEx-Hypercare"
+],
+"created": "2025-05-30",
+"resolution": "Explained",
+"project": "FRWK",
+"components": [
+"P2"
+]
+},
+{
+"key": "FRWK-22444",
+"summary": "VAPT | Session Hijacking",
+"status": "Released",
+"type": "Bug",
+"priority": "High",
+"labels": [],
+"created": "2025-05-30",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-22443",
+"summary": "VAPT | CSV Injection",
+"status": "Open",
+"type": "Bug",
+"priority": "Medium",
+"labels": [],
+"created": "2025-05-30",
+"resolution": null,
+"project": "FRWK",
+"components": [
+"P1"
+]
+},
+{
+"key": "SFH02-422",
+"summary": "VAPT Vulnerability Issues check for XCED",
+"status": "Open",
+"type": "Epic",
+"priority": "Medium",
+"labels": [],
+"created": "2025-05-28",
+"resolution": null,
+"project": "SFH02",
+"components": []
+},
+{
+"key": "FRWK-22427",
+"summary": "VAPT | Unauthorized File Download Through IDOR:Backend validation:",
+"status": "Open",
+"type": "Bug",
+"priority": "Medium",
+"labels": [],
+"created": "2025-05-28",
+"resolution": null,
+"project": "FRWK",
+"components": [
+"P1"
+]
+},
+{
+"key": "FRWK-22424",
+"summary": "VAPT | Successful POST to GET Method Conversion",
+"status": "Open",
+"type": "Bug",
+"priority": "Highest",
+"labels": [],
+"created": "2025-05-28",
+"resolution": null,
+"project": "FRWK",
+"components": [
+"P1"
+]
+},
+{
+"key": "FRWK-22415",
+"summary": "Workflow Canvas is not working after the Fx upgrade - 4.24.6.29",
+"status": "Released",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"DPCFX:2025-Jun"
+],
+"created": "2025-05-27",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "DEU-17883",
+"summary": "Workflow Canvas is not working after the Fx upgrade - 4.24.6.29",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [],
+"created": "2025-05-27",
+"resolution": "Resolved",
+"project": "DEU",
+"components": []
+},
+{
+"key": "FRWK-22413",
+"summary": "Backmerge to AVT of VAPT tickets (Core)",
+"status": "Released",
+"type": "Product Enhancement",
+"priority": "Medium",
+"labels": [],
+"created": "2025-05-27",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-22412",
+"summary": "Backmerge to AVT of VAPT tickets (DigiEx)",
+"status": "Released",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"DPCFX:2025-Sep"
+],
+"created": "2025-05-26",
+"resolution": "Done",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-20027",
+"summary": "App Logs from Nexus scanner",
+"status": "To Do",
+"type": "Issue",
+"priority": "High",
+"labels": [],
+"created": "2025-05-26",
+"resolution": null,
+"project": "CO",
+"components": []
+},
+{
+"key": "DLL03-108",
+"summary": "VAPT Vulnerability Issues Check for DLL",
+"status": "In Progress",
+"type": "Epic",
+"priority": "Medium",
+"labels": [],
+"created": "2025-05-23",
+"resolution": null,
+"project": "DLL03",
+"components": []
+},
+{
+"key": "AVT03-257",
+"summary": "Backmerge- Vulnerability Issues",
+"status": "To Do",
+"type": "Epic",
+"priority": "Medium",
+"labels": [],
+"created": "2025-05-23",
+"resolution": null,
+"project": "AVT03",
+"components": []
+},
+{
+"key": "TPM03-1278",
+"summary": "VAPT Vulnerability Issues Check for TPM",
+"status": "In Progress",
+"type": "Epic",
+"priority": "High",
+"labels": [
+"Triaged"
+],
+"created": "2025-05-22",
+"resolution": null,
+"project": "TPM03",
+"components": [
+"Performance"
+]
+},
+{
+"key": "CO-19926",
+"summary": "WAF setup on the VAPT site",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [
+"Network"
+],
+"created": "2025-05-21",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-22390",
+"summary": "SCB | Inquiry regarding VAPT findings on LEASEWAVE servers",
+"status": "Done",
+"type": "Question",
+"priority": "High",
+"labels": [],
+"created": "2025-05-21",
+"resolution": "Done",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-22387",
+"summary": "VAPT - Failure to invalidate a session on Password Change",
+"status": "Released",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"DPCFX:2025-Aug"
+],
+"created": "2025-05-20",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-19876",
+"summary": "DOT-5285 | Add the VAPT site to DNS",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [
+"Network"
+],
+"created": "2025-05-20",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-22349",
+"summary": "Hyperlink is not present as there are special characters are added in the details",
+"status": "Closed",
+"type": "Story",
+"priority": "Medium",
+"labels": [],
+"created": "2025-05-16",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "DOT-5285",
+"summary": "Setup the Web Service site in VAPT VM for external testing",
+"status": "Closed",
+"type": "Task",
+"priority": "High",
+"labels": [
+"Devops-RTB",
+"Devops-Setup"
+],
+"created": "2025-05-08",
+"resolution": "Done",
+"project": "DOT",
+"components": []
+},
+{
+"key": "OT-5170",
+"summary": "VAPT - DLL Hijacking",
+"status": "Closed",
+"type": "Bug",
+"priority": "Low",
+"labels": [],
+"created": "2025-05-07",
+"resolution": "Resolved",
+"project": "OT",
+"components": []
+},
+{
+"key": "CO-19462",
+"summary": "10.0.2.8 VAPT server is not accessible",
+"status": "Completed",
+"type": "Issue",
+"priority": "Medium",
+"labels": [],
+"created": "2025-05-02",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-19430",
+"summary": "WAF URL Review for MAY 25",
+"status": "Completed",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [
+"Network",
+"WAF-Review"
+],
+"created": "2025-05-02",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "AF-6758",
+"summary": "Back Merge changes from VAPT to Dev and Auto/Dev",
+"status": "Completed",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2025-04-28",
+"resolution": null,
+"project": "AF",
+"components": []
+},
+{
+"key": "OJA-9522",
+"summary": "Categorization field update",
+"status": "Resolved",
+"type": "Change Request",
+"priority": "Medium",
+"labels": [],
+"created": "2025-04-23",
+"resolution": "Resolved",
+"project": "OJA",
+"components": []
+},
+{
+"key": "AF-6727",
+"summary": "Add Logging changes From VAPT to Dev Branch",
+"status": "Completed",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2025-04-23",
+"resolution": null,
+"project": "AF",
+"components": []
+},
+{
+"key": "AF-6709",
+"summary": "Prepring VAPT paylods for Credit and contract",
+"status": "Completed",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2025-04-22",
+"resolution": null,
+"project": "AF",
+"components": []
+},
+{
+"key": "FRWK-22192",
+"summary": "MERGE -  VAPT | Malicious File Upload",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"DPCFX:2025-Jan",
+"SFIVAPT"
+],
+"created": "2025-04-21",
+"resolution": "Deferred",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "PROD-27618",
+"summary": "Customer Portal - Self Registration form",
+"status": "Closed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [
+"Oct_RR",
+"Oct_Revd",
+"Oct_webinar",
+"Security"
+],
+"created": "2025-04-10",
+"resolution": "Resolved",
+"project": "PROD",
+"components": []
+},
+{
+"key": "CO-18838",
+"summary": "SFS | PROD | SSO Testing for VAPT",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2025-04-08",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-22092",
+"summary": "VAPT - Weak account lockout mechanism",
+"status": "Closed",
+"type": "Story",
+"priority": "Medium",
+"labels": [],
+"created": "2025-04-07",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-22090",
+"summary": "VAPT - Unrestricted File Upload",
+"status": "Closed",
+"type": "Story",
+"priority": "Medium",
+"labels": [],
+"created": "2025-04-07",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-22075",
+"summary": "VAPT - Sensitive Data Exposure - AppSettings.json",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"DPCFX:2025-Apr"
+],
+"created": "2025-04-03",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-18659",
+"summary": "WAF URL Review for April 25",
+"status": "Completed",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [
+"Network",
+"WAF-Review"
+],
+"created": "2025-04-01",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "TDM-10966",
+"summary": "VAPT Issue on March PI Version",
+"status": "Triaging",
+"type": "Bug",
+"priority": "Highest",
+"labels": [],
+"created": "2025-03-28",
+"resolution": null,
+"project": "TDM",
+"components": []
+},
+{
+"key": "FRWK-22003",
+"summary": "Need a patch with the VAPT defects",
+"status": "Done",
+"type": "Task",
+"priority": "Medium",
+"labels": [
+"VAPTOct24"
+],
+"created": "2025-03-24",
+"resolution": "No Response",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21955",
+"summary": "VAPT | Odessa application VAPT of MFS UAT and finding shared to be fixed on Priority",
+"status": "Released",
+"type": "Bug",
+"priority": "Critical",
+"labels": [
+"DPCFX_Spillover"
+],
+"created": "2025-03-18",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21923",
+"summary": "Portal VAPT release",
+"status": "Done",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2025-03-14",
+"resolution": "Done",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "OT-5148",
+"summary": "VAPT - March Tools Deployment",
+"status": "Done",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2025-03-11",
+"resolution": "Done",
+"project": "OT",
+"components": []
+},
+{
+"key": "PROD-27278",
+"summary": "Portal's VAPT Setup for Apr'25 Release",
+"status": "Done",
+"type": "Story",
+"priority": "Highest",
+"labels": [
+"Technical"
+],
+"created": "2025-03-10",
+"resolution": "Resolved",
+"project": "PROD",
+"components": []
+},
+{
+"key": "AF-6246",
+"summary": "VAPT reported issues - Analysis",
+"status": "Completed",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2025-03-10",
+"resolution": null,
+"project": "AF",
+"components": []
+},
+{
+"key": "FRWK-21878",
+"summary": "Implement AntiForgery/CSRF token - UserPreference",
+"status": "Closed",
+"type": "Story",
+"priority": "Medium",
+"labels": [],
+"created": "2025-03-06",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21877",
+"summary": "Implement AntiForgery/CSRF token",
+"status": "Open",
+"type": "Story",
+"priority": "Medium",
+"labels": [
+"DigiEx-Jan27",
+"DigiEx-NewFeatures"
+],
+"created": "2025-03-06",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-17888",
+"summary": "WAF URL Review for MAR 25",
+"status": "Completed",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [
+"Network",
+"WAF-Review"
+],
+"created": "2025-03-02",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-17822",
+"summary": "Review below storage blob containers in PROD subscription",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2025-02-27",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "BNP01-3505",
+"summary": "Odessa - LS_PJ04620-2564 - [PENTEST]APP_01 - Vulnerable application components",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"PENTEST"
+],
+"created": "2025-02-20",
+"resolution": "Delivered",
+"project": "BNP01",
+"components": []
+},
+{
+"key": "CO-17495",
+"summary": "For SFTP whether our server support ports other than 22",
+"status": "Completed",
+"type": "Issue",
+"priority": "Highest",
+"labels": [
+"Network"
+],
+"created": "2025-02-14",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "AF-5986",
+"summary": "VAPT test preparation and cooridnation with Cloud ops teams",
+"status": "Completed",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2025-02-13",
+"resolution": null,
+"project": "AF",
+"components": []
+},
+{
+"key": "FRWK-21753",
+"summary": "VAPT CP_Reports",
+"status": "Done",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2025-02-12",
+"resolution": "Done",
+"project": "FRWK",
+"components": [
+"UI ",
+"UX "
+]
+},
+{
+"key": "FRWK-21748",
+"summary": "VAPT Testing- Quick Actions",
+"status": "Done",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2025-02-11",
+"resolution": "Done",
+"project": "FRWK",
+"components": [
+"UI ",
+"UX "
+]
+},
+{
+"key": "FRWK-21747",
+"summary": "VAPT testing  PP - Reports",
+"status": "Done",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2025-02-11",
+"resolution": "Done",
+"project": "FRWK",
+"components": [
+"UI ",
+"UX "
+]
+},
+{
+"key": "FRWK-21746",
+"summary": "VAPT Testing - 3 dots functions",
+"status": "Done",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2025-02-11",
+"resolution": "Done",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21743",
+"summary": "Links  - VAPT testing",
+"status": "Done",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2025-02-11",
+"resolution": "Done",
+"project": "FRWK",
+"components": [
+"UI ",
+"UX "
+]
+},
+{
+"key": "CO-17173",
+"summary": "WAF URL Review for FEB 25",
+"status": "Completed",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [
+"Network",
+"WAF-Review"
+],
+"created": "2025-02-02",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-21689",
+"summary": "PP VAPT Advance filter, inline edit, card vs table and comments",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [],
+"created": "2025-01-31",
+"resolution": "Done",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21720",
+"summary": "Lookups - CP and PP | VAPT Testing",
+"status": "Open",
+"type": "Bug",
+"priority": "Medium",
+"labels": [],
+"created": "2025-01-31",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21685",
+"summary": "CP Grid, Search, Card | VAPT testing",
+"status": "Done",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2025-01-31",
+"resolution": "Done",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21679",
+"summary": "Charts in CP and PP | VAPT testing",
+"status": "Done",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2025-01-31",
+"resolution": "Done",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21639",
+"summary": "VAPT - Strip EXIF metadata for Image files",
+"status": "Done",
+"type": "Task",
+"priority": "Low",
+"labels": [],
+"created": "2025-01-23",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21623",
+"summary": "VAPT - PP - MFA bypass via Response Manipulation",
+"status": "Released",
+"type": "Bug",
+"priority": "Medium",
+"labels": [],
+"created": "2025-01-22",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21622",
+"summary": "VAPT - Payoff Request - IDOR issue - CP",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [],
+"created": "2025-01-22",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-16712",
+"summary": "SFS | VAPT Issues",
+"status": "Completed",
+"type": "Issue",
+"priority": "Medium",
+"labels": [],
+"created": "2025-01-13",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-21464",
+"summary": "VAPT | Credentials Passing in Plain Text",
+"status": "Released",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"SFIVAPT"
+],
+"created": "2025-01-06",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21476",
+"summary": "VAPT | Exif Metadata Not Stripped",
+"status": "Released",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"SFIVAPT"
+],
+"created": "2025-01-06",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21475",
+"summary": "VAPT | Cookie Path Set to Root",
+"status": "Released",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"SFIVAPT"
+],
+"created": "2025-01-06",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21474",
+"summary": "VAPT | Vulnerable jQuery Version Detection",
+"status": "Released",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"SFIVAPT"
+],
+"created": "2025-01-06",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21473",
+"summary": "VAPT | Server Information Disclosure",
+"status": "Released",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"SFIVAPT"
+],
+"created": "2025-01-06",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21472",
+"summary": "VAPT | Security Header is Missing",
+"status": "Released",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"SFIVAPT"
+],
+"created": "2025-01-06",
+"resolution": "Done",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21471",
+"summary": "VAPT | No Rate Limit",
+"status": "Released",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"SFIVAPT"
+],
+"created": "2025-01-06",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21470",
+"summary": "VAPT | No Input Validation",
+"status": "Released",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"DPCFX:2025-Nov",
+"SFIVAPT"
+],
+"created": "2025-01-06",
+"resolution": "Done",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "SFI01-4677",
+"summary": "VAPT | Low Priority defects",
+"status": "Closed",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"SFIVAPT"
+],
+"created": "2025-01-06",
+"resolution": "Delivered",
+"project": "SFI01",
+"components": []
+},
+{
+"key": "FRWK-21467",
+"summary": "Siemens VAPT",
+"status": "Resolved",
+"type": "Story",
+"priority": "Medium",
+"labels": [],
+"created": "2025-01-06",
+"resolution": "Done",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21463",
+"summary": "VAPT - CSP",
+"status": "Closed",
+"type": "Story",
+"priority": "Medium",
+"labels": [],
+"created": "2025-01-06",
+"resolution": "Done",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-16525",
+"summary": "WAF URL Review for JAN 25",
+"status": "Completed",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [
+"WAF-Review"
+],
+"created": "2025-01-03",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-21427",
+"summary": "VAPT | Successful POST to GET Method Conversion",
+"status": "Released",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"DPCFX:2025-Jan",
+"SFIVAPT"
+],
+"created": "2025-01-03",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21426",
+"summary": "VAPT | Session Hijacking",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"DPCFX:2025-Jan",
+"SFIVAPT"
+],
+"created": "2025-01-03",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21425",
+"summary": "VAPT | Cross-Site Request Forgery (CSRF)",
+"status": "Released",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"DPCFX:2025-Feb",
+"SFIVAPT"
+],
+"created": "2025-01-03",
+"resolution": "Done",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21424",
+"summary": "VAPT | Malicious File Upload",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"DPCFX:2025-Aug",
+"DPCFX:2025-Jan",
+"DPCFX:2025-Jul",
+"SFIVAPT"
+],
+"created": "2025-01-03",
+"resolution": "Done",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21423",
+"summary": "VAPT | CSV Injection",
+"status": "Released",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"DPCFX:2025-Jan",
+"SFIVAPT"
+],
+"created": "2025-01-03",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21422",
+"summary": "VAPT | Unauthorized File Download Through IDOR:Backend validation:",
+"status": "Closed",
+"type": "Bug",
+"priority": "Highest",
+"labels": [
+"DPCFX:2025-Jan",
+"SFIVAPT"
+],
+"created": "2025-01-03",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "SFI01-4646",
+"summary": "VAPT | Critical, High & Medium defects",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"SFIVAPT"
+],
+"created": "2025-01-03",
+"resolution": "Delivered",
+"project": "SFI01",
+"components": []
+},
+{
+"key": "CO-16400",
+"summary": "SISA IP Whitelisting for VAPT and Network assessment",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2024-12-24",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-21403",
+"summary": ".Net-8 and .Net-48 VAPT Test Reports",
+"status": "Open",
+"type": "Story",
+"priority": "Medium",
+"labels": [],
+"created": "2024-12-23",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-16290",
+"summary": "Decommissioning Couple of VPAT Sites from WAF",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2024-12-18",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-21367",
+"summary": "CSP VAPT Int Release",
+"status": "Closed",
+"type": "Story",
+"priority": "Medium",
+"labels": [],
+"created": "2024-12-16",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-16223",
+"summary": "Unable to access Neos VAPT site when connected to VPN or Office wifi.",
+"status": "Completed",
+"type": "Service Request",
+"priority": "High",
+"labels": [],
+"created": "2024-12-16",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-16205",
+"summary": "unable to take RDC of VAPT server",
+"status": "Completed",
+"type": "Issue",
+"priority": "Medium",
+"labels": [],
+"created": "2024-12-13",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "DOT-4157",
+"summary": "Need DB back up of Portal VAPT Sites",
+"status": "Completed",
+"type": "Task",
+"priority": "Highest",
+"labels": [
+"Devops-DB"
+],
+"created": "2024-12-12",
+"resolution": "Done",
+"project": "DOT",
+"components": []
+},
+{
+"key": "DOT-4148",
+"summary": "Admin permission for DB sync on use2lwintprddb01.850f952d4987.database.windows.net,1433",
+"status": "Completed",
+"type": "Task",
+"priority": "High",
+"labels": [
+"Devops-DB"
+],
+"created": "2024-12-11",
+"resolution": "Done",
+"project": "DOT",
+"components": []
+},
+{
+"key": "TDM-10226",
+"summary": "Back Merge of classic ticket to Defect and Main",
+"status": "In Progress",
+"type": "Task",
+"priority": "High",
+"labels": [],
+"created": "2024-12-04",
+"resolution": null,
+"project": "TDM",
+"components": []
+},
+{
+"key": "CO-15963",
+"summary": "WAF URL Review for December 24",
+"status": "Completed",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [
+"WAF-Review"
+],
+"created": "2024-12-04",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-21262",
+"summary": "VAPT- CSP Documentation",
+"status": "Closed",
+"type": "Story",
+"priority": "Medium",
+"labels": [],
+"created": "2024-11-28",
+"resolution": "Done",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21218",
+"summary": "Portal : VAPT - Business Logic Error (Negative amount accepted) (CWE-840)",
+"status": "Released",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"VAPTSep24"
+],
+"created": "2024-11-19",
+"resolution": "Done",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21217",
+"summary": "Portal : VAPT - Cross Origin Resource Sharing (CWE-942)",
+"status": "Open",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"VAPTSep24"
+],
+"created": "2024-11-19",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21216",
+"summary": "Portal & Core : VAPT - Text Injection (CWE-89)",
+"status": "Open",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"VAPTDec24",
+"VAPTSep24"
+],
+"created": "2024-11-19",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21214",
+"summary": "Portal : VAPT - Missing HTTP Security Header (CWE-693)",
+"status": "Open",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"VAPTSep24"
+],
+"created": "2024-11-19",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21213",
+"summary": "Portal : VAPT - Misconfigured CSP Header (CWE-1032)",
+"status": "Open",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"VAPTSep24"
+],
+"created": "2024-11-19",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21212",
+"summary": "CLONE - Portal : VAPT - Misconfigured HSTS Header (CWE-523)",
+"status": "Open",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"VAPTSep24"
+],
+"created": "2024-11-19",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-21211",
+"summary": "Portal : VAPT - Weak Account Lockout Mechanism (CWE-307)",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"VAPTSep24"
+],
+"created": "2024-11-19",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "TDM-10109",
+"summary": "RB Neos VAPT Open issues",
+"status": "Open",
+"type": "Bug",
+"priority": "High",
+"labels": [],
+"created": "2024-11-19",
+"resolution": null,
+"project": "TDM",
+"components": []
+},
+{
+"key": "FRWK-21170",
+"summary": "VAPT- CSP",
+"status": "Closed",
+"type": "Story",
+"priority": "Medium",
+"labels": [],
+"created": "2024-11-11",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-15321",
+"summary": "WAF URL Review for November 24",
+"status": "Completed",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [
+"WAF-Review"
+],
+"created": "2024-11-05",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-15308",
+"summary": "unable to take RDC of VAPT server",
+"status": "Completed",
+"type": "Issue",
+"priority": "Medium",
+"labels": [],
+"created": "2024-11-05",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "TDM-10046",
+"summary": "VAPT Issue #1. Improper Implementation on error logs",
+"status": "Done",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"Classic_Defects_Jan'25PI"
+],
+"created": "2024-10-30",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "CO-15015",
+"summary": "Adding Exemption for Http method - OPTIONS",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Highest",
+"labels": [],
+"created": "2024-10-17",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-14992",
+"summary": "Enable site access through internet without VPN",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Highest",
+"labels": [],
+"created": "2024-10-16",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-14773",
+"summary": "Required a VM for running Cloud regression run",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2024-10-04",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-14738",
+"summary": "WAF URL Review for October 24",
+"status": "Completed",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [
+"WAF-Review"
+],
+"created": "2024-10-03",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "PROD-24800",
+"summary": "VAPT Site setup for Portals",
+"status": "Design Review",
+"type": "Story",
+"priority": "Medium",
+"labels": [],
+"created": "2024-10-01",
+"resolution": null,
+"project": "PROD",
+"components": []
+},
+{
+"key": "DOT-3802",
+"summary": "need to Restore DB on SQLMI",
+"status": "Closed",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2024-09-30",
+"resolution": "Done",
+"project": "DOT",
+"components": []
+},
+{
+"key": "CO-14561",
+"summary": "need HTTS site for VAPT server",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2024-09-25",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "BNP01-2784",
+"summary": "Odessa - LS_PJ04620-2133 - [PENTEST]CRYPT_02 - Use of degraded cipher suite",
+"status": "Closed",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"PENTEST"
+],
+"created": "2024-09-18",
+"resolution": "Resolved",
+"project": "BNP01",
+"components": []
+},
+{
+"key": "CO-14370",
+"summary": "Public URL for LP NET8 API VAPT site",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2024-09-17",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "BNP01-2777",
+"summary": "Odessa - LS_PJ04620-2130 - [PENTEST] SVR-04 - Absence of CSP",
+"status": "Closed",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"PENTEST"
+],
+"created": "2024-09-16",
+"resolution": "Delivered",
+"project": "BNP01",
+"components": []
+},
+{
+"key": "BNP01-2776",
+"summary": "Odessa - LS_PJ04620-2131 - [PENTEST] SRV_03 - Absence or misconfiguration of HTTP security headers",
+"status": "Awaiting Clarification",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"PENTEST"
+],
+"created": "2024-09-16",
+"resolution": null,
+"project": "BNP01",
+"components": []
+},
+{
+"key": "BNP01-2774",
+"summary": "Odessa - LS_PJ04620-2134 - [PENTEST]APP_01 - Presence of vulnerable application component",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"PENTEST"
+],
+"created": "2024-09-16",
+"resolution": "Delivered",
+"project": "BNP01",
+"components": []
+},
+{
+"key": "BNP01-2772",
+"summary": "Odessa - LS_PJ04620-2136 - [PENTEST]AUTH_02 - Lack of lockout policy",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"PENTEST"
+],
+"created": "2024-09-16",
+"resolution": null,
+"project": "BNP01",
+"components": []
+},
+{
+"key": "BNP01-2770",
+"summary": "Odessa - LS_PJ04620-2138 - [PENTEST]AUTH_04 - Possible to enumerate of existing users",
+"status": "Reopened",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"PENTEST"
+],
+"created": "2024-09-16",
+"resolution": null,
+"project": "BNP01",
+"components": []
+},
+{
+"key": "BNP01-2768",
+"summary": "[LS_PJ04620-2140]_[PENTEST] LOG_02 - Permissive file upload functionality",
+"status": "Closed",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"PENTEST"
+],
+"created": "2024-09-16",
+"resolution": "Resolved",
+"project": "BNP01",
+"components": []
+},
+{
+"key": "BNP01-2767",
+"summary": "Odessa - LS_PJ04620-2141 - [PENTEST]SESS_08 - Possibility of session fixation",
+"status": "Closed",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"PENTEST"
+],
+"created": "2024-09-16",
+"resolution": null,
+"project": "BNP01",
+"components": []
+},
+{
+"key": "CO-14339",
+"summary": "unable to take RDC of VAPT server (10.0.2.8)",
+"status": "Completed",
+"type": "Issue",
+"priority": "Medium",
+"labels": [],
+"created": "2024-09-13",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-14122",
+"summary": "WAF URL Review for September 24",
+"status": "Completed",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [
+"WAF-Review"
+],
+"created": "2024-09-04",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "OT-5006",
+"summary": "Odessa Core UI is not opening when project authenticated with Windows credentials",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"CORE"
+],
+"created": "2024-08-22",
+"resolution": "Explained",
+"project": "OT",
+"components": []
+},
+{
+"key": "TDM-9596",
+"summary": "VAPT envt. needs to be updated with latest content",
+"status": "Completed",
+"type": "Task",
+"priority": "High",
+"labels": [],
+"created": "2024-08-13",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "CO-13452",
+"summary": "Public URL for LP NET8 VAPT site",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2024-07-31",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-13048",
+"summary": "SFS | OC Site Creation for VAPT test",
+"status": "Completed",
+"type": "Service Request",
+"priority": "High",
+"labels": [],
+"created": "2024-07-10",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "TDM-9246",
+"summary": "RB Classic-VAPT- Username Enumeration",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"VAPT"
+],
+"created": "2024-06-26",
+"resolution": null,
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-9245",
+"summary": "RB Classic-VAPT- Misconfigured HSTS Header",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"VAPT"
+],
+"created": "2024-06-26",
+"resolution": null,
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-9243",
+"summary": "RB Classic-VAPT- Business Logic Errors",
+"status": "Open",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"VAPT"
+],
+"created": "2024-06-26",
+"resolution": null,
+"project": "TDM",
+"components": []
+},
+{
+"key": "CO-12726",
+"summary": "Requesting public URL for VAPT_NeosRB site",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2024-06-21",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "OT-4931",
+"summary": "Tool getting tab out while loading OT project",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [],
+"created": "2024-06-19",
+"resolution": "Resolved",
+"project": "OT",
+"components": []
+},
+{
+"key": "OT-4920",
+"summary": "VAPT Environment setup-June PI",
+"status": "Done",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2024-06-11",
+"resolution": "Done",
+"project": "OT",
+"components": []
+},
+{
+"key": "FRWK-20159",
+"summary": "Allow xlsx embedded objects in word templates",
+"status": "Released",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"Vulnerability"
+],
+"created": "2024-06-03",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-12267",
+"summary": "SMTP server connectivity issue with VM 10.0.2.8",
+"status": "Completed",
+"type": "Issue",
+"priority": "Medium",
+"labels": [],
+"created": "2024-05-28",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-11982",
+"summary": "MFS UAT | VAPT Weak Cipher - Lucky13 and Private IP Disclosure",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Highest",
+"labels": [],
+"created": "2024-05-10",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-19963",
+"summary": "MFS | Odessa application VAPT of UAT and finding shared to be fixed on Priority",
+"status": "Released",
+"type": "Bug",
+"priority": "Critical",
+"labels": [
+"DPCFX:2024-May"
+],
+"created": "2024-05-06",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "MFS03-686",
+"summary": "GANACHARYA SHREYA >> Odessa application VAPT of UAT and Production environment- Login details",
+"status": "Released",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"Reports"
+],
+"created": "2024-05-06",
+"resolution": "Delivered",
+"project": "MFS03",
+"components": []
+},
+{
+"key": "TDM-8781",
+"summary": "Ops Console RBS Issue - raised by VAPT",
+"status": "Done",
+"type": "Bug",
+"priority": "Medium",
+"labels": [],
+"created": "2024-04-26",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-8770",
+"summary": "System allowing to enter special characters in report name and title",
+"status": "Cancelled",
+"type": "Bug",
+"priority": "Medium",
+"labels": [],
+"created": "2024-04-23",
+"resolution": null,
+"project": "TDM",
+"components": []
+},
+{
+"key": "FRWK-19813",
+"summary": "Core: VAPT - Insecure Direct Object Reference (CWE-639)",
+"status": "Released",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"VAPTMar24"
+],
+"created": "2024-04-12",
+"resolution": "Done",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-19746",
+"summary": "Portal : VAPT - Missing CSP Header (CWE-1021)",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"VAPTJun24",
+"VAPTMar24",
+"VAPTSep24"
+],
+"created": "2024-04-02",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-19745",
+"summary": "Core/ API : VAPT - Missing CSP Header (CWE-1021)",
+"status": "Open",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"VAPTDec24",
+"VAPTMar24"
+],
+"created": "2024-04-02",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-19744",
+"summary": "Core/ API : VAPT - Weak SSL: Cipher Suites Enabled (CWE-326)",
+"status": "Open",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"ServerSideConfiguration",
+"VAPTDec24",
+"VAPTMar24",
+"VAPTSep24"
+],
+"created": "2024-04-02",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-19743",
+"summary": "Portal : VAPT - Weak SSL: Cipher Suites Enabled (CWE-326)",
+"status": "Open",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"DigiEx-Hypercare",
+"ServerSideConfiguration",
+"VAPTJun24",
+"VAPTMar24"
+],
+"created": "2024-04-02",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-19742",
+"summary": "Portal : VAPT - Configuration: Content Security Policy Not Implemented (CWE-16)",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"VAPTMar24"
+],
+"created": "2024-04-02",
+"resolution": "Done",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-19741",
+"summary": "Portal : VAPT - Insufficient session expiration (CWE-613)",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"DigiEx-Fixathon-P3",
+"DigiEx-Hypercare",
+"VAPTJun24",
+"VAPTMar24"
+],
+"created": "2024-04-02",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-19740",
+"summary": "Portal : VAPT - Exif Image Metadata Not Stripped (CWE-200)",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"VAPTMar24"
+],
+"created": "2024-04-02",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-19739",
+"summary": "Portal : VAPT - Spamming (CWE-799)",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"VAPTMar24"
+],
+"created": "2024-04-02",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-19738",
+"summary": "Portal & Core: VAPT - Use of vulnerable/ outdated versions tinymce (CWE-1104)",
+"status": "Open",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"VAPTDec24",
+"VAPTJun24",
+"VAPTMar24",
+"VAPTSep24"
+],
+"created": "2024-04-02",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-19737",
+"summary": "Portal : VAPT - Session Fixation (CWE-384)",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"FXMay24",
+"VAPTMar24"
+],
+"created": "2024-04-02",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-19729",
+"summary": "Portal : VAPT - HTML Injection (CWE-80)",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"VAPTMar24"
+],
+"created": "2024-04-02",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "TDM-8659",
+"summary": "Admin Session Concurrency",
+"status": "Open",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"Login",
+"VAPT"
+],
+"created": "2024-04-02",
+"resolution": null,
+"project": "TDM",
+"components": []
+},
+{
+"key": "CO-10705",
+"summary": "Requesting public URL for VAPT OdessaDW site",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2024-03-15",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "OT-4844",
+"summary": "VAPT - Tools Deployment",
+"status": "Done",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2024-03-13",
+"resolution": "Done",
+"project": "OT",
+"components": []
+},
+{
+"key": "PROD-20809",
+"summary": "VAPT FW package consumption and release activities",
+"status": "Done",
+"type": "Story",
+"priority": "High",
+"labels": [
+"PP_Mar'24",
+"PP_P1"
+],
+"created": "2024-03-05",
+"resolution": "Resolved",
+"project": "PROD",
+"components": []
+},
+{
+"key": "OT-4830",
+"summary": "Enter should work in VAPT sign-in window",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [],
+"created": "2024-02-29",
+"resolution": "Resolved",
+"project": "OT",
+"components": []
+},
+{
+"key": "CO-10093",
+"summary": "WAF URL review - Jan'24",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [
+"CloudOps-Review"
+],
+"created": "2024-02-21",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "TDM-8324",
+"summary": "RB VAPT- Missing CSP Header",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"VAPT",
+"VAPTDec23",
+"frameworkdependent"
+],
+"created": "2024-01-17",
+"resolution": null,
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-8323",
+"summary": "RB VAPT- Use of Vulnerable/ out dated versions",
+"status": "In Progress",
+"type": "Task",
+"priority": "Low",
+"labels": [
+"VAPT",
+"VAPTDec23"
+],
+"created": "2024-01-17",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-8317",
+"summary": "Cross site Scripting (Reflected)",
+"status": "Completed",
+"type": "Task",
+"priority": "Medium",
+"labels": [
+"VAPT",
+"VAPTDec23"
+],
+"created": "2024-01-16",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "FRWK-19103",
+"summary": "Odessa Core : VAPT - Exif Image Metadata not Stripped",
+"status": "Peer review",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"P3",
+"VAPTDec23"
+],
+"created": "2024-01-09",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-9093",
+"summary": "Required DB back from SQLMI",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2024-01-02",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "TDM-8262",
+"summary": "Insecure Direct Object Reference",
+"status": "Completed",
+"type": "Task",
+"priority": "Medium",
+"labels": [
+"VAPT",
+"VAPTDec23"
+],
+"created": "2024-01-02",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "FRWK-19025",
+"summary": "Core WebAPI: VAPT - Improper Error Handling (CWE-209)",
+"status": "In Progress",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"OnHold",
+"VAPTDec23"
+],
+"created": "2023-12-22",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-8578",
+"summary": "WAF URL review - Dec 1",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [
+"CloudOps-Review"
+],
+"created": "2023-12-01",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-7976",
+"summary": "Restart required for VAPT server (10.0.2.8)",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2023-10-27",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "TDM-8041",
+"summary": "VAPT-Missing Content Security Policy",
+"status": "Done",
+"type": "Bug",
+"priority": "Highest",
+"labels": [
+"Oct'23",
+"P1",
+"VAPT"
+],
+"created": "2023-10-27",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-8038",
+"summary": "Insecure Direct Object Reference Issue fixing at Application level",
+"status": "Completed",
+"type": "Task",
+"priority": "Highest",
+"labels": [
+"Oct'23",
+"P1",
+"VAPT",
+"VAPTDec23"
+],
+"created": "2023-10-26",
+"resolution": "Won't Do",
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-8014",
+"summary": "Report lock is not working during editing of a shared report",
+"status": "Open",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"security"
+],
+"created": "2023-10-19",
+"resolution": null,
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-8004",
+"summary": "Issue- Insecure/security related",
+"status": "To Do",
+"type": "Task",
+"priority": "Medium",
+"labels": [
+"VAPT",
+"VAPTDec23"
+],
+"created": "2023-10-18",
+"resolution": null,
+"project": "TDM",
+"components": []
+},
+{
+"key": "FRWK-18530",
+"summary": "Accessibility Requirement - Look up field with HTML tagged data",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"UI/UX"
+],
+"created": "2023-10-17",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-18473",
+"summary": "Odessa Core : VAPT - HTML Injection (CWE-80)",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"VAPTSep23"
+],
+"created": "2023-10-12",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-18471",
+"summary": "Odessa Core : VAPT - Browser Cache Weakness (CWE-525)",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"VAPTSep23"
+],
+"created": "2023-10-12",
+"resolution": "Duplicate",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "TDM-7975",
+"summary": "VAPT Issue- Insecure Direct Object Reference",
+"status": "Done",
+"type": "Bug",
+"priority": "Highest",
+"labels": [
+"Oct'23",
+"P1",
+"RBProductRelease10.0",
+"VAPT",
+"VAPTSep23"
+],
+"created": "2023-10-09",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "CO-7614",
+"summary": "Need access to WAF/VAPT Testing Logs and DB server",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Highest",
+"labels": [],
+"created": "2023-10-04",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-7605",
+"summary": "Need RDP access to devtest vapt machine",
+"status": "Completed",
+"type": "Service Request",
+"priority": "High",
+"labels": [],
+"created": "2023-10-03",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "OT-4678",
+"summary": ".NET 7 upgrade for VAPT in OT - Support",
+"status": "Done",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2023-09-29",
+"resolution": "Resolved",
+"project": "OT",
+"components": []
+},
+{
+"key": "FRWK-18398",
+"summary": "VAPT Test Result with Issue from Mahindra UAT env",
+"status": "Released",
+"type": "Bug",
+"priority": "Highest",
+"labels": [],
+"created": "2023-09-28",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "MFS03-158",
+"summary": "Password encryption policy violated",
+"status": "Closed",
+"type": "Bug",
+"priority": "Highest",
+"labels": [
+"Production",
+"SteercoItem"
+],
+"created": "2023-09-28",
+"resolution": "Resolved",
+"project": "MFS03",
+"components": []
+},
+{
+"key": "FRWK-18396",
+"summary": "Odessa Partner Portal : VAPT - HTML Injection (CWE-80)",
+"status": "Released",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"VAPTSep23"
+],
+"created": "2023-09-27",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-18395",
+"summary": "Odessa Partner and Customer Portal : VAPT - Browser Cache Weakness (CWE-525)",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"VAPTSep23"
+],
+"created": "2023-09-27",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-18367",
+"summary": "Odessa Core : VAPT - Configuration: Content Security Policy Not Implemented",
+"status": "Closed",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"OnHold",
+"VAPTSep23"
+],
+"created": "2023-09-22",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-7439",
+"summary": "Need to conifgure Azure FD for the VAPT WAF test site.",
+"status": "Completed",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [],
+"created": "2023-09-22",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-7438",
+"summary": "Clone VAPT site for WAF test.",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2023-09-22",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "OT-4674",
+"summary": "VAPT - Misconfiguration: Control Flow Guard",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [],
+"created": "2023-09-20",
+"resolution": null,
+"project": "OT",
+"components": []
+},
+{
+"key": "OT-4673",
+"summary": "VAPT - Misconfiguration: SafeSEH",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [],
+"created": "2023-09-20",
+"resolution": null,
+"project": "OT",
+"components": []
+},
+{
+"key": "OT-4672",
+"summary": "VAPT - Misconfiguration: Code unsigned",
+"status": "Closed",
+"type": "Bug",
+"priority": "Low",
+"labels": [],
+"created": "2023-09-20",
+"resolution": "Resolved",
+"project": "OT",
+"components": []
+},
+{
+"key": "OT-4671",
+"summary": "VAPT - No Code Obfuscation Techniques Used",
+"status": "Open",
+"type": "Bug",
+"priority": "Medium",
+"labels": [],
+"created": "2023-09-20",
+"resolution": null,
+"project": "OT",
+"components": []
+},
+{
+"key": "OT-4670",
+"summary": "VAPT - Improper Error Handling",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [],
+"created": "2023-09-20",
+"resolution": null,
+"project": "OT",
+"components": []
+},
+{
+"key": "OT-4654",
+"summary": "OB/OT tools setup on VAPT Server",
+"status": "Done",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2023-09-08",
+"resolution": "Done",
+"project": "OT",
+"components": []
+},
+{
+"key": "TDM-7885",
+"summary": "Issue after Framework upgrade(When Free licensing is active)",
+"status": "To Do",
+"type": "Task",
+"priority": "High",
+"labels": [
+"Client_Impact",
+"P1",
+"Sep'23",
+"security"
+],
+"created": "2023-09-07",
+"resolution": null,
+"project": "TDM",
+"components": []
+},
+{
+"key": "DOT-1451",
+"summary": "Requesting to create a DB on SQLMI",
+"status": "Completed",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2023-09-05",
+"resolution": "Resolved",
+"project": "DOT",
+"components": []
+},
+{
+"key": "OT-4622",
+"summary": "VAPT issue with .NET core environment",
+"status": "Done",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2023-08-18",
+"resolution": "Done",
+"project": "OT",
+"components": []
+},
+{
+"key": "TDM-7790",
+"summary": "In Configuration the allow full Access :- When we disable it is impacting the existing Role, categories, folder and fields",
+"status": "To Do",
+"type": "Task",
+"priority": "Highest",
+"labels": [
+"Client_Impact",
+"P1",
+"Sep'23",
+"security"
+],
+"created": "2023-08-16",
+"resolution": null,
+"project": "TDM",
+"components": []
+},
+{
+"key": "OT-4616",
+"summary": "Initial DOR -SSO support in VAPT",
+"status": "Closed",
+"type": "Story",
+"priority": "Medium",
+"labels": [],
+"created": "2023-08-16",
+"resolution": "Done",
+"project": "OT",
+"components": []
+},
+{
+"key": "AF-25",
+"summary": "VAPT (MVP 1)",
+"status": "To Do",
+"type": "Epic",
+"priority": "Medium",
+"labels": [
+"NFRs"
+],
+"created": "2023-08-09",
+"resolution": null,
+"project": "AF",
+"components": []
+},
+{
+"key": "CO-6557",
+"summary": "Create temporary Odessa Core Site for testing WAF rules",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2023-07-31",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-6433",
+"summary": "Required DB back from SQLMI",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2023-07-24",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "OT-4549",
+"summary": "VAPT Environment Setup",
+"status": "Done",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2023-07-07",
+"resolution": "Resolved",
+"project": "OT",
+"components": []
+},
+{
+"key": "FRWK-17849",
+"summary": "VAPT - Broken Authentication - Login Expiry",
+"status": "Released",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"VAPTJune23"
+],
+"created": "2023-07-05",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "OT-4540",
+"summary": "Change to VAPT signing-In.",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [],
+"created": "2023-06-30",
+"resolution": "Resolved",
+"project": "OT",
+"components": []
+},
+{
+"key": "DEU-363",
+"summary": "TMF has requires the Security deposit impact on lease rental which impacts IRR where security deposits will be collected from customer and will be adjusted against booked residual at the maturity of contract",
+"status": "Done",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [
+"Customization",
+"Deposit",
+"OutScope",
+"Security"
+],
+"created": "2023-06-28",
+"resolution": "Resolved",
+"project": "DEU",
+"components": []
+},
+{
+"key": "TMF01-184",
+"summary": "TMF has requires the Security deposit impact on lease rental which impacts IRR where security deposits will be collected from customer and will be adjusted against booked residual at the maturity of contract",
+"status": "Closed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [
+"Deposit",
+"Security"
+],
+"created": "2023-06-26",
+"resolution": "Accepted",
+"project": "TMF01",
+"components": []
+},
+{
+"key": "TDM-7638",
+"summary": "Multifactor Authentication Enablement- March Version",
+"status": "Completed",
+"type": "Task",
+"priority": "Medium",
+"labels": [
+"Client_Impact",
+"July'23",
+"P1",
+"Security"
+],
+"created": "2023-06-22",
+"resolution": "Done",
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-7632",
+"summary": "MFA:- Authentication App OTP Timeout issue",
+"status": "Blocked",
+"type": "Bug",
+"priority": "Highest",
+"labels": [
+"July'23",
+"June'23",
+"MFA",
+"P1",
+"Security"
+],
+"created": "2023-06-21",
+"resolution": null,
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-7627",
+"summary": "MFA:- System is not capturing \"Authentication failure count\" and not blocking the user on 3 unsuccesful authentication attempts",
+"status": "Done",
+"type": "Bug",
+"priority": "Highest",
+"labels": [
+"July'23",
+"June'23",
+"MFA",
+"P1",
+"Security"
+],
+"created": "2023-06-20",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-7625",
+"summary": "MFA:- Email should be removed on Uncheck of MFA enable in MFA details",
+"status": "Done",
+"type": "Bug",
+"priority": "Highest",
+"labels": [
+"June'23",
+"MFA",
+"P1",
+"Security"
+],
+"created": "2023-06-20",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-7624",
+"summary": "MFA:- Email should not be defaulted on click of MFA details check box.",
+"status": "Done",
+"type": "Bug",
+"priority": "Highest",
+"labels": [
+"June'23",
+"MFA",
+"P1",
+"Security"
+],
+"created": "2023-06-20",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-7623",
+"summary": "On Edit of User and enabling MFA (User enable to login)",
+"status": "Done",
+"type": "Bug",
+"priority": "Highest",
+"labels": [
+"June'23",
+"MFA",
+"P1",
+"Security"
+],
+"created": "2023-06-20",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "OT-4532",
+"summary": "Technical analysis for VAPT concerns raised by SAAS team.",
+"status": "Done",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2023-06-19",
+"resolution": "Resolved",
+"project": "OT",
+"components": []
+},
+{
+"key": "CO-5835",
+"summary": "Required a VM for Regression Run",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2023-06-19",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "TDM-7616",
+"summary": "No scroll bar is appearing when screen resolution is more than 100% and on clicking on 'Tab' button the screen is splitting",
+"status": "Done",
+"type": "Bug",
+"priority": "Highest",
+"labels": [
+"June'23",
+"MFA",
+"P1",
+"Security"
+],
+"created": "2023-06-19",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-7582",
+"summary": "MFA Enablement for System Admin",
+"status": "Completed",
+"type": "Task",
+"priority": "Highest",
+"labels": [
+"MFA",
+"Security"
+],
+"created": "2023-06-15",
+"resolution": "Done",
+"project": "TDM",
+"components": []
+},
+{
+"key": "CO-5667",
+"summary": "Security audit - VAPT sites",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2023-06-07",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-5641",
+"summary": "unable access https://webapi-vapt.odessainc.com/ site in VAPT server",
+"status": "Completed",
+"type": "Issue",
+"priority": "Medium",
+"labels": [],
+"created": "2023-06-06",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-5622",
+"summary": "Required DB back from SQLMI- VAPT_BPM",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2023-06-05",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "TDM-7520",
+"summary": "PNC | Session Management - Insufficient Session Timeouts",
+"status": "Done",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"Client_Impact",
+"P1",
+"VAPT"
+],
+"created": "2023-06-05",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-7519",
+"summary": "PNC | Security Configuration - Cookies Missing Secure Attribute",
+"status": "Done",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"Client_Impact",
+"P1",
+"VAPT"
+],
+"created": "2023-06-05",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-7518",
+"summary": "PNC | Security Configuration - Content-Security-Policy Header",
+"status": "Development In-Progress",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"Client_Impact",
+"P1",
+"VAPT"
+],
+"created": "2023-06-05",
+"resolution": null,
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-7517",
+"summary": "PNC | Authentication - Weak Account Lockout Policy",
+"status": "Development In-Progress",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"Client_Impact",
+"P1",
+"VAPT"
+],
+"created": "2023-06-05",
+"resolution": null,
+"project": "TDM",
+"components": []
+},
+{
+"key": "CO-5586",
+"summary": "Required DB back from SQLMI",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2023-06-01",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-5501",
+"summary": "Enable WAF rules for BPM VAPT API site",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2023-05-26",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-17496",
+"summary": "System is crashing on selection of transaction without selecting the entity in transaction task",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [],
+"created": "2023-05-25",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "PAB-112",
+"summary": "VAPT testing elements",
+"status": "Done",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [],
+"created": "2023-05-25",
+"resolution": null,
+"project": "PAB",
+"components": []
+},
+{
+"key": "TDM-7461",
+"summary": "Multifactor Authentication Enablement- Edit User & Existing Users",
+"status": "Done",
+"type": "Story",
+"priority": "Medium",
+"labels": [
+"Jun23",
+"MFA",
+"Security"
+],
+"created": "2023-05-25",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "FRWK-17475",
+"summary": "Print action is crasing in vapt environment",
+"status": "Released",
+"type": "Bug",
+"priority": "Medium",
+"labels": [],
+"created": "2023-05-24",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-17474",
+"summary": "List view is not working as expected in vapt envi",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [],
+"created": "2023-05-24",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-5432",
+"summary": "Requesting DB backup of VAPT site",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2023-05-22",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "TDM-7433",
+"summary": "Getting a pop up on opening a CSV report in excel format",
+"status": "Cancelled",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"Client-Impact",
+"P2",
+"VAPT"
+],
+"created": "2023-05-19",
+"resolution": null,
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-7404",
+"summary": "Multifactor Authentication Enablement- Create User",
+"status": "Done",
+"type": "Story",
+"priority": "Medium",
+"labels": [
+"June'23",
+"MFA",
+"Security"
+],
+"created": "2023-05-16",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "OT-4488",
+"summary": "VAPT Configuration",
+"status": "Done",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2023-05-16",
+"resolution": "Resolved",
+"project": "OT",
+"components": []
+},
+{
+"key": "INL02-25",
+"summary": "NFR - Conversation Engine",
+"status": "Open",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [
+"NFR"
+],
+"created": "2023-05-11",
+"resolution": null,
+"project": "INL02",
+"components": []
+},
+{
+"key": "CO-5234",
+"summary": "Public URL for BPM VAPT site",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2023-05-08",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-5228",
+"summary": "Requesting DB Restore for BPM VAPT site",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2023-05-08",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "TDM-7348",
+"summary": "Enabling MFA for ReportBuilder product- June Release",
+"status": "Completed",
+"type": "Task",
+"priority": "Medium",
+"labels": [
+"June'23",
+"P1",
+"Security"
+],
+"created": "2023-05-08",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "EPG02-1670",
+"summary": "Webconfig changes with Testautomation tag - ePlus",
+"status": "Completed",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2023-04-19",
+"resolution": "Done",
+"project": "EPG02",
+"components": []
+},
+{
+"key": "OT-4445",
+"summary": "SSO support in VAPT",
+"status": "Closed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2023-04-19",
+"resolution": "Deferred",
+"project": "OT",
+"components": []
+},
+{
+"key": "CO-4966",
+"summary": "Webconfig changes with Testautomation tag - SGEF",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2023-04-17",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "TDM-7072",
+"summary": "VAPT Testing - External Vendor",
+"status": "Cancelled",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2023-04-14",
+"resolution": null,
+"project": "TDM",
+"components": []
+},
+{
+"key": "OT-4437",
+"summary": "OT execution scenarions fail from powershell azure pipeline",
+"status": "Done",
+"type": "Question",
+"priority": "Medium",
+"labels": [],
+"created": "2023-04-14",
+"resolution": "Duplicate",
+"project": "OT",
+"components": []
+},
+{
+"key": "OT-4434",
+"summary": "UI for data entry feature should work even without VAPT",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [],
+"created": "2023-04-13",
+"resolution": "Resolved",
+"project": "OT",
+"components": []
+},
+{
+"key": "PAB-50",
+"summary": "Workflow V2 MVP1a - : Security/VAPT",
+"status": "Done",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [],
+"created": "2023-04-06",
+"resolution": null,
+"project": "PAB",
+"components": [
+"Platform Arch Board"
+]
+},
+{
+"key": "FRWK-17039",
+"summary": "VAPT - Forced Browsing (tracer download) CWE-425 - When Tracer is enabled",
+"status": "Open",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"VAPTJan23"
+],
+"created": "2023-04-05",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-16989",
+"summary": "VAPT: jQuery Version Upgrade for DocPortal Site",
+"status": "Closed",
+"type": "Product Enhancement",
+"priority": "Medium",
+"labels": [],
+"created": "2023-03-29",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-16986",
+"summary": "VAPT - Forced Browsing (tracer download) CWE-425",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"VAPTJan23"
+],
+"created": "2023-03-29",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "TDM-6909",
+"summary": "Windows Authentication for Users is not working",
+"status": "Done",
+"type": "Bug",
+"priority": "Highest",
+"labels": [
+"P1",
+"Security"
+],
+"created": "2023-03-28",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-6797",
+"summary": "RB VAPT: missing func level access on Post",
+"status": "Completed",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [],
+"created": "2023-03-15",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-6796",
+"summary": "Use of vulnerable/ outdated versions",
+"status": "Done",
+"type": "Story",
+"priority": "High",
+"labels": [
+"Apr'23",
+"P1"
+],
+"created": "2023-03-15",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "FRWK-16834",
+"summary": "VAPT - Use of Vulnerable/Outdated Versions CWE-1104 - framework.jquerychart.js - 2.9.3. to 2.9.4",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"VAPTJan23"
+],
+"created": "2023-03-08",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "TDM-6690",
+"summary": "Functional Only - Report Generation - Role Based Security(Row & Column level) Property",
+"status": "Cancelled",
+"type": "Story",
+"priority": "Medium",
+"labels": [
+"Security",
+"Set2"
+],
+"created": "2023-03-07",
+"resolution": null,
+"project": "TDM",
+"components": []
+},
+{
+"key": "CO-4390",
+"summary": "Required a DB backup from SQLMI - use2lwintprddb01.850f952d4987.database.windows.net",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2023-03-06",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "DOT-792",
+"summary": "PTC update OT exeuction steps in pipeline for FW 4.22.12.5",
+"status": "Completed",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2023-03-03",
+"resolution": "Resolved",
+"project": "DOT",
+"components": []
+},
+{
+"key": "TDM-6615",
+"summary": "<TBD>Functional Only - Report Generation - Implicit Data Security Property",
+"status": "Ready for testing",
+"type": "Story",
+"priority": "Medium",
+"labels": [
+"Security",
+"Set2"
+],
+"created": "2023-03-01",
+"resolution": null,
+"project": "TDM",
+"components": []
+},
+{
+"key": "HPE04-1343",
+"summary": "HPE Partner Portal VAPT environment setup",
+"status": "In Progress",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2023-02-28",
+"resolution": null,
+"project": "HPE04",
+"components": []
+},
+{
+"key": "CO-4182",
+"summary": "Custom DNS configuration for partner portal site (VAPT_HPE_PP) & API (VAPT_HPE_PP_API)",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2023-02-20",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-4130",
+"summary": "Access on VAPT VM for HPE Partner Portal",
+"status": "Completed",
+"type": "Service Request",
+"priority": "High",
+"labels": [],
+"created": "2023-02-16",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-4044",
+"summary": "VAPT CP Upgrade- Jan23 Release",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2023-02-13",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-4029",
+"summary": "VAPT Upgrade- Jan23 Release",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2023-02-10",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-3829",
+"summary": "create https site for VAPT PTC site http://10.0.2.8:162",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2023-01-27",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "MFS01-1865",
+"summary": "VAPT | Vehicle Core leasing Odessa Penetration testing",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [],
+"created": "2023-01-27",
+"resolution": "Resolved",
+"project": "MFS01",
+"components": []
+},
+{
+"key": "CO-3811",
+"summary": "Create copy of Presidio_QA",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2023-01-27",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-3771",
+"summary": "Please delete below URLS from WAF",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2023-01-24",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-16446",
+"summary": "VAPT Test Result with Issue from Mahindra Project",
+"status": "Released",
+"type": "Bug",
+"priority": "High",
+"labels": [],
+"created": "2023-01-23",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-3761",
+"summary": "Grant full access on VAPT server",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2023-01-23",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-3711",
+"summary": "New DB for VAPT RB test",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2023-01-20",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-3636",
+"summary": "Webconfig changes with Testautomation tag",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2023-01-17",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "OT-4283",
+"summary": "VAPT Support",
+"status": "Done",
+"type": "Task",
+"priority": "High",
+"labels": [
+"Required",
+"StructureTasks"
+],
+"created": "2023-01-16",
+"resolution": "Resolved",
+"project": "OT",
+"components": []
+},
+{
+"key": "CO-3369",
+"summary": "DB Changes for VAPT  - Odessa Data Catalog",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2022-12-19",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-3324",
+"summary": "Webconfig changes with Testautomation tag - FFEL",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2022-12-14",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-3323",
+"summary": "Webconfig changes with Testautomation tag - HayDock",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2022-12-14",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-3321",
+"summary": "Webconfig changes with Testautomation tag - ePlus",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2022-12-14",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-3320",
+"summary": "Webconfig changes with Testautomation tag - CFL",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2022-12-14",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-3319",
+"summary": "Webconfig changes with Testautomation tag - M2L",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2022-12-14",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-3318",
+"summary": "Webconfig changes with Testautomation tag - MCB",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2022-12-14",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-3317",
+"summary": "Webconfig changes with Testautomation tag - MFS",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2022-12-14",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-3316",
+"summary": "Webconfig changes with Testautomation tag - TDEF",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2022-12-14",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-3315",
+"summary": "Webconfig changes with Testautomation tag - Sasfin",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2022-12-14",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-3314",
+"summary": "Webconfig changes with Testautomation tag - PTC",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2022-12-14",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-3313",
+"summary": "Webconfig changes with Testautomation tag - JCC",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2022-12-14",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-3312",
+"summary": "Webconfig changes with Testautomation tag - JnJ",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2022-12-14",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-3309",
+"summary": "DB backup of VAPT_RB",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2022-12-14",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-3304",
+"summary": "Changes for VAPT sites - All Sites",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2022-12-14",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-3284",
+"summary": "DB Changes for VAPT - Odessa Core",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2022-12-13",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-3278",
+"summary": "DB Changes for VAPT  - Odessa Portal",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2022-12-13",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-15840",
+"summary": "VAPT - Unverified Password Change",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"Triaged",
+"VAPTNov22",
+"VendorPortal"
+],
+"created": "2022-11-29",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-15839",
+"summary": "VAPT - Missing Functional Level Access Control",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"Triaged",
+"VAPTNov22",
+"VendorPortal"
+],
+"created": "2022-11-29",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-15838",
+"summary": "VAPT - Information Disclosure",
+"status": "Released",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"Partner-Portal",
+"Triaged",
+"VAPTNov22"
+],
+"created": "2022-11-29",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-15822",
+"summary": "VAPT - Admin Session Concurrency - CWE-557",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"OdessaCore",
+"VAPTNov22",
+"VendorPortal"
+],
+"created": "2022-11-28",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-3060",
+"summary": "new RB Databases for ProdScan site",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2022-11-27",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-15807",
+"summary": "VAPT - Username Enumeration",
+"status": "Released",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"OdessaCore",
+"Triaged",
+"VAPTNov22"
+],
+"created": "2022-11-24",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-15806",
+"summary": "VAPT - Use of Vulnerable/Outdated Versions CWE-1104",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"Customer-portal",
+"Data-Catalog",
+"OdessaCore",
+"Partner-Portal",
+"Triaged",
+"VAPTNov22",
+"VendorPortal"
+],
+"created": "2022-11-24",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-15805",
+"summary": "VAPT - Banner Disclosure",
+"status": "Released",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"OdessaCore",
+"Partner-Portal",
+"Triaged",
+"VAPTNov22",
+"VendorPortal"
+],
+"created": "2022-11-24",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-15782",
+"summary": "VAPT - Session Timeout | CWE-613",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"Customer-portal",
+"Data-Catalog",
+"OdessaCore",
+"Triage",
+"VAPTNov22"
+],
+"created": "2022-11-24",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-15781",
+"summary": "VAPT - Host Header Injection",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"Customer-portal",
+"Data-Catalog",
+"OdessaCore",
+"Partner-Portal",
+"Triaged",
+"VAPTNov22",
+"VendorPortal"
+],
+"created": "2022-11-24",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-15780",
+"summary": "VAPT - Unrestricted File Upload",
+"status": "Released",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"Customer-portal",
+"Data-Catalog",
+"OdessaCore",
+"Partner-Portal",
+"Triaged",
+"VAPTNov22"
+],
+"created": "2022-11-24",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-15779",
+"summary": "VAPT - Improper Error Handling",
+"status": "Released",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"OdessaCore",
+"Partner-Portal",
+"Triaged",
+"VAPTNov22",
+"VendorPortal"
+],
+"created": "2022-11-24",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "TDM-5399",
+"summary": "RB VAPT Fix: Cross site scripting",
+"status": "Done",
+"type": "Story",
+"priority": "Medium",
+"labels": [],
+"created": "2022-11-24",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-5398",
+"summary": "RB VAPT Fix: Unrestricted file upload",
+"status": "Done",
+"type": "Story",
+"priority": "Medium",
+"labels": [],
+"created": "2022-11-24",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-5397",
+"summary": "RB VAPT Fix: Improper error handling",
+"status": "Done",
+"type": "Story",
+"priority": "Medium",
+"labels": [],
+"created": "2022-11-24",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-5396",
+"summary": "RB VAPT Fix: Missing functional level access control",
+"status": "Done",
+"type": "Story",
+"priority": "Medium",
+"labels": [],
+"created": "2022-11-24",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-5395",
+"summary": "RB VAPT testing fixes- Mar'23",
+"status": "Closed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2022-11-24",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "PROD-14198",
+"summary": "Dec 8th Release Items",
+"status": "Release",
+"type": "Task",
+"priority": "Medium",
+"labels": [
+"PP_Dec22",
+"PP_P1"
+],
+"created": "2022-11-23",
+"resolution": null,
+"project": "PROD",
+"components": []
+},
+{
+"key": "CO-2767",
+"summary": "SQL MI Database restore",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2022-10-28",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-15557",
+"summary": "CLONE - VAPT Testing - Removal of cookie clientTimeZoneId from application",
+"status": "Open",
+"type": "Bug",
+"priority": "Medium",
+"labels": [],
+"created": "2022-10-14",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-2616",
+"summary": "Data Catalog DB Restoration on VAPT server",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2022-10-13",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-2580",
+"summary": "CLONE - Update VAPT Customerportal DB to Sep2022 PI",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2022-10-10",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-2579",
+"summary": "Update VAPT Lessorportal DB to Sep2022 PI",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2022-10-10",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-2559",
+"summary": "Help URL is slow for US Location",
+"status": "Completed",
+"type": "Issue",
+"priority": "Medium",
+"labels": [],
+"created": "2022-10-07",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-2473",
+"summary": "Fiserv - Request to create a site for VAPT testing",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2022-09-27",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-15465",
+"summary": "API Developer Guide needs authentication",
+"status": "Closed",
+"type": "Requirements",
+"priority": "High",
+"labels": [],
+"created": "2022-09-26",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-2342",
+"summary": "Public URL of VAPT LP and WebAPI is not working",
+"status": "Completed",
+"type": "Issue",
+"priority": "Medium",
+"labels": [],
+"created": "2022-09-16",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-2341",
+"summary": "DB Upgrade for VAPT Partner portal",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2022-09-16",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-2322",
+"summary": "DB Upgrade for VAPT",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2022-09-15",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-2319",
+"summary": "Public URL for VAPT DataCatalog",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2022-09-15",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-15334",
+"summary": "Solution should be VAPT Complaint",
+"status": "Done",
+"type": "Task",
+"priority": "Medium",
+"labels": [
+"NonFunctionalRequirements",
+"WF-MILESTONE-3"
+],
+"created": "2022-08-25",
+"resolution": "Done",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-15264",
+"summary": "MFS | Possible DOS attack",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"DPCFX:2022-Aug",
+"Triaged",
+"expresslane"
+],
+"created": "2022-08-24",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-2054",
+"summary": "Public URL for VAPT Portal",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2022-08-11",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-2050",
+"summary": "Request to restore DB in VAPT server",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2022-08-10",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-15203",
+"summary": "VAPT Test Result with Issue from Mahindra Project",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"DPCFX:2022-Sep"
+],
+"created": "2022-08-10",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-15175",
+"summary": "FRWK: VAPT Testing Bugs",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"vulnerability"
+],
+"created": "2022-08-01",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-1886",
+"summary": "Script Execution in MFS Staging | VAPT Testing user creation",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Highest",
+"labels": [],
+"created": "2022-07-26",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-1859",
+"summary": "Script Execution on CP_VAPT",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2022-07-23",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-1858",
+"summary": "Script Execution on VAPT DB",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2022-07-23",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-1848",
+"summary": "Database Backup from use2lwintprddb01.850f952d4987.database.windows.net,1433",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2022-07-22",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-1798",
+"summary": "Public URL for VAPT DocPortal",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2022-07-19",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-1761",
+"summary": "DB Upgrade for VAPT",
+"status": "Completed",
+"type": "Service Request",
+"priority": "Medium",
+"labels": [],
+"created": "2022-07-13",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "TDM-3820",
+"summary": "Confirm Folders (or Categories) are not rendered in the side bar if not available to user by RBS",
+"status": "To Do",
+"type": "Task",
+"priority": "High",
+"labels": [
+"Analysis",
+"Client_Impact",
+"P1",
+"RBDefectBacklog",
+"RB_Oct_P1",
+"ReportbuilderUI",
+"Security"
+],
+"created": "2022-07-07",
+"resolution": null,
+"project": "TDM",
+"components": []
+},
+{
+"key": "TDM-3819",
+"summary": "Attempting to create a secured folder within an available category",
+"status": "Open",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"Analysis",
+"P1",
+"RBDefectBacklog",
+"RB_Oct_P1",
+"ReportAdmin",
+"Security"
+],
+"created": "2022-07-07",
+"resolution": null,
+"project": "TDM",
+"components": []
+},
+{
+"key": "TLWA-19",
+"summary": "Able to access parts of application without logging in to RB",
+"status": "Open",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"Vulnerability"
+],
+"created": "2022-06-25",
+"resolution": null,
+"project": "TLWA",
+"components": []
+},
+{
+"key": "FRWK-14951",
+"summary": "Cookies Issued Without User Consent",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"VAPT"
+],
+"created": "2022-06-24",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-1600",
+"summary": "Public URL for VAPT Report Builder",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2022-06-23",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-1599",
+"summary": "DB for VAPT Report Builder",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2022-06-23",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-14887",
+"summary": "Unencrypted communications",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"VAPT"
+],
+"created": "2022-06-15",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-14886",
+"summary": "SQL injection",
+"status": "Open",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"VAPT"
+],
+"created": "2022-06-15",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-1457",
+"summary": "VAPT env's - All portals facing SQL server connectivity issue",
+"status": "Completed",
+"type": "Issue",
+"priority": "Medium",
+"labels": [],
+"created": "2022-06-08",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-14623",
+"summary": "Use of JavaScript Library with Known Vulnerability: Vulnerable javascript library: jQuery.ui.dialog",
+"status": "Released",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"DPCFX:2022-May"
+],
+"created": "2022-04-29",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FIS02-4401",
+"summary": "Use of JavaScript Library with Known Vulnerability: Vulnerable javascript library: jQuery.ui.dialog",
+"status": "Closed",
+"type": "Bug",
+"priority": "Highest",
+"labels": [
+"BUG_FIX_November,2022",
+"PGL"
+],
+"created": "2022-04-29",
+"resolution": "Resolved",
+"project": "FIS02",
+"components": []
+},
+{
+"key": "TDB01-376964",
+"summary": "VAPT | Performance - March'22 PI",
+"status": "Completed",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2022-04-28",
+"resolution": "Delivered",
+"project": "TDB01",
+"components": [
+"Governance/Artifacts"
+]
+},
+{
+"key": "CO-1199",
+"summary": "VAPT env's - Lessor & Vendor portal not working",
+"status": "Completed",
+"type": "Issue",
+"priority": "Medium",
+"labels": [],
+"created": "2022-04-26",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-14595",
+"summary": "VAPT Testing - Removal of cookie clientTimeZoneId from application",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [],
+"created": "2022-04-26",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-1141",
+"summary": "Fiserv | Environment For VAPT Testing",
+"status": "Done",
+"type": "Environment Request",
+"priority": "Medium",
+"labels": [],
+"created": "2022-04-11",
+"resolution": "Resolved",
+"project": "CO",
+"components": []
+},
+{
+"key": "TDB01-702",
+"summary": "VAPT | Performance - Dec'21 PI",
+"status": "Completed",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2022-01-28",
+"resolution": "Resolved",
+"project": "TDB01",
+"components": [
+"Governance/Artifacts"
+]
+},
+{
+"key": "FRWK-13870",
+"summary": "Server Error Message",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"VAPT"
+],
+"created": "2021-12-13",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-13869",
+"summary": "Use of JavaScript Library with Known Vulnerability",
+"status": "Open",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"VAPT"
+],
+"created": "2021-12-13",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-13868",
+"summary": "Session Cookie (Authentication Related) Does Not Contain The \"secure\" Attribute",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"VAPT"
+],
+"created": "2021-12-13",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-13867",
+"summary": "Session Cookie (Authentication Related) Does Not Contain The \"HTTPOnly\" Attribute",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"VAPT"
+],
+"created": "2021-12-13",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-13793",
+"summary": "Session Token in URL",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"VAPT"
+],
+"created": "2021-12-02",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-13742",
+"summary": "Strict transport security not enforced",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"VAPT"
+],
+"created": "2021-11-26",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-13741",
+"summary": "Link manipulation (DOM-based)",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"VAPT"
+],
+"created": "2021-11-26",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-13740",
+"summary": "Open redirection (DOM-based)",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"VAPT"
+],
+"created": "2021-11-26",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-13738",
+"summary": "Vulnerable JavaScript dependency",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"VAPT"
+],
+"created": "2021-11-26",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-616",
+"summary": "DB script and access request",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2021-11-08",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "OIT01-1291",
+"summary": "To clear Medium vapt - SMB Signing is not required",
+"status": "Closed",
+"type": "Change Request",
+"priority": "Medium",
+"labels": [],
+"created": "2021-10-21",
+"resolution": "Done",
+"project": "OIT01",
+"components": []
+},
+{
+"key": "CO-564",
+"summary": "upgrading VAPT site to August Release",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2021-09-28",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "FRWK-13307",
+"summary": "Verbose Error Messages (with Stack Trace)",
+"status": "Open",
+"type": "Bug",
+"priority": "Medium",
+"labels": [],
+"created": "2021-09-21",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-537",
+"summary": "VAPT sites are down",
+"status": "Completed",
+"type": "Issue",
+"priority": "Medium",
+"labels": [],
+"created": "2021-09-16",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "TDM-2515",
+"summary": "PNC | Session Not Terminated After Logout",
+"status": "Blocked",
+"type": "Bug",
+"priority": "Highest",
+"labels": [
+"ClientTicketLinked",
+"Client_Impact",
+"DPC-Dec22",
+"DPC-Jan23",
+"P1",
+"R1",
+"ReportbuilderUI",
+"Security"
+],
+"created": "2021-08-24",
+"resolution": "Resolved",
+"project": "TDM",
+"components": []
+},
+{
+"key": "OIT01-1254",
+"summary": "Exceptional for Weak SSL/TLS Configuration",
+"status": "Completed",
+"type": "Audit",
+"priority": "Medium",
+"labels": [],
+"created": "2021-08-20",
+"resolution": "Explained",
+"project": "OIT01",
+"components": []
+},
+{
+"key": "OIT01-1250",
+"summary": "Weak SSL/TLS Configuration-VAPT",
+"status": "Completed",
+"type": "Audit",
+"priority": "Medium",
+"labels": [],
+"created": "2021-08-18",
+"resolution": "Resolved",
+"project": "OIT01",
+"components": []
+},
+{
+"key": "OIT01-1249",
+"summary": "Weak SSH Key Exchange Algorithm-VAPT-Switches",
+"status": "Completed",
+"type": "Audit",
+"priority": "Medium",
+"labels": [],
+"created": "2021-08-18",
+"resolution": "Resolved",
+"project": "OIT01",
+"components": []
+},
+{
+"key": "OIT01-1248",
+"summary": "Weak SSH Key Exchange Algorithm-VAPT",
+"status": "Completed",
+"type": "Audit",
+"priority": "Medium",
+"labels": [],
+"created": "2021-08-18",
+"resolution": "Resolved",
+"project": "OIT01",
+"components": []
+},
+{
+"key": "CO-451",
+"summary": "Restart the VAPT server",
+"status": "Completed",
+"type": "Issue",
+"priority": "Medium",
+"labels": [],
+"created": "2021-08-17",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-447",
+"summary": "Public URL for VAPT user manual site",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2021-08-17",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "PROD01-32712",
+"summary": "Sensitive Data in Query String Parameter",
+"status": "Closed",
+"type": "Bug",
+"priority": "Low",
+"labels": [],
+"created": "2021-08-13",
+"resolution": "Duplicate",
+"project": "PROD01",
+"components": []
+},
+{
+"key": "FRWK-13025",
+"summary": "Invalid login attempts validation not there in WebApi",
+"status": "Closed",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"VAPT"
+],
+"created": "2021-08-13",
+"resolution": "Cannot Reproduce",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-13024",
+"summary": "\"Cache-Control\" headers is not set to \"no-store, no-cache\" for APIs",
+"status": "Open",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"DevAnalysis",
+"VAPT"
+],
+"created": "2021-08-13",
+"resolution": null,
+"project": "FRWK",
+"components": []
+},
+{
+"key": "FRWK-13023",
+"summary": "Sensitive information revealed in the tracer",
+"status": "Closed",
+"type": "Requirements",
+"priority": "Low",
+"labels": [
+"VAPT"
+],
+"created": "2021-08-13",
+"resolution": "Resolved",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "CO-443",
+"summary": "VAPT sites are down",
+"status": "Completed",
+"type": "Issue",
+"priority": "Medium",
+"labels": [],
+"created": "2021-08-13",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "DEMO-414",
+"summary": "Verbose Server Banner",
+"status": "Done",
+"type": "Story",
+"priority": "Lowest",
+"labels": [
+"Security",
+"Vulnerability"
+],
+"created": "2021-08-13",
+"resolution": "Cannot Reproduce",
+"project": "DEMO",
+"components": []
+},
+{
+"key": "DEMO-413",
+"summary": "User Manual button redirects to different domain",
+"status": "Done",
+"type": "Story",
+"priority": "Lowest",
+"labels": [
+"Security",
+"Vulnerability"
+],
+"created": "2021-08-13",
+"resolution": "Resolved",
+"project": "DEMO",
+"components": []
+},
+{
+"key": "DEMO-419",
+"summary": "HTTP Strict Transport Security (HSTS) Not Implemented",
+"status": "Done",
+"type": "Story",
+"priority": "Low",
+"labels": [
+"Security",
+"Vulnerability"
+],
+"created": "2021-08-13",
+"resolution": "Resolved",
+"project": "DEMO",
+"components": []
+},
+{
+"key": "DEMO-418",
+"summary": "Directory Listing Enabled",
+"status": "Done",
+"type": "Story",
+"priority": "Low",
+"labels": [
+"Security",
+"Vulnerability"
+],
+"created": "2021-08-13",
+"resolution": "Resolved",
+"project": "DEMO",
+"components": []
+},
+{
+"key": "DEMO-417",
+"summary": "Verbose Error Messages (with Stack Trace)",
+"status": "Done",
+"type": "Story",
+"priority": "Low",
+"labels": [
+"Security",
+"Vulnerability"
+],
+"created": "2021-08-13",
+"resolution": "Resolved",
+"project": "DEMO",
+"components": []
+},
+{
+"key": "FRWK-13022",
+"summary": "Verbose Error Messages (with Stack Trace)",
+"status": "Closed",
+"type": "Bug",
+"priority": "Low",
+"labels": [
+"VAPT"
+],
+"created": "2021-08-13",
+"resolution": "Explained",
+"project": "FRWK",
+"components": []
+},
+{
+"key": "OIT01-1233",
+"summary": "VPN access for software user to carryout VAPT",
+"status": "Open",
+"type": "Change Request",
+"priority": "Medium",
+"labels": [],
+"created": "2021-07-21",
+"resolution": null,
+"project": "OIT01",
+"components": []
+},
+{
+"key": "OIT01-1231",
+"summary": "NESUS Tool for Internal VAPT",
+"status": "To Do",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2021-07-20",
+"resolution": null,
+"project": "OIT01",
+"components": []
+},
+{
+"key": "OIT01-1229",
+"summary": "Weekly status update on VAPT",
+"status": "To Do",
+"type": "Task",
+"priority": "Medium",
+"labels": [],
+"created": "2021-07-20",
+"resolution": null,
+"project": "OIT01",
+"components": []
+},
+{
+"key": "OIT01-1222",
+"summary": "VAPT clearance on Prod Servers",
+"status": "In Progress",
+"type": "Change Request",
+"priority": "Medium",
+"labels": [],
+"created": "2021-07-14",
+"resolution": null,
+"project": "OIT01",
+"components": []
+},
+{
+"key": "CO-372",
+"summary": "VAPT Testing DB restore and SSRS config",
+"status": "Completed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [],
+"created": "2021-07-08",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-362",
+"summary": "VAPT - Create VM for VAPT testing July",
+"status": "Completed",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [],
+"created": "2021-07-05",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-203",
+"summary": "Cloud env for doing VAPT- Test Schedule- July 21",
+"status": "Done",
+"type": "Environment Request",
+"priority": "Medium",
+"labels": [],
+"created": "2021-05-25",
+"resolution": "Resolved",
+"project": "CO",
+"components": []
+},
+{
+"key": "OIT01-1179",
+"summary": "VAPT March 2021",
+"status": "To Do",
+"type": "Audit",
+"priority": "Medium",
+"labels": [],
+"created": "2021-05-13",
+"resolution": null,
+"project": "OIT01",
+"components": []
+},
+{
+"key": "CO-81",
+"summary": "Backup and delete backup for VAPT test environment.",
+"status": "Completed",
+"type": "Sub-task",
+"priority": "Medium",
+"labels": [],
+"created": "2021-04-19",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-24",
+"summary": "Backup of VAPT env",
+"status": "Done",
+"type": "Environment Request",
+"priority": "Medium",
+"labels": [],
+"created": "2021-03-04",
+"resolution": "Resolved",
+"project": "CO",
+"components": []
+},
+{
+"key": "CO-18",
+"summary": "GTM : VAPT Testing Environment Readiness - March 2021",
+"status": "Done",
+"type": "Environment Request",
+"priority": "Medium",
+"labels": [
+"GTM"
+],
+"created": "2021-02-15",
+"resolution": "Done",
+"project": "CO",
+"components": []
+},
+{
+"key": "MFM01-823",
+"summary": "Review - Permission Retention in Lower environments",
+"status": "Completed",
+"type": "Task",
+"priority": "Low",
+"labels": [
+"LW5Impact",
+"Security"
+],
+"created": "2020-06-05",
+"resolution": "Deferred",
+"project": "MFM01",
+"components": []
+},
+{
+"key": "MIZ01-291",
+"summary": "Encryption of LW Config files",
+"status": "Completed",
+"type": "Task",
+"priority": "Medium",
+"labels": [
+"security"
+],
+"created": "2020-05-20",
+"resolution": "Done",
+"project": "MIZ01",
+"components": []
+},
+{
+"key": "MIZ01-288",
+"summary": "Authentication Queries related to AD  Users and Multiple AD in LW",
+"status": "Completed",
+"type": "Question",
+"priority": "High",
+"labels": [
+"security"
+],
+"created": "2020-05-15",
+"resolution": "Done",
+"project": "MIZ01",
+"components": []
+},
+{
+"key": "PROD-6617",
+"summary": "Product Certification :  VAPT to ensure no security vulnerabilities exist on Azure environment",
+"status": "To Do",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [
+"Certification",
+"CloudProgram",
+"mustHave"
+],
+"created": "2020-03-30",
+"resolution": null,
+"project": "PROD",
+"components": []
+},
+{
+"key": "TD02-85",
+"summary": "Has the solution been verified and validated that third party, open source, and commercially obtained software, components, libraries, and frameworks used by the solution are safe and secure to use?",
+"status": "To Do",
+"type": "Task",
+"priority": "Medium",
+"labels": [
+"Security"
+],
+"created": "2020-01-27",
+"resolution": null,
+"project": "TD02",
+"components": []
+},
+{
+"key": "BFSC04-192",
+"summary": "Persist value of \"IsRollUpSecurityDeposit\" in table",
+"status": "Closed",
+"type": "Bug",
+"priority": "High",
+"labels": [
+"Roll",
+"Security",
+"up"
+],
+"created": "2019-11-26",
+"resolution": "Done",
+"project": "BFSC04",
+"components": []
+},
+{
+"key": "MFM01-461",
+"summary": "165931 - Screen Permissions - Security Access",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"Roles",
+"Security"
+],
+"created": "2019-01-21",
+"resolution": "Deferred",
+"project": "MFM01",
+"components": []
+},
+{
+"key": "MFM01-399",
+"summary": "TFS62429 - Early Termination Link not working to Payment Schedule",
+"status": "Closed",
+"type": "Bug",
+"priority": "Medium",
+"labels": [
+"ContractManagement",
+"Security"
+],
+"created": "2018-11-22",
+"resolution": "Explained",
+"project": "MFM01",
+"components": []
+},
+{
+"key": "LBC01-518",
+"summary": "Securities-Activity Center must display the LTV value at Contract Level",
+"status": "Deferred",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [
+"Security"
+],
+"created": "2017-03-03",
+"resolution": null,
+"project": "LBC01",
+"components": []
+},
+{
+"key": "LBC01-517",
+"summary": "Securities-Third Party Relationship - Value Tracking Fields",
+"status": "Deferred",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [
+"Security"
+],
+"created": "2017-03-03",
+"resolution": null,
+"project": "LBC01",
+"components": []
+},
+{
+"key": "LBC01-516",
+"summary": "Securities-Activity Center must display the list of all Collateral Assets pledged by the customer",
+"status": "Deferred",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [
+"Security"
+],
+"created": "2017-03-03",
+"resolution": null,
+"project": "LBC01",
+"components": []
+},
+{
+"key": "LBC01-515",
+"summary": "Securities-Activity Center must display the list of all Additional Securities offered by the customer",
+"status": "Deferred",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [
+"Security"
+],
+"created": "2017-03-03",
+"resolution": null,
+"project": "LBC01",
+"components": []
+},
+{
+"key": "LBC01-514",
+"summary": "Securities-Additional Securities - Lease Level Editing",
+"status": "Deferred",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [
+"DesignSprintScope3",
+"Security"
+],
+"created": "2017-03-03",
+"resolution": null,
+"project": "LBC01",
+"components": []
+},
+{
+"key": "LBC01-513",
+"summary": "Securities-Additional Securities - Lease Level",
+"status": "Deferred",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [
+"DesignSprintScope3",
+"Security"
+],
+"created": "2017-03-03",
+"resolution": null,
+"project": "LBC01",
+"components": []
+},
+{
+"key": "LBC01-512",
+"summary": "Securities-Additional Securities - Proposal Level Editing",
+"status": "Closed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [
+"DesignSprintScope3",
+"Security"
+],
+"created": "2017-03-03",
+"resolution": "Won't Do",
+"project": "LBC01",
+"components": []
+},
+{
+"key": "LBC01-511",
+"summary": "Securities-Additional Securities - Proposal Level",
+"status": "Closed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [
+"DesignSprintScope3",
+"Security"
+],
+"created": "2017-03-03",
+"resolution": "Won't Do",
+"project": "LBC01",
+"components": []
+},
+{
+"key": "LBC01-510",
+"summary": "Securities-Additional Securities - Customer Level Editing",
+"status": "Deferred",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [
+"DesignSprintScope3",
+"Security"
+],
+"created": "2017-03-03",
+"resolution": null,
+"project": "LBC01",
+"components": []
+},
+{
+"key": "LBC01-509",
+"summary": "Securities-Additional Securities - Customer Level",
+"status": "Deferred",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [
+"DesignSprintScope3",
+"Security"
+],
+"created": "2017-03-03",
+"resolution": null,
+"project": "LBC01",
+"components": []
+},
+{
+"key": "LBC01-508",
+"summary": "Securities-Additional Securities - System Level Library",
+"status": "Deferred",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [
+"DesignSprintScope3",
+"Security"
+],
+"created": "2017-03-03",
+"resolution": null,
+"project": "LBC01",
+"components": []
+},
+{
+"key": "LBC01-507",
+"summary": "Securities-Additional Securities Tracking",
+"status": "Deferred",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [
+"DesignSprintScope3",
+"Security"
+],
+"created": "2017-03-03",
+"resolution": null,
+"project": "LBC01",
+"components": []
+},
+{
+"key": "LBC01-81",
+"summary": "Securities-Ability to file lien for additional securities at the customer level for customer securities",
+"status": "Closed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [
+"ApprovalWeek4b",
+"DesignSprintDeferred2",
+"DesignSprintScope3",
+"Security"
+],
+"created": "2017-01-24",
+"resolution": "Won't Do",
+"project": "LBC01",
+"components": []
+},
+{
+"key": "KF00-155",
+"summary": "Any \"Security Deposit\" collected by Telco against an asset should be maintained at lease level in LW",
+"status": "Closed",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [
+"Deposit",
+"M1",
+"Security"
+],
+"created": "2016-12-27",
+"resolution": "No Response",
+"project": "KF00",
+"components": []
+},
+{
+"key": "OTI02-142",
+"summary": "System requires SSO",
+"status": "Open",
+"type": "Requirements",
+"priority": "Medium",
+"labels": [
+"Security"
+],
+"created": "2016-08-23",
+"resolution": null,
+"project": "OTI02",
+"components": []
+}
+]

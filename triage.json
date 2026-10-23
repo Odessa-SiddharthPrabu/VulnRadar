@@ -1,0 +1,988 @@
+{
+ "feeds": {},
+ "findings": {
+  "28f271b7c03f": {
+   "id": "VR-001",
+   "title": "Pre-login lookups reveal whether an account exists",
+   "severity": "Medium",
+   "stage": "Assessed",
+   "verdict": "Verified",
+   "status": "Open",
+   "jiraRefs": [
+    "BNP01-7890",
+    "FRWK-25518",
+    "BNP01-2770",
+    "FRWK-25935"
+   ],
+   "notes": "Four actions on the login controller take a login name and answer differently per account, with no authentication, no HTTP verb restriction and no throttling in this controller: GetBusinessUnitInfos returns the business-unit list or the NoBUsAssigned message; GetDefaultCultureInfo returns a culture or NoDefaultCulture; IsShowForgotPasswordLink returns a per-user flag; GetConnectionKeysForSecurityAdmin returns connection keys for any login name. Each is an enumeration oracle and matches the open pentest item BNP01-7890 (GetBusinessUnitInfos). Fix: return one uniform response for unknown and known users, move these behind [HttpPost] with rate limiting, and require authentication for GetConnectionKeysForSecurityAdmin."
+  },
+  "ba40bac7c29f": {
+   "id": "VR-002",
+   "title": "Login trusts an authentication context read from a cookie",
+   "severity": "High",
+   "stage": "Assessed",
+   "verdict": "Needs investigation",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-25928",
+    "FRWK-25929",
+    "FRWK-24208"
+   ],
+   "notes": "BeforeLogin() deserialises the ExtLoginDetails request cookie into ExternalAuthenticationContext (lines 54-64). If IsAuthenticationSuccessful is true, Authenticate becomes false and LogonUser() calls Model.LoginUser(false) with the user name taken from that context (lines 127-134), so no password is checked. This is safe only if CookieExtensions.SetCookie(..., true)/GetCookie encrypt and sign the value. Confirm in Lw.System.Web; if the cookie is only HttpOnly, a forged cookie could log in as any user (Critical)."
+  },
+  "1043ec6f3e7c": {
+   "id": "VR-003",
+   "title": "Login and password-reset POST actions have no anti-forgery check",
+   "severity": "Medium",
+   "stage": "Assessed",
+   "verdict": "Needs investigation",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-25931",
+    "FRWK-21877"
+   ],
+   "notes": "LogonUser, ForgotPassword, ResetPassword and UpdateCulture are [HttpPost] without [ValidateAntiForgeryToken]. LogonUser only checks that a Referer header is present (line 112), which is a weak CSRF control. Verify whether a global anti-forgery filter is registered for the portal; if not, add the attribute and the token to the login views. New evidence (Lw.System.Web/Mvc/AbstractController.cs lines 22-28): the base controller applies LogAction, MvcException, RequestHashCodeValidation and ContentSecurityPolicy filters but no anti-forgery filter. Next, check what RequestHashCodeValidationFilter validates and whether an anti-forgery filter is registered globally at startup."
+  },
+  "8a1419d6de16": {
+   "id": "VR-004",
+   "title": "Change-password POST has no anti-forgery check",
+   "severity": "Medium",
+   "stage": "Assessed",
+   "verdict": "Needs investigation",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-25931",
+    "FRWK-21877"
+   ],
+   "notes": "ChangePassword() is [HttpPost] without [ValidateAntiForgeryToken]. Session validation is also skipped when the reset-link flow is active (ShouldValidateSession, lines 141-150). Same check as VR-003: confirm whether a global anti-forgery filter covers this controller. New evidence: AbstractController (line 22-28) applies no anti-forgery filter; check RequestHashCodeValidationFilter and the global filter registration."
+  },
+  "fbe68b83bfe2": {
+   "id": "VR-005",
+   "title": "Login controller actions that change state accept GET",
+   "severity": "Medium",
+   "stage": "Assessed",
+   "verdict": "Verified",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-25933",
+    "FRWK-22424",
+    "FRWK-24096"
+   ],
+   "notes": "SetUIRenderingModePreference(bool) writes a user preference and UpdateRepositoryConnection(string) changes the repository connection on the model. Neither has an HTTP verb attribute, so MVC accepts GET, which is the POST-to-GET class reported in FRWK-25933 (open). SetUIRenderingModePreference uses LoggedInUserId.GetValueOrDefault(), so an anonymous call writes for user id 0. Add [HttpPost] and anti-forgery validation; check what UpdateRepositoryConnection allows an unauthenticated caller to change."
+  },
+  "877fd2807650": {
+   "group": "fbe68b83bfe2"
+  },
+  "eeb80d3217ed": {
+   "id": "VR-006",
+   "title": "LoginFailure() flagged by the GET rule",
+   "severity": "Low",
+   "stage": "Assessed",
+   "verdict": "Not applicable",
+   "status": "Not applicable",
+   "jiraRefs": [],
+   "notes": "Not applicable: LoginFailure() only returns the LoginFailure view and changes no state. The rule matched on the 'Login' prefix."
+  },
+  "dae2d5d7a3d4": {
+   "id": "VR-007",
+   "title": "ChangePassword Login() flagged by the GET rule",
+   "severity": "Low",
+   "stage": "Assessed",
+   "verdict": "Not applicable",
+   "status": "Not applicable",
+   "jiraRefs": [],
+   "notes": "Not applicable: Login() only redirects to LogoffController and changes no state."
+  },
+  "3499c9c286a2": {
+   "id": "VR-008",
+   "title": "Password-reset token travels in the URL",
+   "severity": "Low",
+   "stage": "Assessed",
+   "verdict": "Verified",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-24101",
+    "FRWK-23748"
+   ],
+   "notes": "SetPassword(string id) is a GET target for the e-mailed reset link, so the token appears in the URL, server logs and any Referer sent from the page. That is expected for e-mail links; keep it safe by making the token single-use with a short expiry, setting Referrer-Policy: no-referrer on this page, and exchanging the token for a POST form immediately."
+  },
+  "6827e8a3ca58": {
+   "id": "VR-009",
+   "title": "Detailed ASP.NET error pages enabled",
+   "severity": "Medium",
+   "stage": "Assessed",
+   "verdict": "Verified",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-25523",
+    "FRWK-13307",
+    "FRWK-19025"
+   ],
+   "notes": "The base Web.config shipped in the framework sets customErrors mode=\"Off\", so unhandled exceptions return stack traces and framework versions to the browser. Matches FRWK-25523 (open, server-side details revealed). Ship mode=\"RemoteOnly\" or \"On\" and rely on environment transforms only to relax it."
+  },
+  "474dba9aca4b": {
+   "id": "VR-010",
+   "title": "Debug compilation enabled in base Web.config",
+   "severity": "Low",
+   "stage": "Assessed",
+   "verdict": "Verified",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-25523"
+   ],
+   "notes": "compilation debug=\"true\" disables batch optimisations and makes error output more detailed. Set debug=\"false\" in the shipped config."
+  },
+  "ed6255b0e3ca": {
+   "id": "VR-011",
+   "title": "ELMAH error log reachable remotely",
+   "severity": "High",
+   "stage": "Assessed",
+   "verdict": "Verified",
+   "status": "Open",
+   "jiraRefs": [
+    "BNP01-7604",
+    "FRWK-25930"
+   ],
+   "notes": "elmah.axd is mapped for POST, GET and HEAD (lines 71 and 110) and <elmah><security allowRemoteAccess=\"1\"/> (line 175) allows it from any client. No <location path=\"elmah.axd\"> authorisation rule exists in this file. ELMAH logs keep full request details, including cookies and form fields, which is the exposure behind BNP01-7604 and FRWK-25930. Set allowRemoteAccess=\"0\" and restrict elmah.axd to administrators, or remove the handler from production."
+  },
+  "9fc2f21bb9da": {
+   "id": "VR-012",
+   "title": "HSTS header commented out",
+   "severity": "Medium",
+   "stage": "Assessed",
+   "verdict": "Verified",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-25522",
+    "FRWK-21212",
+    "FRWK-13742"
+   ],
+   "notes": "Strict-Transport-Security is present only as a comment ('Enable the following in secured site', line 140). Three HSTS tickets are still open. Emit it from code when the request is HTTPS so every deployment gets it without editing config."
+  },
+  "2e7a0e63adfe": {
+   "id": "VR-013",
+   "title": "No Content-Security-Policy in Web.config",
+   "severity": "Medium",
+   "stage": "Assessed",
+   "verdict": "Needs investigation",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-25520",
+    "FRWK-19745",
+    "FRWK-21213"
+   ],
+   "notes": "customHeaders sets X-Content-Type-Options, X-Frame-Options and X-XSS-Protection but no Content-Security-Policy. CSP work was closed earlier (FRWK-21463), so the header may be added in code; confirm in the response pipeline before treating this as missing. New evidence (Lw.System.Web/Mvc/AbstractController.cs line 25): the base class of all portal controllers applies [ContentSecurityPolicyFilter], so MVC responses get a CSP from code. Check the policy that filter emits and whether static files and error pages are covered before closing this."
+  },
+  "abb243d1bd2b": {
+   "id": "VR-014",
+   "title": "Cookies not forced to Secure",
+   "severity": "Medium",
+   "stage": "Assessed",
+   "verdict": "Verified",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-23268",
+    "FRWK-23908",
+    "FRWK-13868"
+   ],
+   "notes": "<httpCookies httpOnlyCookies=\"true\"/> is active and the requireSSL=\"true\" variant is commented out (lines 76-78); no sameSite is set. Earlier Secure/SameSite tickets were closed, but the base config still ships without them, so any deployment that keeps the default repeats the finding."
+  },
+  "b550d0af0096": {
+   "id": "VR-015",
+   "title": "SMTP password stored in plain text",
+   "severity": "Medium",
+   "stage": "Assessed",
+   "verdict": "Needs investigation",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-24107",
+    "FRWK-22075"
+   ],
+   "notes": "<network host=\"mail.odessatech.in\" userName=\"no-reply@odessatech.in\" password=\"...\"/> is committed in the base Web.config (line 170). The value looks like a placeholder; confirm it is not a live credential, rotate it if it is, and load it from Key Vault (the AzureKeyVault config builder is already declared at line 22)."
+  },
+  "c44fc19cb835": {
+   "id": "VR-016",
+   "title": "Session idle timeout of 120 minutes",
+   "severity": "Low",
+   "stage": "Assessed",
+   "verdict": "Verified",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-19741"
+   ],
+   "notes": "sessionState timeout=\"120\". FRWK-19741 (insufficient session expiration) is open. Consider 15-30 minutes for the portal, or document the business reason."
+  },
+  "36e772bf1921": {
+   "id": "VR-017",
+   "title": "Request size limit of 4 GB",
+   "severity": "Low",
+   "stage": "Assessed",
+   "verdict": "Verified",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-15264",
+    "FRWK-22090"
+   ],
+   "notes": "maxAllowedContentLength=\"4294967295\" (IIS) with maxRequestLength 214748 KB (about 210 MB, ASP.NET). Very large uploads allow resource exhaustion. Set the limit to the largest file the business needs and enforce it per upload endpoint."
+  },
+  "dcd2a75989d1": {
+   "id": "VR-018",
+   "title": "Service endpoints over plain HTTP with internal hosts",
+   "severity": "Low",
+   "stage": "Assessed",
+   "verdict": "Verified",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-14887",
+    "FRWK-24099"
+   ],
+   "notes": "TValue, Vertex (192.168.10.88) and SSRS (lwproddb-012) endpoints use http:// in the base config. Traffic to them is unencrypted and the file discloses internal host names and IPs. Use HTTPS endpoints and supply them per environment."
+  },
+  "man-reset-enum": {
+   "id": "VR-019",
+   "title": "Password reset reveals accounts with a pending reset link",
+   "severity": "Medium",
+   "stage": "Assessed",
+   "verdict": "Verified",
+   "status": "Open",
+   "jiraRefs": [
+    "BNP01-7610",
+    "FRWK-25518"
+   ],
+   "notes": "ValidateResetPasswordInput() throws ResetPasswordLinkShared only when the account exists and already has a valid link (lines 388-389); unknown accounts get a different result. This is the behaviour in open pentest item BNP01-7610. Return the same message for every request."
+  },
+  "745a0d1dd946": {
+   "id": "VR-020",
+   "title": "js-cookie 3.0.5 is affected by a cookie-attribute injection advisory",
+   "severity": "High",
+   "stage": "Assessed",
+   "verdict": "Verified",
+   "status": "Open",
+   "layer": "Base",
+   "jiraRefs": [
+    "FRWK-25932",
+    "FRWK-23906"
+   ],
+   "notes": "Lw.WebPortal/Scripts/js.cookie.js declares js-cookie v3.0.5 in its header, inside the affected range (<=3.0.5) of GHSA-qjx8-664m-686j (CWE-1321, CVSS 7.5): a per-instance prototype hijack in assign() lets an attacker inject cookie attributes. This advisory is not in the Jira VAPT history, so it is new to the organisation; a vendor scan that fingerprints library versions would report it as an outdated library (the class of FRWK-25932, open). Reachability: framework.common.js line 2896 calls Cookies.set(cookieName, value) without an attributes object, which lowers the risk, but other callers were not checked. Fix: upgrade js-cookie to the first patched release listed in the advisory and re-run VulnRadar."
+  },
+  "015e48af658e": {
+   "id": "VR-021",
+   "title": "braces 3.0.3 (build tooling) is affected by a denial-of-service advisory",
+   "severity": "Low",
+   "stage": "Assessed",
+   "verdict": "Verified",
+   "status": "Open",
+   "layer": "Base",
+   "jiraRefs": [
+    "FRWK-25932"
+   ],
+   "notes": "package-lock.json pins braces 3.0.3 (a dev dependency of chokidar in the SASS/JS asset pipeline), inside the affected range (<=3.0.3) of GHSA-vfj7-8cjw-p6xm (CVSS 7.5, stack exhaustion on deeply nested patterns). It runs only on developer and build machines and is not shipped to browsers, so the practical severity is Low. Fix: npm update braces (or chokidar) and commit the lock file."
+  },
+  "751bb54c0c23": {
+   "id": "VR-022",
+   "title": "immutable 5.1.5 (build tooling) is affected by two denial-of-service advisories",
+   "severity": "Low",
+   "stage": "Assessed",
+   "verdict": "Verified",
+   "status": "Open",
+   "layer": "Base",
+   "jiraRefs": [
+    "FRWK-25932"
+   ],
+   "notes": "package-lock.json pins immutable 5.1.5 (pulled in by sass), inside the affected range (>=5.0.0-beta.1 <5.1.8) of GHSA-v56q-mh7h-f735 (CVSS 7.5) and GHSA-xvcm-6775-5m9r. Build-time only, so practical severity is Low. Fix: update sass so immutable resolves to 5.1.8 or later."
+  },
+  "4b82e12d060d": {
+   "id": "VR-023",
+   "title": "source-map-js 1.2.1 (build tooling) is affected by a denial-of-service advisory",
+   "severity": "Low",
+   "stage": "Assessed",
+   "verdict": "Verified",
+   "status": "Open",
+   "layer": "Base",
+   "jiraRefs": [
+    "FRWK-25932"
+   ],
+   "notes": "package-lock.json pins source-map-js 1.2.1 (pulled in by sass), inside the affected range (>=1.0.0 <1.2.2) of GHSA-68fv-2mgg-jv7q (CVSS 7.5). Build-time only, so practical severity is Low. Fix: update to 1.2.2 or later."
+  },
+  "man-tfa-otp-2": {
+   "group": "man-tfa-otp-1"
+  },
+  "man-tfa-otp-3": {
+   "group": "man-tfa-otp-1"
+  },
+  "man-px-open-2": {
+   "group": "man-px-open-1"
+  },
+  "man-ta-exposed-2": {
+   "group": "man-ta-exposed-1"
+  },
+  "man-ta-exposed-202": {
+   "group": "man-ta-exposed-1"
+  },
+  "man-ta-exposed-234": {
+   "group": "man-ta-exposed-1"
+  },
+  "man-ta-exposed-289": {
+   "group": "man-ta-exposed-1"
+  },
+  "man-ta-sql-2": {
+   "group": "man-ta-sql-1"
+  },
+  "man-ta-secret-2": {
+   "group": "man-ta-secret-1"
+  },
+  "man-ta-exmsg-2": {
+   "group": "man-ta-exmsg-1"
+  },
+  "man-ta-path-445": {
+   "group": "man-ta-path-146"
+  },
+  "man-ta-path-450": {
+   "group": "man-ta-path-146"
+  },
+  "man-ta-path-485": {
+   "group": "man-ta-path-146"
+  },
+  "8dfa21d60df7": {
+   "id": "VR-024",
+   "title": "MFA actions accept GET, so one-time codes can travel in the URL",
+   "severity": "Medium",
+   "stage": "Assessed",
+   "verdict": "Verified",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-25933",
+    "FRWK-22424",
+    "FRWK-24101"
+   ],
+   "notes": "Register(string authCode) (line 166), Verify (183), Authenticate (198) and SendAuthCodeAsync (213) have no HTTP verb attribute, so MVC also accepts GET. A one-time code sent as ?authCode=... ends up in browser history, proxy and IIS logs and the Referer header, and the actions that complete MFA can be triggered from a link. This is the POST-to-GET class still open in FRWK-25933. Fix: [HttpPost] plus [ValidateAntiForgeryToken] on all four actions."
+  },
+  "c2dac51798ea": {
+   "group": "8dfa21d60df7"
+  },
+  "e4cb358f1b3c": {
+   "group": "8dfa21d60df7"
+  },
+  "7eb1062fc95d": {
+   "group": "8dfa21d60df7"
+  },
+  "man-tfa-otp-1": {
+   "id": "VR-025",
+   "severity": "Medium",
+   "stage": "Assessed",
+   "verdict": "Needs investigation",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-25935",
+    "FRWK-24102",
+    "FRWK-23758"
+   ],
+   "notes": "On a wrong code, Verify/Authenticate/Register (lines 166-211) only add a model error through OnAuthenticationFailed (line 377); no failed-attempt counter is visible in the controller. The only limiter (line 25) is a static InMemoryRateLimitingService that resets on restart and is per server, and CheckRateLimits skips every factor except e-mail (line 488), so authenticator-app codes have no limit here. Check whether Model.OnAuthStateChange(...Failed) increments a persistent counter and sets isUserBlocked; if not, a six-digit code can be brute-forced. FRWK-25935 (lack of rate limiting) and FRWK-24102 (old OTP reuse) are still open."
+  },
+  "man-tfa-dest": {
+   "id": "VR-026",
+   "severity": "High",
+   "stage": "Assessed",
+   "verdict": "Needs investigation",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-23595",
+    "FRWK-21623"
+   ],
+   "notes": "GetEmailTemplateforAuthentication sends the code to Model.FactorTrueValue ?? Model.FactorUnmaskedValue (line 325). The registered-e-mail comparison added for FRWK-23595 (IsValidEmail, lines 241-255) runs only in SendAuthCodeAsync; Index -> NavigateToVerification/NavigateToAuthentication -> SendCodeAsync uses the model value without it. If ReconstructModel can take FactorTrueValue from posted form data, a user with the password can redirect the code to their own address and bypass MFA. Confirm the model value is server-side only, or read the destination from the user record."
+  },
+  "man-tfa-log": {
+   "id": "VR-027",
+   "severity": "Medium",
+   "stage": "Assessed",
+   "verdict": "Verified",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-25927"
+   ],
+   "notes": "HandleRateLimitException writes the event with System.Diagnostics.Debug.WriteLine (line 537). Debug methods are compiled only in DEBUG builds, so OTP rate-limit events are never recorded in production, which matches the open logging and alerting finding FRWK-25927. The comment on line 536 already notes the missing audit trail."
+  },
+  "man-tfa-exmsg": {
+   "id": "VR-028",
+   "severity": "Low",
+   "stage": "Assessed",
+   "verdict": "Needs investigation",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-25523",
+    "FRWK-13307"
+   ],
+   "notes": "OnModelCreatedWithError copies ex.Message into Model.showWarningMessage (line 122) when model reconstruction fails. Confirm whether the TwoFactorAuthentication view renders it; if so, replace it with a generic message and log the exception."
+  },
+  "man-px-open-1": {
+   "id": "VR-029",
+   "severity": "Medium",
+   "stage": "Assessed",
+   "verdict": "Needs investigation",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-24208",
+    "FRWK-25928"
+   ],
+   "notes": "RedirectRequest takes everything after the proxy prefix (line 29) and the full query string and forwards it to the core site with the user's cross-site session cookie (line 38). Any core endpoint the session can reach is reachable through the portal, and the core login token is attached whenever the path merely contains 'ChangeExternalContext' (line 40). SessionValidator.ValidateSession limits this to signed-in users. Confirm which core routes the portal needs and enforce an allow-list; this is the class of FRWK-24208 (authorization flow bypass via direct backend request)."
+  },
+  "man-px-get": {
+   "id": "VR-030",
+   "severity": "Medium",
+   "stage": "Assessed",
+   "verdict": "Needs investigation",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-25931",
+    "FRWK-25933"
+   ],
+   "notes": "RedirectRequest() (line 27) forwards posted form fields and files to the core site but has no [HttpPost] and no anti-forgery validation, so a cross-site form post through the portal reaches core with the victim's session. Confirm whether a global anti-forgery filter covers ProxyController."
+  },
+  "man-ta-exposed-1": {
+   "id": "VR-031",
+   "severity": "High",
+   "stage": "Assessed",
+   "verdict": "Needs investigation",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-25928",
+    "FRWK-25929",
+    "FRWK-15839"
+   ],
+   "notes": "TestAutomationController ships in Lw.WebPortal. Its only guard is the class-level [OdessaTestAuthenticationFilter] (line 40), and IsAuthenticationRequired reports no authentication needed on Odessa domains when Lw.IsTestAutomationSecurityEnabled is false (line 61). Behind that filter, GetPortfolioParamConfigInfo, GetUserBusinessUnitInfos and GetUserPortalInfos switch to the system user for any connection name (lines 202, 234, 289) and return all approved users' login names, business units and accessible parties. Confirm how the filter authenticates callers and whether the controller is reachable in customer deployments; prefer excluding it from production builds."
+  },
+  "man-ta-sql-1": {
+   "id": "VR-032",
+   "severity": "Critical",
+   "stage": "Assessed",
+   "verdict": "Needs investigation",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-21216",
+    "FRWK-14886",
+    "BNP01-6610"
+   ],
+   "notes": "GetExecutedCommandResult(string sqlCommand, string connectionString) (line 354) runs GetSqlColumnInfo on SQL text supplied by the caller, and resolves an optional caller-supplied connection string (line 361). Depending on how GetSqlColumnInfo executes the text, this allows arbitrary SQL against the Leasewave repository and connections to any database host the server can reach. It has no verb attribute and relies only on the test-automation filter (VR-031). Confirm GetSqlColumnInfo's execution mode and remove or restrict the endpoint."
+  },
+  "man-ta-secret-1": {
+   "id": "VR-033",
+   "severity": "High",
+   "stage": "Assessed",
+   "verdict": "Verified",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-24107",
+    "FRWK-22075"
+   ],
+   "notes": "GetAutomationRepositoryConnection (lines 393-397) returns Config.ConnectionStrings.Value(AutomationRepository), the full connection string including any SQL credentials, to the caller. GetConnectionStringKeys (line 95) lists all connection names. Return only whether the connection is configured."
+  },
+  "man-ta-exmsg-1": {
+   "id": "VR-034",
+   "severity": "Medium",
+   "stage": "Assessed",
+   "verdict": "Verified",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-25523",
+    "FRWK-13307",
+    "FRWK-19025"
+   ],
+   "notes": "TestConnectionString returns \"Fail\" + ex.Message (line 112), which for SqlConnection.Open includes server names and login errors, and OnException (line 403) returns every action's exception message as RuntimeException in the JSON body."
+  },
+  "man-ta-path-146": {
+   "id": "VR-035",
+   "severity": "High",
+   "stage": "Assessed",
+   "verdict": "Needs investigation",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-22427",
+    "FRWK-17039"
+   ],
+   "notes": "UpdateFileGenerationDetails(reportLocation) (line 146), RestoreSelectedIteration(exportedPath) (445), CompressFolder(fileNames) (450) and UploadZephyrTestCases(folderPath) (485) pass request values to TestAutomationService as file-system paths, with no verb attribute. Check the service implementations: each path must be resolved under a fixed base folder and rejected if it leaves it."
+  },
+  "0f5706573b32": {
+   "id": "VR-036",
+   "title": "Test automation actions that change data accept GET",
+   "severity": "Medium",
+   "stage": "Assessed",
+   "verdict": "Verified",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-25933",
+    "FRWK-22424",
+    "FRWK-24096"
+   ],
+   "notes": "Fifteen void or state-changing actions have no HTTP verb attribute, so they also accept GET: AbortScenarioExecution, GenerateEntityData, UpdateFileGenerationDetails, SetFavouriteScenarioRun, StoreSelectedScenarioDetailLogs (deletes iterations), ShrinkDataBase, RestoreSelectedIteration, CompressFolder, PortDataAsync, UpdateRunStatus, RenameIteration, PostDataSetSource and the three UploadZephyr actions. StoreSelectedScenarioDetailLogs also falls back to a caller-supplied user name for the deletion audit (line 427). Restrict them to [HttpPost] with anti-forgery validation."
+  },
+  "8f2e992b1ae5": {
+   "group": "0f5706573b32"
+  },
+  "7df6d0edae22": {
+   "group": "0f5706573b32"
+  },
+  "552df64eaba9": {
+   "group": "0f5706573b32"
+  },
+  "f743eff80236": {
+   "group": "0f5706573b32"
+  },
+  "9ea49b408933": {
+   "group": "0f5706573b32"
+  },
+  "ad3fb984e13d": {
+   "group": "0f5706573b32"
+  },
+  "966923ac7915": {
+   "group": "0f5706573b32"
+  },
+  "52a9651c7248": {
+   "group": "0f5706573b32"
+  },
+  "946f4b7008fb": {
+   "group": "0f5706573b32"
+  },
+  "9109dae2abc5": {
+   "group": "0f5706573b32"
+  },
+  "7d311bfa4ef6": {
+   "group": "0f5706573b32"
+  },
+  "156202b39fa5": {
+   "group": "0f5706573b32"
+  },
+  "aba4e4465e00": {
+   "group": "0f5706573b32"
+  },
+  "c2e82b7707fc": {
+   "group": "0f5706573b32"
+  },
+  "3aa8f944783d": {
+   "id": "VR-037",
+   "title": "Test automation POST actions have no anti-forgery check, and none on .NET 10",
+   "severity": "Medium",
+   "stage": "Assessed",
+   "verdict": "Needs investigation",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-25931",
+    "FRWK-21877"
+   ],
+   "notes": "ExecuteScenario, ExecuteScenarioAsync, GetWorkflowConfigsAsync, GetResourceTranslations and GetEntityBehaviorConfigsAsync are [HttpPost, ValidateInput(false)] on .NET Framework, without [ValidateAntiForgeryToken]. Under #if NET they carry only [ActionName], so on .NET 10 they accept GET as well. ValidateInput(false) also turns off request validation. If the test tool authenticates with a header token rather than a cookie, CSRF does not apply; confirm how OdessaTestAuthenticationFilter authenticates. New evidence: AbstractController (lines 22-28) applies no anti-forgery filter; check RequestHashCodeValidationFilter and the global filter registration."
+  },
+  "9c98403f9612": {
+   "id": "VR-038",
+   "title": "Template generation actions flagged by the GET rule",
+   "severity": "Low",
+   "stage": "Assessed",
+   "verdict": "Not applicable",
+   "status": "Not applicable",
+   "jiraRefs": [],
+   "notes": "Not applicable: GenerateXmlDataTemplateText (line 378) and GenerateJsonTemplate (387) only build templates from metadata and change no data. The rule matched on the 'Generate' prefix."
+  },
+  "43d6aa76f887": {
+   "group": "9c98403f9612"
+  },
+  "6c27a173e6e5": {
+   "id": "VR-039",
+   "title": "Any controller's AbandonSession URL logs the user out through GET",
+   "severity": "Low",
+   "stage": "Assessed",
+   "verdict": "Verified",
+   "status": "Open",
+   "jiraRefs": [
+    "FRWK-25933",
+    "FRWK-25931"
+   ],
+   "notes": "AbandonSession() (line 32) is a public action on AbstractController, the base class of every portal controller, and has no HTTP verb attribute or anti-forgery check. A link or image tag pointing at any controller's /AbandonSession URL ends the victim's session (logout CSRF). The impact is a forced logout rather than data access, so the severity is Low; restrict it to [HttpPost] with anti-forgery validation."
+  },
+  "eba58d480e4d": {
+   "id": "VR-040",
+   "title": "Base controller helpers are callable as actions on every controller",
+   "severity": "Medium",
+   "stage": "Assessed",
+   "verdict": "Needs investigation",
+   "status": "Open",
+   "jiraRefs": [
+    "PROD01-62682",
+    "FRWK-25928"
+   ],
+   "notes": "Close() (line 110) and GetApmCompatibleUrl(string url) (line 132) are public, non-static and not marked [NonAction] on AbstractController, so MVC exposes both as actions on every derived controller. GetApmCompatibleUrl returns its url argument (prefixed with path wildcards when ApmCompatibleUrl is on). On .NET Framework, MVC wraps a string return value in a ContentResult with no content type, so the value is reflected as text/html; request validation normally blocks markup in the query string, which is the only thing standing between this and reflected XSS (the class of PROD01-62682). Close() is overridden in derived controllers (e.g. TwoFactorAuthenticationController line 109); any override that releases locks or changes state can be triggered by URL. Confirm with a GET to /Login/GetApmCompatibleUrl?url=test on a test site, then mark both methods [NonAction] or make them protected."
+  }
+ },
+ "manual": [
+  {
+   "fp": "man-reset-enum",
+   "rule": "VR-RULE-RESET-ENUM",
+   "file": "Lw.WebPortal/BaseLoginController.cs",
+   "line": 388,
+   "evidence": "if (Config.Instance.PasswordResetViaLink && Model.UserHasValidPasswordResetLink())",
+   "detail": "Return the same message for every reset request; ResetPasswordLinkShared is only thrown for accounts that exist and have a pending link.",
+   "title": "Password reset reveals accounts with a pending reset link",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-204"
+   ],
+   "owasp": "A07:2021",
+   "vaptClass": "User enumeration"
+  },
+  {
+   "fp": "man-tfa-otp-1",
+   "rule": "VR-RULE-OTP-BRUTEFORCE",
+   "file": "Lw.WebPortal/Controllers/TwoFactorAuthenticationController.cs",
+   "line": 377,
+   "detail": "Verify/Authenticate/Register only record a model error when a code is wrong; confirm a per-user failed-attempt counter and lockout exist before trying again is allowed.",
+   "title": "OTP verification attempts are not throttled in the controller",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-307"
+   ],
+   "owasp": "A07",
+   "vaptClass": "Rate limiting / lockout"
+  },
+  {
+   "fp": "man-tfa-otp-2",
+   "rule": "VR-RULE-OTP-BRUTEFORCE",
+   "file": "Lw.WebPortal/Controllers/TwoFactorAuthenticationController.cs",
+   "line": 25,
+   "detail": "The OTP rate limiter is a static in-memory store: it resets on restart and is not shared between web servers.",
+   "title": "",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-307"
+   ],
+   "owasp": "A07",
+   "vaptClass": "Rate limiting / lockout"
+  },
+  {
+   "fp": "man-tfa-otp-3",
+   "rule": "VR-RULE-OTP-BRUTEFORCE",
+   "file": "Lw.WebPortal/Controllers/TwoFactorAuthenticationController.cs",
+   "line": 488,
+   "detail": "Rate limiting is skipped for every factor except e-mail, so authenticator-app codes have no limit here.",
+   "title": "",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-307"
+   ],
+   "owasp": "A07",
+   "vaptClass": "Rate limiting / lockout"
+  },
+  {
+   "fp": "man-tfa-dest",
+   "rule": "VR-RULE-OTP-DESTINATION",
+   "file": "Lw.WebPortal/Controllers/TwoFactorAuthenticationController.cs",
+   "line": 325,
+   "detail": "The OTP is sent to Model.FactorTrueValue ?? Model.FactorUnmaskedValue; the registered-e-mail check (IsValidEmail) only runs in SendAuthCodeAsync, not on the Index/NavigateToVerification path.",
+   "title": "OTP destination is taken from the model",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-287",
+    "CWE-639"
+   ],
+   "owasp": "A07",
+   "vaptClass": "Cookie / session management"
+  },
+  {
+   "fp": "man-tfa-log",
+   "rule": "VR-RULE-SECURITY-EVENT-LOG",
+   "file": "Lw.WebPortal/Controllers/TwoFactorAuthenticationController.cs",
+   "line": 537,
+   "detail": "Rate-limit events go to Debug.WriteLine, which is compiled out of release builds; write them to the audit log instead.",
+   "title": "OTP rate-limit events are not logged in production",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-778"
+   ],
+   "owasp": "A09",
+   "vaptClass": "Logging and alerting"
+  },
+  {
+   "fp": "man-tfa-exmsg",
+   "rule": "VR-RULE-EXCEPTION-MESSAGE",
+   "file": "Lw.WebPortal/Controllers/TwoFactorAuthenticationController.cs",
+   "line": 122,
+   "detail": "ex.Message from model reconstruction is copied into showWarningMessage and shown on the MFA page; show a generic message and log the exception.",
+   "title": "MFA page shows raw exception messages",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-209",
+    "CWE-200"
+   ],
+   "owasp": "A10",
+   "vaptClass": "Information disclosure / errors"
+  },
+  {
+   "fp": "man-px-open-1",
+   "rule": "VR-RULE-OPEN-PROXY",
+   "file": "Lw.WebPortal/Controllers/ProxyController.cs",
+   "line": 38,
+   "detail": "Any request path and query string after the proxy prefix is appended to the core site URL and forwarded with the user's cross-site session.",
+   "title": "Proxy forwards any path and query to the core site",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-441",
+    "CWE-918"
+   ],
+   "owasp": "A01",
+   "vaptClass": "Broken access control / IDOR"
+  },
+  {
+   "fp": "man-px-open-2",
+   "rule": "VR-RULE-OPEN-PROXY",
+   "file": "Lw.WebPortal/Controllers/ProxyController.cs",
+   "line": 40,
+   "detail": "The core login token is added whenever the path merely contains 'ChangeExternalContext'; compare against the exact route instead.",
+   "title": "",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-441",
+    "CWE-918"
+   ],
+   "owasp": "A01",
+   "vaptClass": "Broken access control / IDOR"
+  },
+  {
+   "fp": "man-px-get",
+   "rule": "VR-RULE-GET-STATE",
+   "file": "Lw.WebPortal/Controllers/ProxyController.cs",
+   "line": 27,
+   "detail": "RedirectRequest() forwards POSTed form fields and files to the core site but has no HTTP verb restriction or anti-forgery check.",
+   "title": "Proxy action forwards form posts without verb or anti-forgery checks",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-650",
+    "CWE-352"
+   ],
+   "owasp": "A02",
+   "vaptClass": "HTTP method tampering (POST to GET)"
+  },
+  {
+   "fp": "man-ta-exposed-1",
+   "rule": "VR-RULE-TEST-ENDPOINT",
+   "file": "Lw.WebPortal/Controllers/TestAutomationController.cs",
+   "line": 40,
+   "detail": "The whole test automation API is protected only by [OdessaTestAuthenticationFilter]; confirm it requires an authenticated, authorised test account and is disabled in production.",
+   "title": "Test automation API is exposed in the portal",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-489",
+    "CWE-306"
+   ],
+   "owasp": "A02",
+   "vaptClass": "Broken access control / IDOR"
+  },
+  {
+   "fp": "man-ta-exposed-2",
+   "rule": "VR-RULE-TEST-ENDPOINT",
+   "file": "Lw.WebPortal/Controllers/TestAutomationController.cs",
+   "line": 61,
+   "detail": "Authentication is reported as not required on Odessa domains when Lw.IsTestAutomationSecurityEnabled is false; make the flag impossible to disable outside test environments.",
+   "title": "",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-489",
+    "CWE-306"
+   ],
+   "owasp": "A02",
+   "vaptClass": "Broken access control / IDOR"
+  },
+  {
+   "fp": "man-ta-exposed-202",
+   "rule": "VR-RULE-TEST-ENDPOINT",
+   "file": "Lw.WebPortal/Controllers/TestAutomationController.cs",
+   "line": 202,
+   "detail": "GetPortfolioParamConfigInfo switches to the system user for any connection name and returns data for all approved users.",
+   "title": "",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-489",
+    "CWE-306"
+   ],
+   "owasp": "A02",
+   "vaptClass": "Broken access control / IDOR"
+  },
+  {
+   "fp": "man-ta-exposed-234",
+   "rule": "VR-RULE-TEST-ENDPOINT",
+   "file": "Lw.WebPortal/Controllers/TestAutomationController.cs",
+   "line": 234,
+   "detail": "GetUserBusinessUnitInfos switches to the system user for any connection name and returns data for all approved users.",
+   "title": "",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-489",
+    "CWE-306"
+   ],
+   "owasp": "A02",
+   "vaptClass": "Broken access control / IDOR"
+  },
+  {
+   "fp": "man-ta-exposed-289",
+   "rule": "VR-RULE-TEST-ENDPOINT",
+   "file": "Lw.WebPortal/Controllers/TestAutomationController.cs",
+   "line": 289,
+   "detail": "GetUserPortalInfos switches to the system user for any connection name and returns data for all approved users.",
+   "title": "",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-489",
+    "CWE-306"
+   ],
+   "owasp": "A02",
+   "vaptClass": "Broken access control / IDOR"
+  },
+  {
+   "fp": "man-ta-sql-1",
+   "rule": "VR-RULE-REQUEST-SQL",
+   "file": "Lw.WebPortal/Controllers/TestAutomationController.cs",
+   "line": 354,
+   "detail": "GetExecutedCommandResult takes raw SQL text from the request and runs GetSqlColumnInfo on it.",
+   "title": "Endpoint accepts raw SQL and a connection string from the request",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-89",
+    "CWE-918"
+   ],
+   "owasp": "A05",
+   "vaptClass": "Injection (XSS / HTML / SQL / CSV)"
+  },
+  {
+   "fp": "man-ta-sql-2",
+   "rule": "VR-RULE-REQUEST-SQL",
+   "file": "Lw.WebPortal/Controllers/TestAutomationController.cs",
+   "line": 361,
+   "detail": "The optional connectionString parameter is resolved as a full connection string, so the server can be pointed at any database host.",
+   "title": "",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-89",
+    "CWE-918"
+   ],
+   "owasp": "A05",
+   "vaptClass": "Injection (XSS / HTML / SQL / CSV)"
+  },
+  {
+   "fp": "man-ta-secret-1",
+   "rule": "VR-RULE-SECRET-DISCLOSURE",
+   "file": "Lw.WebPortal/Controllers/TestAutomationController.cs",
+   "line": 396,
+   "detail": "GetAutomationRepositoryConnection returns the AutomationRepository connection string in the JSON response.",
+   "title": "Test automation API returns the automation database connection string",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-200",
+    "CWE-522"
+   ],
+   "owasp": "A04",
+   "vaptClass": "Sensitive data / credentials exposure"
+  },
+  {
+   "fp": "man-ta-secret-2",
+   "rule": "VR-RULE-SECRET-DISCLOSURE",
+   "file": "Lw.WebPortal/Controllers/TestAutomationController.cs",
+   "line": 95,
+   "detail": "GetConnectionStringKeys lists every configured connection-string name.",
+   "title": "",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-200",
+    "CWE-522"
+   ],
+   "owasp": "A04",
+   "vaptClass": "Sensitive data / credentials exposure"
+  },
+  {
+   "fp": "man-ta-exmsg-1",
+   "rule": "VR-RULE-EXCEPTION-MESSAGE",
+   "file": "Lw.WebPortal/Controllers/TestAutomationController.cs",
+   "line": 112,
+   "detail": "TestConnectionString returns \"Fail\" + ex.Message, which can include the SQL Server name and login error.",
+   "title": "Test automation API returns exception messages",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-209",
+    "CWE-200"
+   ],
+   "owasp": "A10",
+   "vaptClass": "Information disclosure / errors"
+  },
+  {
+   "fp": "man-ta-exmsg-2",
+   "rule": "VR-RULE-EXCEPTION-MESSAGE",
+   "file": "Lw.WebPortal/Controllers/TestAutomationController.cs",
+   "line": 403,
+   "detail": "OnException returns the exception message as RuntimeException in the JSON body for every action.",
+   "title": "",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-209",
+    "CWE-200"
+   ],
+   "owasp": "A10",
+   "vaptClass": "Information disclosure / errors"
+  },
+  {
+   "fp": "man-ta-path-146",
+   "rule": "VR-RULE-PATH-TRAVERSAL",
+   "file": "Lw.WebPortal/Controllers/TestAutomationController.cs",
+   "line": 146,
+   "detail": "UpdateFileGenerationDetails passes the request value 'reportLocation' to the service as a file-system path; confirm the service resolves it under a fixed folder.",
+   "title": "Test automation actions take file-system paths from the request",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-22"
+   ],
+   "owasp": "A01",
+   "vaptClass": "Broken access control / IDOR"
+  },
+  {
+   "fp": "man-ta-path-445",
+   "rule": "VR-RULE-PATH-TRAVERSAL",
+   "file": "Lw.WebPortal/Controllers/TestAutomationController.cs",
+   "line": 445,
+   "detail": "RestoreSelectedIteration passes the request value 'exportedPath' to the service as a file-system path; confirm the service resolves it under a fixed folder.",
+   "title": "",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-22"
+   ],
+   "owasp": "A01",
+   "vaptClass": "Broken access control / IDOR"
+  },
+  {
+   "fp": "man-ta-path-450",
+   "rule": "VR-RULE-PATH-TRAVERSAL",
+   "file": "Lw.WebPortal/Controllers/TestAutomationController.cs",
+   "line": 450,
+   "detail": "CompressFolder passes the request value 'fileNames' to the service as a file-system path; confirm the service resolves it under a fixed folder.",
+   "title": "",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-22"
+   ],
+   "owasp": "A01",
+   "vaptClass": "Broken access control / IDOR"
+  },
+  {
+   "fp": "man-ta-path-485",
+   "rule": "VR-RULE-PATH-TRAVERSAL",
+   "file": "Lw.WebPortal/Controllers/TestAutomationController.cs",
+   "line": 485,
+   "detail": "UploadZephyrTestCases passes the request value 'folderPath' to the service as a file-system path; confirm the service resolves it under a fixed folder.",
+   "title": "",
+   "category": "Code pattern",
+   "cwe": [
+    "CWE-22"
+   ],
+   "owasp": "A01",
+   "vaptClass": "Broken access control / IDOR"
+  }
+ ],
+ "run": {
+  "budget": 15000000,
+  "usedTotal": 575000,
+  "stopAt": 0.5,
+  "note": "Approximate tokens used by all VulnRadar work so far (setup plus the scan of 6 files), against the 15,000,000-token session budget. Your account's plan quota is not visible to the tool. Work stops at the red marker (50%)."
+ }
+}

@@ -1,0 +1,1226 @@
+{
+ "checkedAt": "2026-10-20T07:46:13+00:00",
+ "sources": [
+  {
+   "name": "GitHub Advisory Database (npm audit endpoint)",
+   "url": "registry.npmjs.org/-/npm/v1/security/advisories/bulk",
+   "status": "ok",
+   "checked": 76,
+   "at": "2026-10-20T07:46:13+00:00"
+  },
+  {
+   "name": "OSV.dev (NuGet + npm)",
+   "url": "https://api.osv.dev/v1/querybatch",
+   "status": "blocked: <urlopen error Tunnel connection failed: 403 Forbidden>",
+   "at": "2026-10-20T07:46:13+00:00"
+  },
+  {
+   "name": "NuGet vulnerability resource",
+   "url": "https://api.nuget.org/v3/vulnerabilities/index.json",
+   "status": "blocked: <urlopen error Tunnel connection failed: 403 Forbidden>",
+   "at": "2026-10-20T07:46:13+00:00"
+  },
+  {
+   "name": "CISA Known Exploited Vulnerabilities",
+   "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+   "status": "blocked: <urlopen error Tunnel connection failed: 403 Forbidden>",
+   "at": "2026-10-20T07:46:13+00:00"
+  },
+  {
+   "name": "NIST NVD",
+   "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=1",
+   "status": "blocked: <urlopen error Tunnel connection failed: 403 Forbidden>",
+   "at": "2026-10-20T07:46:13+00:00"
+  }
+ ],
+ "components": [
+  {
+   "name": "jquery",
+   "version": "3.5.1",
+   "ecosystem": "npm",
+   "file": "Lw.WebPortal/Scripts/jquery-3.5.1.js",
+   "evidence": "file name",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "jquery-ui",
+   "version": "1.14.2",
+   "ecosystem": "npm",
+   "file": "Lw.WebPortal/Scripts/jquery-ui-1.14.2.js",
+   "evidence": "file name",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "jQuery blockUI",
+   "version": "2.66",
+   "ecosystem": "none",
+   "file": "Lw.WebPortal/Scripts/jquery.blockUI-2.66.js",
+   "evidence": "file name",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "jstz",
+   "version": "1.0.4",
+   "ecosystem": "npm",
+   "file": "Lw.WebPortal/Scripts/jquery.jstz-1.0.4.min.js",
+   "evidence": "file name",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "jQuery Masked Input",
+   "version": "1.3",
+   "ecosystem": "none",
+   "file": "Lw.WebPortal/Scripts/jquery.maskedinput-1.3.min.js",
+   "evidence": "file name",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "signalr",
+   "version": "2.4.2",
+   "ecosystem": "npm",
+   "file": "Lw.WebPortal/Scripts/jquery.signalR-2.4.2.min.js",
+   "evidence": "file name",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "modernizr",
+   "version": "2.8.3",
+   "ecosystem": "npm",
+   "file": "Lw.WebPortal/Scripts/modernizr-2.8.3.js",
+   "evidence": "file name",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "underscore",
+   "version": "1.13.8",
+   "ecosystem": "npm",
+   "file": "Lw.WebPortal/Scripts/underscore.js",
+   "evidence": "file header",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "js-cookie",
+   "version": "3.0.5",
+   "ecosystem": "npm",
+   "file": "Lw.WebPortal/Scripts/js.cookie.js",
+   "evidence": "file header",
+   "checked": "GitHub Advisory Database",
+   "advisories": [
+    {
+     "id": "GHSA-qjx8-664m-686j",
+     "url": "https://github.com/advisories/GHSA-qjx8-664m-686j",
+     "title": "JavaScript Cookie: Per-instance prototype hijack in assign() enables cookie-attribute injection",
+     "severity": "high",
+     "range": "<=3.0.5",
+     "cwe": [
+      "CWE-1321"
+     ],
+     "cvss": 7.5
+    }
+   ]
+  },
+  {
+   "name": "jqGrid (Trirand)",
+   "version": "4.5.4",
+   "ecosystem": "none",
+   "file": "Lw.WebPortal/Scripts/jquery.jqGrid.src.js",
+   "evidence": "file header",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.Rest.ClientRuntime",
+   "version": "2.3.24",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.AspNet.Web.Optimization",
+   "version": "1.1.3",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Antlr",
+   "version": "3.5.0.2",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "bootstrap",
+   "version": "5.3.8",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "bootstrap",
+   "version": "5.3.8",
+   "ecosystem": "npm",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "JavaScript shipped in NuGet package bootstrap",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "jQuery",
+   "version": "3.7.1",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "jquery",
+   "version": "3.7.1",
+   "ecosystem": "npm",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "JavaScript shipped in NuGet package jQuery",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "jQuery.Validation",
+   "version": "1.21.0",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "jquery-validation",
+   "version": "1.21.0",
+   "ecosystem": "npm",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "JavaScript shipped in NuGet package jQuery.Validation",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.ApplicationInsights",
+   "version": "3.1.2",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.ApplicationInsights.Agent.Intercept",
+   "version": "2.4.0",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.ApplicationInsights.DependencyCollector",
+   "version": "2.23.0",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.ApplicationInsights.PerfCounterCollector",
+   "version": "2.23.0",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.ApplicationInsights.Web",
+   "version": "3.1.2",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.ApplicationInsights.WindowsServer",
+   "version": "2.23.0",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel",
+   "version": "2.23.0",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.AspNet.Mvc",
+   "version": "5.3.0",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.AspNet.Razor",
+   "version": "3.2.7",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.AspNet.WebPages",
+   "version": "3.2.7",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.AspNet.SignalR",
+   "version": "2.4.3",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.CSharp",
+   "version": "4.7.0",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.jQuery.Unobtrusive.Validation",
+   "version": "4.0.0",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "jquery-validation-unobtrusive",
+   "version": "4.0.0",
+   "ecosystem": "npm",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "JavaScript shipped in NuGet package Microsoft.jQuery.Unobtrusive.Validation",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.Web.Infrastructure",
+   "version": "2.0.0",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Modernizr",
+   "version": "2.8.3",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "modernizr",
+   "version": "2.8.3",
+   "ecosystem": "npm",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "JavaScript shipped in NuGet package Modernizr",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "Newtonsoft.Json",
+   "version": "13.0.4",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Respond",
+   "version": "1.4.2",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "respond.js",
+   "version": "1.4.2",
+   "ecosystem": "npm",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "JavaScript shipped in NuGet package Respond",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "WebGrease",
+   "version": "1.6.0",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.PowerBI.Api",
+   "version": "4.3.0",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.AspNetCore.Authentication.JwtBearer",
+   "version": "10.0.11",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.AspNetCore.Authentication.OpenIdConnect",
+   "version": "10.0.11",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.AspNetCore.Authentication.WsFederation",
+   "version": "10.0.11",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.AspNetCore.Mvc.NewtonsoftJson",
+   "version": "10.0.11",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation",
+   "version": "10.0.11",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.AspNetCore.SignalR",
+   "version": "1.2.12",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.CodeAnalysis.Common",
+   "version": "5.9.0",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.CodeAnalysis.CSharp",
+   "version": "5.9.0",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.CodeAnalysis.CSharp.Scripting",
+   "version": "5.9.0",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.CodeAnalysis.VisualBasic",
+   "version": "5.9.0",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Syncfusion.EJ2.AspNet.Core",
+   "version": "34.2.5",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Odessa.UiPath.Workflow",
+   "version": "7.0.0",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "System.ServiceModel.Duplex",
+   "version": "4.10.3",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "System.ServiceModel.NetTcp",
+   "version": "4.10.3",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Serilog.AspNetCore",
+   "version": "10.0.0",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "ErrorProne.NET.CoreAnalyzers",
+   "version": "0.4.0-beta.1",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.AspNet.TelemetryCorrelation",
+   "version": "1.0.8",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.Graph",
+   "version": "6.5.0",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "Microsoft.Kiota.Abstractions",
+   "version": "2.0.0",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "System.Text.Json",
+   "version": "10.0.11",
+   "ecosystem": "NuGet",
+   "file": "Lw.WebPortal/Lw.WebPortal.csproj",
+   "evidence": "PackageReference",
+   "checked": "not checked",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/aix-ppc64",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/android-arm",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/android-arm64",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/android-x64",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/darwin-arm64",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/darwin-x64",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/freebsd-arm64",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/freebsd-x64",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/linux-arm",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/linux-arm64",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/linux-ia32",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/linux-loong64",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/linux-mips64el",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/linux-ppc64",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/linux-riscv64",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/linux-s390x",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/linux-x64",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/netbsd-arm64",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/netbsd-x64",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/openbsd-arm64",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/openbsd-x64",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/openharmony-arm64",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/sunos-x64",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/win32-arm64",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/win32-ia32",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@esbuild/win32-x64",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@parcel/watcher",
+   "version": "2.5.6",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@parcel/watcher-android-arm64",
+   "version": "2.5.6",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@parcel/watcher-darwin-arm64",
+   "version": "2.5.6",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@parcel/watcher-darwin-x64",
+   "version": "2.5.6",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@parcel/watcher-freebsd-x64",
+   "version": "2.5.6",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@parcel/watcher-linux-arm-glibc",
+   "version": "2.5.6",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@parcel/watcher-linux-arm-musl",
+   "version": "2.5.6",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@parcel/watcher-linux-arm64-glibc",
+   "version": "2.5.6",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@parcel/watcher-linux-arm64-musl",
+   "version": "2.5.6",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@parcel/watcher-linux-x64-glibc",
+   "version": "2.5.6",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@parcel/watcher-linux-x64-musl",
+   "version": "2.5.6",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@parcel/watcher-win32-arm64",
+   "version": "2.5.6",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@parcel/watcher-win32-ia32",
+   "version": "2.5.6",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "@parcel/watcher-win32-x64",
+   "version": "2.5.6",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "picomatch",
+   "version": "4.0.4",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "anymatch",
+   "version": "3.1.3",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "binary-extensions",
+   "version": "2.3.0",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "braces",
+   "version": "3.0.3",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": [
+    {
+     "id": "GHSA-vfj7-8cjw-p6xm",
+     "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+     "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+     "severity": "high",
+     "range": "<=3.0.3",
+     "cwe": [
+      "CWE-674"
+     ],
+     "cvss": 7.5
+    }
+   ]
+  },
+  {
+   "name": "chokidar",
+   "version": "3.6.0",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "detect-libc",
+   "version": "2.1.2",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "esbuild",
+   "version": "0.28.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "fill-range",
+   "version": "7.1.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "fsevents",
+   "version": "2.3.3",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "glob-parent",
+   "version": "5.1.2",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "immutable",
+   "version": "5.1.5",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": [
+    {
+     "id": "GHSA-v56q-mh7h-f735",
+     "url": "https://github.com/advisories/GHSA-v56q-mh7h-f735",
+     "title": "Immutable.js `List` 32-bit trie overflow \u2192 unrecoverable DoS",
+     "severity": "high",
+     "range": ">=5.0.0-beta.1 <5.1.8",
+     "cwe": [
+      "CWE-190",
+      "CWE-400",
+      "CWE-835",
+      "CWE-1284"
+     ],
+     "cvss": 7.5
+    },
+    {
+     "id": "GHSA-xvcm-6775-5m9r",
+     "url": "https://github.com/advisories/GHSA-xvcm-6775-5m9r",
+     "title": "Immutable: Hash-collision algorithmic complexity denial of service in Immutable.Map/Set",
+     "severity": "high",
+     "range": ">=5.0.0-beta.1 <5.1.8",
+     "cwe": [
+      "CWE-400",
+      "CWE-407"
+     ],
+     "cvss": 0
+    }
+   ]
+  },
+  {
+   "name": "is-binary-path",
+   "version": "2.1.0",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "is-extglob",
+   "version": "2.1.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "is-glob",
+   "version": "4.0.3",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "is-number",
+   "version": "7.0.0",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "node-addon-api",
+   "version": "7.1.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "normalize-path",
+   "version": "3.0.0",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "picomatch",
+   "version": "2.3.2",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "readdirp",
+   "version": "3.6.0",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "sass",
+   "version": "1.99.0",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "chokidar",
+   "version": "4.0.3",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "readdirp",
+   "version": "4.1.2",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  },
+  {
+   "name": "source-map-js",
+   "version": "1.2.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": [
+    {
+     "id": "GHSA-68fv-2mgg-jv7q",
+     "url": "https://github.com/advisories/GHSA-68fv-2mgg-jv7q",
+     "title": "source-map-js allows event-loop denial of service through indexed source-map section offsets",
+     "severity": "high",
+     "range": ">=1.0.0 <1.2.2",
+     "cwe": [
+      "CWE-1284"
+     ],
+     "cvss": 7.5
+    }
+   ]
+  },
+  {
+   "name": "to-regex-range",
+   "version": "5.0.1",
+   "ecosystem": "npm",
+   "file": "package-lock.json",
+   "evidence": "package-lock (dev tooling)",
+   "checked": "GitHub Advisory Database",
+   "advisories": []
+  }
+ ]
+}
